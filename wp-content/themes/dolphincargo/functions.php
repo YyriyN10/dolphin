@@ -139,13 +139,11 @@ add_action( 'widgets_init', 'dolphincargo_widgets_init' );
  */
 function dolphincargo_scripts() {
 	wp_enqueue_style( 'dolphincargo-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'dolphincargo-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'dolphincargo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_style( 'dolphincargo-style-main', get_template_directory_uri() . '/assets/css/style.min.css', array(), _S_VERSION );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_script( 'dolphincargo-main-js', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery'), _S_VERSION, true );
+
 }
 add_action( 'wp_enqueue_scripts', 'dolphincargo_scripts' );
 
@@ -170,9 +168,33 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
+ * Poly translations
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
 
+require get_template_directory() . '/inc/poly-translation.php';
+
+/**
+ * Custom post types
+ */
+
+require get_template_directory() . '/inc/custom-post-types.php';
+
+/**
+ * Carbon init
+ */
+
+require get_template_directory() . '/inc/carbon-init.php';
+
+/**
+ * Carbon init
+ */
+
+require get_template_directory() . '/inc/ajax-functions.php';
+
+/**
+ * Constants
+ */
+
+define( 'SITE_URL', get_site_url() );
+define( 'SITE_LOCALE', get_locale() );
+define( 'THEME_PATH', get_template_directory_uri() );
