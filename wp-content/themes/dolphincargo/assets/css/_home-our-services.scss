@@ -66,20 +66,31 @@
 
   .run-rows-wrapper{
     margin-top: 58px;
+    position: relative;
+    z-index: 3;
 
     .run-row{
       height: auto;
-      background-color: $color-light-blue;
+      padding: 16px 0;
+      position: relative;
+      transform-origin: center;
 
       .js-marquee{
         font-size: 24px;
         padding: 16px 0;
+        display: contents;
       }
 
       &.first-row{
-        .js-marquee{
+        background-color: $color-dark-blue;
+        z-index: 1;
+        transform: rotate(3deg);
+      }
 
-        }
+      &.second-row{
+        background-color: $color-light-blue;
+        z-index: 2;
+        transform: rotate(-3deg);
       }
     }
   }

@@ -22,6 +22,7 @@ function scripts(){
     'js/bootstrap.js',
     'js/jquery.lazy.js',
     'js/jquery.marquee.js',
+    'js/slick.min.js',
     'js/js.js'//завжди останній, важлива послідовність
   ])
     .pipe(concat('main.min.js'))//ім'я згенерованого файлу

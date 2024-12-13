@@ -69,3 +69,5 @@
 
 require ('carbon-blocks/home-main-screen.php');
 require ('carbon-blocks/home-what-you-get.php');
+require ('carbon-blocks/home-call-to.php');
+require ('carbon-blocks/block-about-us.php');

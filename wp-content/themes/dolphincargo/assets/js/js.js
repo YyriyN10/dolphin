@@ -51,14 +51,59 @@ jQuery(function($) {
    * Marque
    */
 
-  $('.first-row').marquee({
-    speed: 100,
-    gap: 30,
-    delayBeforeStart: 0,
-    direction: 'left',
-    duplicated: true,
-    pauseOnHover: false
-  });
+  if( $('.run-rows-wrapper').length ){
+
+    $('.first-row').marquee({
+      speed: 2000,
+      gap: 30,
+      delayBeforeStart: 0,
+      direction: 'left',
+      duplicated: true,
+      pauseOnHover: false
+    });
+
+    $('.second-row').marquee({
+      speed: 2000,
+      gap: 30,
+      delayBeforeStart: 0,
+      direction: 'left',
+      duplicated: true,
+      pauseOnHover: false
+    });
+
+  }
+
+  /*--- About us slider ---*/
+
+  if ( $('#about-us-slider').length ){
+
+    $('#about-us-slider').slick({
+        autoplay: false,
+        autoplaySpeed: 2000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true
+    });
+
+    $('.about-us .prev').click(function(e){
+        e.preventDefault();
+
+        $('#about-us-slider').slick('slickPrev');
+    });
+
+    $('.about-us .next').click(function(e){
+        e.preventDefault();
+
+        $('#about-us-slider').slick('slickNext');
+    });
+  }
+
+
+
+
+
+
 
   //Fixed Menu
 

@@ -176,10 +176,12 @@
                  <div class="run-rows-wrapper">
                    <div class="run-row first-row">
                      <?php echo $fields['dolphincargo_our_services_run_text'];?>
-                     <?php echo $fields['dolphincargo_our_services_run_text'];?>
-                     <?php echo $fields['dolphincargo_our_services_run_text'];?>
+
                    </div>
-                   <p class="run-row second-row"><?php echo $fields['dolphincargo_our_services_run_text'];?> <?php echo $fields['dolphincargo_our_services_run_text'];?></p>
+                   <div class="run-row second-row">
+                     <?php echo $fields['dolphincargo_our_services_run_text'];?>
+
+                   </div>
                  </div>
                <?php endif;?>
 
