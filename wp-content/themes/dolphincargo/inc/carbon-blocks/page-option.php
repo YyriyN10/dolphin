@@ -12,11 +12,24 @@
 		Container::make( 'theme_options', __('Options'))
 		         ->set_icon( 'dashicons-admin-generic' )
 		         ->add_tab( 'Контакти', array(
-			         Field::make_text('clinic_rial_address', 'Адреса клініки'),
+			         Field::make_text('dolphincargo_option_rial_address'.dolphincargo_lang_prefix(), 'Адреса клініки'),
+			         Field::make_text('dolphincargo_option_contact_phone', 'Контактний телефон'),
+			         Field::make_text('dolphincargo_option_contact_email', 'Контактний email')
+		            ->set_attribute('type', 'email'),
 
 		         ) )
+						->add_tab( 'Соціальні мережі', array(
+							Field::make_text('dolphincargo_option_facebook_link', 'Посилання на Facebook')
+							     ->set_attribute('type', 'url'),
+							Field::make_text('dolphincargo_option_instagram_link', 'Посилання на Instagram')
+							     ->set_attribute('type', 'url'),
+						) )
+
 
 		         ->add_tab( 'Опції сайту', array(
+		         	  Field::make_image('dolphincargo_option_logo', 'Логотип')
+									->set_type('image')
+									->set_value_type('url'),
 			         Field::make_association('policy_page', 'Сторінка політики конфіденційності')
 			              ->set_types( array(
 				              array(

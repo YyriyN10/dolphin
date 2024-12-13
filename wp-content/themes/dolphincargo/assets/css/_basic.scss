@@ -3,10 +3,11 @@ html{ overflow-y: scroll !important; }
 
 body{
   font-family: $f-main;
-  color: #2c2e29;
-  font-size: 16px;
-  line-height: 1.6;
+  color: $color-white;
+  font-size: 18px;
+  line-height: 1.4;
   padding-right: 0 !important;
+  background-color: $color-black;
 
   .modal.show {
     display: flex !important;
@@ -66,7 +67,9 @@ svg{
   left: 0;
   right: 0;
   z-index: 10;
-  transition: all 0.5s;
+  transition: all 0.2s;
+  background-color: rgba(0,0,0,0);
+  padding: 25px 0;
 
   &.fixed-header{
     transform: translateY(-110%);
@@ -174,9 +177,44 @@ svg{
 }
 
 .main-menu{
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 32px;
+
+  li{
+    list-style: none;
+
+    a{
+      color: $color-black !important;
+      font-family: $f-med;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+  }
+
   @media(max-width: 992px){
     display: block;
     gap: 30px;
+  }
+}
+
+/*--- .lines-wrapper ---*/
+
+.lines-wrapper{
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 134px;
+  right: 134px;
+  z-index: 2;
+  justify-content: space-between;
+
+  .line{
+    width: 2px;
+    height: 100%;
+    background: rgba(251, 251, 251, 0.1);
   }
 }
 
@@ -185,17 +223,95 @@ svg{
 .button{
   display: inline-block;
   cursor: pointer;
-  transition: all 0.5s;
+  transition: all 0.2s;
+  border: none;
+  font-family: $f-med;
+
+  &.yellow-btn{
+    padding: 16px 32px;
+    background-color: $color-yellow;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: $color-black !important;
+
+  }
+
+  &.arrow-btn{
+    font-size: 18px;
+    color: $color-dark-blue !important;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s;
+
+    svg{
+      width: 24px;
+      height: auto;
+      margin-left: 8px;
+
+      path{
+        stroke: $color-dark-blue;
+        transition: all 0.2s;
+      }
+    }
+    
+    &:hover{
+      color: $color-light-blue !important;
+      
+      svg{
+        path{
+          stroke: $color-light-blue;
+        }
+      }
+    }
+  }
 
   &:hover{
 
   }
 }
 
+/*--- blur-element ---*/
+
+.blur-element{
+  backdrop-filter: blur(10px);
+  position: absolute;
+  background-color: rgba(251, 251, 251, 0.2);
+
+}
 /*--- block-title ---*/
 
 .block-title {
+  text-transform: uppercase;
+  font-family: $f-bold;
+  line-height: 1.4;
 
+  &.big-title{
+    font-size: 48px;
+  }
+
+  &.small-title{
+    font-size: 32px;
+  }
+
+}
+
+/*--- indent ---*/
+
+.indent-top-big{
+  padding-top: 130px;
+}
+
+.indent-bottom-big{
+  padding-bottom: 130px;
+}
+
+.indent-top-small{
+  padding-top: 65px;
+}
+
+.indent-bottom-small{
+  padding-bottom: 65px;
 }
 
 /*--- form ---*/
@@ -266,67 +382,5 @@ form{
         border: none;
       }
     }
-  }
-}
-
-/*--------- ANIMATION ------------*/
-
-
-.menu-slider{
-  -webkit-animation: slide-menu 1s infinite ease-in-out;
-  animation: slide-menu 1s infinite ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-}
-
-@-webkit-keyframes slide-menu {
-  0% {
-    right: -200px;
-  }
-
-  100% {
-    right: 0;
-  }
-}
-
-@keyframes slide-menu {
-  0% {
-    right: -200px;
-  }
-
-  100% {
-    right: 0;
-  }
-}
-
-.menu-slider-out{
-  -webkit-animation: slide-menu-out 1s infinite ease-in-out;
-  animation: slide-menu-out 1s infinite ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  opacity: 0;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-}
-
-@-webkit-keyframes slide-menu-out {
-  0% {
-    right: 0;
-  }
-
-  100% {
-    right: -200px;
-  }
-}
-
-@keyframes slide-menu-out {
-  0% {
-    right: 0;
-  }
-
-  100% {
-    right: -200px;
   }
 }

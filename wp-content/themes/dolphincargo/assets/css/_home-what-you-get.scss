@@ -1,0 +1,85 @@
+.home-what-you-get{
+  position: relative;
+  margin-top: -30px;
+  padding-bottom: 204px;
+
+  .text-element{
+    position: relative;
+    z-index: 3;
+    width: calc(100% - 90px);
+    margin: 0 auto 50px;
+    display: block;
+  }
+
+  .light{
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    top: 0;
+    width: 904px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .logo-bg{
+    position: absolute;
+    top: -150px;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1267px;
+    height: auto;
+  }
+
+
+  .container-fluid{
+    position: relative;
+    z-index: 3;
+  }
+
+  .get-list{
+    margin: 0;
+    gap: 24px;
+
+    .item{
+      list-style: none;
+      display: flex;
+      align-items: center;
+
+      svg{
+        width: 58px;
+        height: auto;
+        margin-right: 32px;
+      }
+
+      span{
+        width: calc(100% - 90px);
+        text-transform: uppercase;
+        font-family: $f-flex;
+        font-size: 24px;
+      }
+    }
+  }
+
+
+  .pic-container{
+    position: relative;
+
+    .img-container{
+      position: absolute;
+      width: 50vw;
+      overflow: hidden;
+      left: 0;
+      top: -35.3vw;
+
+      img{
+        width: 100%;
+        height: auto;
+        transition: all 0.2s;
+      }
+    }
+  }
+}

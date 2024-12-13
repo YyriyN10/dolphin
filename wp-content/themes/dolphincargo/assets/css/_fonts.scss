@@ -1,12 +1,57 @@
+
 @font-face {
-  font-family: "HarmoniaSansProCyr-Black";
-  src: url("../fonts/HarmoniaSansProCyr-Black/HarmoniaSansProCyr-Black.eot");
-  src: url("../fonts/HarmoniaSansProCyr-Black/HarmoniaSansProCyr-Black.eot?#iefix") format("embedded-opentype"),
-  url("../fonts/HarmoniaSansProCyr-Black/HarmoniaSansProCyr-Black.woff") format("woff"),
-  url("../fonts/HarmoniaSansProCyr-Black/HarmoniaSansProCyr-Black.ttf") format("truetype");
+  font-display: swap;
+  font-family: 'RobotoLight';
   font-style: normal;
-  font-weight: normal;
-  font-display: swap; //обязательно
+  font-weight: 300;
+  src: url('../fonts/Roboto/roboto-v32-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-300.woff2') format('woff2'),
+  url('../fonts/Roboto/roboto-v32-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-300.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'RobotoRegular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Roboto/roboto-v32-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-regular.woff2') format('woff2'),
+  url('../fonts/Roboto/roboto-v32-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'RobotoMedium';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/Roboto/roboto-v32-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-500.woff2') format('woff2'),
+  url('../fonts/Roboto/roboto-v32-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-500.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'RobotoBold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Roboto/roboto-v32-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-700.woff2') format('woff2'),
+  url('../fonts/Roboto/roboto-v32-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-700.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'RobotoExtra';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/Roboto/roboto-v32-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-900.woff2') format('woff2'),
+  url('../fonts/Roboto/roboto-v32-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-900.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto Flex';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Roboto-flex/roboto-flex-v26-cyrillic_cyrillic-ext_greek_latin_latin-ext-regular.woff2') format('woff2'),
+  url('../fonts/Roboto-flex/roboto-flex-v26-cyrillic_cyrillic-ext_greek_latin_latin-ext-regular.ttf') format('truetype');
 }
 
 

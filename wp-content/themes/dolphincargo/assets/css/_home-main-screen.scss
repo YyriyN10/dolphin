@@ -1,0 +1,87 @@
+.home-main-screen{
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 160px;
+  padding-bottom: 308px;
+  position: relative;
+
+  .container-fluid{
+    position: relative;
+    z-index: 3;
+  }
+
+  .main-title{
+    text-transform: uppercase;
+    font-family: $f-flex;
+    margin-bottom: 32px;
+    line-height: 1.1;
+    font-size: clamp(186px, 11.6vw, 222px);
+  }
+
+  .who-are{
+    font-family: $f-flex;
+    line-height: 1.4;
+    font-size: 24px;
+    margin-bottom: 77px;
+  }
+
+  .circle-button{
+    position: absolute;
+    z-index: 10;
+    width: 142px;
+    height: 142px;
+    border-radius: 50%;
+    background-color: $color-light-blue;
+    color: $color-white!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .numbers-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 32px;
+    margin: 0;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    position: relative;
+
+    &:before,
+    &:after{
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: calc(100% + 44px);
+      left: -22px;
+      right: -22px;
+      background: rgba(251, 251, 251, 0.1);
+    }
+
+    &:before{
+      top: 0;
+    }
+
+    &:after{
+      bottom: 0;
+    }
+
+    .item{
+      list-style: none;
+      width: 33.33%;
+
+      .number-full{
+        font-family: $f-bold;
+        font-size: 42px;
+        line-height: 1.2;
+      }
+    }
+  }
+}

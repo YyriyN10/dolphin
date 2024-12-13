@@ -1,19 +1,64 @@
-jQuery(function() {
+jQuery(function($) {
 
 
-  //Get Window Width, Height
+  /**
+   * Get Window Width, Height
+   */
 
-  /*let windWid = jQuery(window).width();
-  let windHeig = jQuery(window).height();
+  let windWidth = $(window).width();
+  let windHeight = $(window).height();
 
-  jQuery(window).resize(function () {
-    windWid = jQuery(window).width();
-    windHeig = jQuery(window).height();
-  });*/
+  $(window).resize(function () {
+    windWidth = $(window).width();
+    windHeight = $(window).height();
+  });
 
-  // Lazy load
+  /**
+   * Lazy load
+   */
 
-  /*jQuery('.lazy').lazy();*/
+  $('.lazy').lazy();
+
+  /**
+   * Current lang
+   */
+
+  const langWrapper = $('#lang-wrapper');
+
+  langWrapper.find('.lang-name').text( langWrapper.find('.current-lang a').text());
+
+  langWrapper.find('.page-lang').on('click', function (e) {
+
+    e.preventDefault();
+
+    $(this).toggleClass('open');
+  })
+
+  /**
+   * Arrow btn hover
+   */
+
+    $('.arrow-btn').hover(
+      function () {
+        $(this).find('path').attr('d', 'M22 12L16 18M22 12L16 6M22 12L2.5 12');
+      },
+      function () {
+        $(this).find('path').attr('d', 'M19 12L13 18M19 12L13 6M19 12L5 12');
+      }
+    )
+
+  /**
+   * Marque
+   */
+
+  $('.first-row').marquee({
+    speed: 100,
+    gap: 30,
+    delayBeforeStart: 0,
+    direction: 'left',
+    duplicated: true,
+    pauseOnHover: false
+  });
 
   //Fixed Menu
 

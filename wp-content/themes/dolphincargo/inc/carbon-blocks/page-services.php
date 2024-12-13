@@ -16,16 +16,29 @@
 		         } )
 
 		         ->add_tab(  'Головний екран', array(
-			         Field::make_text('food_home_page_main_screen_title', 'Головний заголовок'),
-			         Field::make_text('food_home_page_main-screen_text', 'Текст'),
-			         Field::make_image('food_home_page_main-screen_image', 'Зображення')
-			              ->set_type('image'),
-			         Field::make_complex('food_home_page_main-screen_image_spices', 'Зображення спецій')
-			              ->add_fields(array(
-				              Field::make_image('image', 'Зображення спеції')
-				                   ->set_type('image')
-			              ))
+			         Field::make_text('dolphincargo_services_page_main_screen_title', 'Головний заголовок'),
+			         Field::make_text('dolphincargo_services_page_main_screen_text', 'Текст'),
+			         Field::make_image('dolphincargo_services_page_main_screen_page_main-screen_image', 'Зображення')
+			              ->set_type('image')
+		                ->set_value_type('url'),
 
-		         ) );
+		         ) )
+						->add_tab(  'Заклик до дії', array(
+							Field::make_text('dolphincargo_services_page_call_to_action_title'.dolphincargo_lang_prefix(), 'Заголовок блоку'),
+							Field::make_text('dolphincargo_services_page_call_to_action_text'.dolphincargo_lang_prefix(), 'Заклик'),
+						) )
+						->add_tab(  'F.A.Q.', array(
+							Field::make_text('dolphincargo_services_page_faq_title'.dolphincargo_lang_prefix(), 'Заголовок блоку'),
+							Field::make_complex('dolphincargo_services_page_faq_list'.dolphincargo_lang_prefix(), 'Перелік питань')
+							     ->add_fields(array(
+								     Field::make_text('question', 'Питання'),
+								     Field::make_rich_text('answer', 'Відповідь'),
+
+							     ))
+						) )
+						->add_tab(  'SEO блок', array(
+							Field::make_text('dolphincargo_services_page_seo_title'.dolphincargo_lang_prefix(), 'Заголовок блоку'),
+							Field::make_rich_text('dolphincargo_services_page_seo_text'.dolphincargo_lang_prefix(), 'Текст'),
+						) );
 
 	}

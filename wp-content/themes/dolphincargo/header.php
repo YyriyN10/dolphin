@@ -1,4 +1,9 @@
 <?php
+
+	if ( ! defined( 'ABSPATH' ) ) {
+		exit;
+	}
+
 /**
  * The header for our theme
  *
@@ -22,38 +27,59 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'dolphincargo' ); ?></a>
+<div class="wrapper">
+	<header class="site-header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="content col-12">
+          <?php if( is_front_page() ):?>
+            <div class="logo">
+              <img src="<?php echo carbon_get_theme_option('dolphincargo_option_logo');?>" alt="<?php echo get_bloginfo('name');?>">
+            </div>
+          <?php else:?>
+            <a href="<?php echo get_home_url('/');?>" class="logo">
+              <img src="<?php echo carbon_get_theme_option('dolphincargo_option_logo');?>" alt="<?php echo get_bloginfo('name');?>">
+            </a>
+          <?php endif;?>
+          <nav id="header-navigation" class="header-navigation">
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$dolphincargo_description = get_bloginfo( 'description', 'display' );
-			if ( $dolphincargo_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $dolphincargo_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+		        <?php
+			        wp_nav_menu(
+				        array(
+					        'theme_location' => 'menu-1',
+					        'menu_id'        => 'primary-menu',
+                  'container' => false,
+                  'menu_class' => 'main-menu'
+				        )
+			        );
+		        ?>
+          </nav>
+	        <?php
+		        $langArgs = array(
+			        'show_names' => 1,
+			        'display_names_as' => 'name',
+			        'show_flags' => 0,
+			        'hide_current' => 0
+		        );
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'dolphincargo' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		        if ( $langArgs ):
+			        ?>
+              <div class="lang-wrapper" id="lang-wrapper">
+                <button class="page-lang">
+                  <span class="lang-name"></span>
+                </button>
+
+                <ul class="lang-list">
+		              <?php
+			              pll_the_languages($langArgs);
+		              ?>
+                </ul>
+
+              </div>
+
+		        <?php endif;?>
+        </div>
+      </div>
+    </div>
+	</header>
+  <main>
