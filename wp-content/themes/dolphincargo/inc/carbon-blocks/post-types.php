@@ -98,3 +98,41 @@
 							Field::make_rich_text('dolphincargo_service_single_seo_text'.dolphincargo_lang_prefix(), 'Текст'),
 						) );
 	}
+
+	add_action( 'carbon_fields_register_fields', 'dolphincargo_review_card' );
+
+	function dolphincargo_review_card(){
+
+		Container::make( 'post_meta', 'Відгук' )
+		         ->where( 'post_type', '=', 'reviews' )
+
+		         ->add_fields(array(
+		         	  /*Field::make_select('dolphincargo_review_type'.dolphincargo_lang_prefix(), 'Тип відгуку')
+			            ->add_options( array(
+				            'video' => 'Відео',
+				            'text' => 'Текст',
+			            ) ),
+
+			         Field::make_rich_text('dolphincargo_review_text'.dolphincargo_lang_prefix(), 'Текст відгуку')
+				         ->set_conditional_logic( array(
+					         'relation' => 'AND',
+					         array(
+						         'field' => 'dolphincargo_review_type'.dolphincargo_lang_prefix(),
+						         'value' => 'text',
+						         'compare' => '=',
+					         )
+				         ) ),
+			         Field::make_file('dolphincargo_review_video'.dolphincargo_lang_prefix(), 'Відео відгуку')
+				            ->set_type('video')
+				            ->set_value_type('url')
+			              ->set_conditional_logic( array(
+				              'relation' => 'AND',
+				              array(
+					              'field' => 'dolphincargo_review_type'.dolphincargo_lang_prefix(),
+					              'value' => 'video',
+					              'compare' => '=',
+				              )
+			              ) ),*/
+			         Field::make_text('dolphincargo_review_position'.dolphincargo_lang_prefix(), 'Посада')
+		         ));
+	}

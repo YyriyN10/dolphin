@@ -52,6 +52,15 @@
 				false
 			);
 
+			pll_register_string(
+				'dolphincargo_btn_read_full',
+				'Читати повний відгук',
+				'Кнопки',
+				false
+			);
+
+
+
 
 			/**
 			 * Titles

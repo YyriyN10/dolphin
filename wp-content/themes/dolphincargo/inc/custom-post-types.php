@@ -143,6 +143,7 @@ add_action( 'init', 'blog_post_type' );
 			'publicly_queryable' => true,
 			'show_ui'            => true,
 			'show_in_menu'       => true,
+			'show_in_rest'       => true,
 			'query_var'          => true,
 			'rewrite'            => array( 'slug' => 'reviews' ),
 			'capability_type'    => 'post',
@@ -151,7 +152,7 @@ add_action( 'init', 'blog_post_type' );
 			'exclude_from_search'=> false,
 			'menu_position'      => 7,
 			'menu_icon'          => 'dashicons-testimonial',
-			'supports'           => array( 'title', 'editor',)
+			'supports'           => array( 'title', 'editor', 'thumbnail',)
 		);
 
 		register_post_type( 'reviews', $args );

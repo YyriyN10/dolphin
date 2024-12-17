@@ -18,7 +18,8 @@ body{
 .wrapper{
   width: 100%;
   margin: 0 auto;
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
+  overflow: hidden;
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -227,6 +228,15 @@ svg{
   border: none;
   font-family: $f-med;
 
+  &.blue-btn{
+    padding: 20px 105px;
+    border-radius: 5px;
+    background-color: $color-light-blue;
+    text-transform: uppercase;
+    color: $color-white;
+    font-size: 16px;
+  }
+
   &.yellow-btn{
     padding: 16px 32px;
     background-color: $color-yellow;
@@ -268,6 +278,33 @@ svg{
 
   &:hover{
 
+  }
+}
+
+/*--- Slider controls ---*/
+
+.controls-wrapper{
+  display: flex;
+
+  .control{
+    padding: 0;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    width: 58px;
+
+    svg{
+      width: 100%;
+      height: auto;
+      transition: all 0.2s;
+    }
+
+    &:hover{
+      svg{
+        path{
+          stroke: $color-white;
+        }
+      }
+    }
   }
 }
 

@@ -1,0 +1,20 @@
+.block-faq{
+  padding-top: 90px;
+  position: relative;
+
+  .container-fluid{
+    position: relative;
+    z-index: 3;
+  }
+
+  .block-title{
+    margin-bottom: 40px;
+  }
+
+  .card{
+    background-color: rgba(0,0,0,0);
+    margin-bottom: 24px;
+    border-radius: 4px;
+
+  }
+}

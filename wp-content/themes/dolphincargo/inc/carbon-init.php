@@ -53,6 +53,12 @@
 			'icon'  => 'welcome-widgets-menus'
 		);
 
+		$categories[] = array(
+			'slug'  => 'dolphincargo-reviews-category',
+			'title' => 'Dolphin Cargo Reviews Blocks',
+			'icon'  => 'testimonial'
+		);
+
 		return $categories;
 	} );
 
@@ -69,3 +75,8 @@
 
 require ('carbon-blocks/home-main-screen.php');
 require ('carbon-blocks/home-what-you-get.php');
+require ('carbon-blocks/home-call-to.php');
+require ('carbon-blocks/block-about-us.php');
+require ('carbon-blocks/block-advantages.php');
+require ('carbon-blocks/block-reviews.php');
+require ('carbon-blocks/block-faq.php');

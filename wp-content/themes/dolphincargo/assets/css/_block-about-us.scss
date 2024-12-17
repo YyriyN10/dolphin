@@ -1,0 +1,45 @@
+.about-us{
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 120px;
+
+  .container-fluid{
+    position: relative;
+    z-index: 3;
+  }
+
+  &__slider{
+    margin-bottom: 16px;
+
+    .slide{
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .controls-wrapper{
+    justify-content: flex-end;
+    gap: 32px;
+    width: 100%;
+  }
+
+  .light{
+    position: absolute;
+    width: 2164px;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-50%) translateY(50%);
+    z-index: 1;
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+}
