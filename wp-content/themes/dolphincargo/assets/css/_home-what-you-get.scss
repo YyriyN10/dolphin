@@ -3,12 +3,32 @@
   margin-top: -30px;
   padding-bottom: 204px;
 
+  @media(max-width: 992px){
+    padding-bottom: 160px;
+  }
+
+  @media(max-width: 767px){
+    padding-bottom: 120px;
+  }
+
   .text-element{
     position: relative;
     z-index: 3;
     width: calc(100% - 90px);
     margin: 0 auto 50px;
     display: block;
+
+    @media(max-width: 992px){
+      margin-bottom: 15vw;
+    }
+
+    @media(max-width: 767px){
+      width: calc( 100% - 50px);
+    }
+
+    @media(max-width: 575px){
+      width: calc( 100% - 10px);
+    }
   }
 
   .light{
@@ -30,10 +50,17 @@
     z-index: 1;
     left: 50%;
     transform: translateX(-50%);
-    width: 1267px;
+    width: 65.67vw;
     height: auto;
-  }
 
+    @media(max-width: 1200px){
+      width: 75vw;
+    }
+
+    @media(max-width: 992px){
+      width: 90vw;
+    }
+  }
 
   .container-fluid{
     position: relative;
@@ -45,6 +72,10 @@
     gap: 24px;
     display: grid;
 
+    @media(max-width: 992px){
+      order: 1;
+    }
+
     .item{
       list-style: none;
       display: flex;
@@ -54,6 +85,11 @@
         width: 58px;
         height: auto;
         margin-right: 32px;
+
+        @media(max-width: 440px){
+          width: 48px;
+          margin-right: 24px;
+        }
       }
 
       span{
@@ -61,13 +97,33 @@
         text-transform: uppercase;
         font-family: $f-flex;
         font-size: 24px;
+
+        @media(max-width: 1200px){
+          font-size: 22px;
+        }
+
+        @media(max-width: 575px){
+          font-size: 20px;
+        }
+
+        @media(max-width: 440px){
+          font-size: 18px;
+          width: calc(100% - 72px);
+        }
+
+        @media(max-width: 375px){
+          font-size: 16px;
+        }
       }
     }
   }
 
-
   .pic-container{
     position: relative;
+
+    @media(max-width: 992px){
+      order: 0;
+    }
 
     .img-container{
       position: absolute;
@@ -75,6 +131,21 @@
       overflow: hidden;
       left: 0;
       top: -35.3vw;
+
+      @media(max-width: 992px){
+        left: auto;
+        right: -70px;
+        width: 40vw;
+        top: -45vw;
+      }
+
+      @media(max-width: 767px){
+        right: -30px;
+      }
+
+      @media(max-width: 575px){
+        right: 5px;
+      }
 
       img{
         width: 100%;

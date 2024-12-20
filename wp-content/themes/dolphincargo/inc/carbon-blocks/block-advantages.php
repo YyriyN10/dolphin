@@ -38,13 +38,13 @@
 					     <?php get_template_part('template-parts/decor-lines');?>
 					     <div class="container-fluid">
 						     <div class="row">
-							     <h2 class="block-title col-12 text-center"><?php echo $fields['dolphincargo_block_advantages_title'];?></h2>
+							     <h2 class="block-title small-title col-12 text-center"><?php echo $fields['dolphincargo_block_advantages_title'];?></h2>
 						     </div>
 						     <div class="row content">
 							     <?php foreach( $fields['dolphincargo_block_advantages_list'] as $index => $item ):?>
                      <?php if( $index == 2 ):?>
                        <?php if( !empty( $fields['dolphincargo_block_advantages_top_image'] ) ):?>
-                         <div class="our-advantages__item image image-top col-lg-4">
+                         <div class="our-advantages__item image image-top col-lg-4 col-sm-6">
                            <div class="inner">
                              <img
                                  src="<?php echo wp_get_attachment_image_src( $fields['dolphincargo_block_advantages_top_image'], 'full')[0];?>"
@@ -61,7 +61,7 @@
                          </div>
                        <?php endif;?>
                        <?php if( !empty( $fields['dolphincargo_block_advantages_bottom_image'] ) ):?>
-                         <div class="our-advantages__item image image-bootom col-lg-4">
+                         <div class="our-advantages__item image image-bottom col-lg-4 col-sm-6">
                            <div class="inner">
                              <img
                                  src="<?php echo wp_get_attachment_image_src( $fields['dolphincargo_block_advantages_bottom_image'], 'full')[0];?>"
@@ -77,7 +77,7 @@
                            </div>
                          </div>
                        <?php endif;?>
-                       <div class="our-advantages__item text col-lg-4">
+                       <div class="our-advantages__item text col-lg-4 col-sm-6">
                          <div class="inner">
                          <span class="number">
                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,7 +90,7 @@
                          </div>
                        </div>
                      <?php else:?>
-                       <div class="our-advantages__item text col-lg-4">
+                       <div class="our-advantages__item text col-lg-4 col-sm-6">
                          <div class="inner">
                          <span class="number">
                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">

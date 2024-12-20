@@ -1,11 +1,15 @@
 .about-us{
   position: relative;
-  padding-top: 90px;
-  padding-bottom: 120px;
 
   .container-fluid{
     position: relative;
     z-index: 3;
+  }
+
+  &__slider-wrapper{
+    @media(max-width: 767px){
+      order: 1;
+    }
   }
 
   &__slider{
@@ -40,6 +44,43 @@
     img{
       width: 100%;
       height: auto;
+    }
+  }
+
+  .text-content{
+
+    @media(max-width: 767px){
+      order: 0;
+      margin-bottom: 24px;
+    }
+
+    .block-title{
+      margin-bottom: 40px;
+
+      @media(max-width: 440px){
+        margin-bottom: 32px;
+      }
+    }
+
+    .text-content{
+      font-size: clamp(18px, 1.25vw, 24px);
+      margin-bottom: 24px;
+
+      @media(max-width: 1200px){
+        font-size: 16px;
+      }
+
+      p{
+        margin-bottom: 8px;
+
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .button{
+      font-size: 16px;
     }
   }
 }

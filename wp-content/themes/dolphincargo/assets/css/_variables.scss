@@ -16,6 +16,8 @@ $color-black: #141414;
 $color-dark-blue: #16246F;
 $color-light-blue: #067FEF;
 
+$bg-blue-gradient: radial-gradient(ellipse at center, rgba(2,23,169,0.4) 0%,rgba(2,23,169,0.1) 100%);
+
 /*--- Grid ---*/
 
 
@@ -42,19 +44,29 @@ $color-light-blue: #067FEF;
   padding-left: 158px;
   padding-right: 158px;
 
+  @media(max-width: 1200px){
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+
   @media(max-width: 767px){
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 35px;
+    padding-right: 35px;
   }
 
   @media(max-width: 575px){
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .row{
     margin-right: 0;
     margin-left: 0;
+
+    @media(max-width: 575px){
+      margin-right: -16px;
+      margin-left: -16px;
+    }
   }
 }
 

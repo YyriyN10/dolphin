@@ -208,7 +208,6 @@
       </section>
   <?php endif;?>
 
-  <?php get_template_part('template-parts/block-reviews');?>
 
   <?php
       $calculatorTitle = carbon_get_post_meta(get_the_ID(), 'dolphincargo_home_page_calculator_title'.dolphincargo_lang_prefix());
@@ -241,7 +240,6 @@
 
   }
 ?>
-
-<?php get_template_part('template-parts/block-inner-blog');?>
+  
 
 <?php get_footer();

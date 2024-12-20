@@ -62,7 +62,7 @@
 
                <div class="container-fluid">
 						     <div class="row">
-							     <ul class="get-list col-lg-6">
+							     <ul class="get-list col-xl-6 col-lg-7 col-md-9">
 								     <?php foreach( $fields['dolphincargo_home_page_what_you_get_list'] as $index=>$item ):?>
 									     <li class="item">
                          <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +97,7 @@
                        </li>
 								     <?php endforeach;?>
 							     </ul>
-                   <div class="pic-container col-lg-6">
+                   <div class="pic-container col-xl-6 col-lg-5">
                      <div class="img-container">
                        <img
                            class="lazy"

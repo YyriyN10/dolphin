@@ -48,7 +48,7 @@ function blog_post_type() {
 	'exclude_from_search'=> false,
 	'menu_position'      => 5,
 	'menu_icon'          => 'dashicons-welcome-write-blog',
-	'supports'           => array( 'title', 'editor',)
+	'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt')
 	);
 
 	register_post_type( 'blog', $args );

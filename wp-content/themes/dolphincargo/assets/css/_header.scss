@@ -3,7 +3,6 @@
 
 .site-header{
 
-
   .content{
     display: flex;
     justify-content: space-between;
@@ -11,6 +10,8 @@
 
     .logo{
       width: 100px;
+      position: relative;
+      z-index: 15;
 
       img{
         width: 100%;
@@ -18,11 +19,11 @@
       }
     }
 
-    .header-navigation{
-
-    }
-
     .lang-wrapper{
+
+      @media(max-width: 992px){
+        display: none;
+      }
 
       .page-lang{
         background-color: rgba(0,0,0,0);
@@ -30,35 +31,96 @@
         display: flex;
         align-items: center;
         cursor: pointer;
+        padding: 0;
 
         .lang-name{
           text-transform: uppercase;
           font-size: 16px;
-          font-family: $f-med;
           line-height: 1.6;
-          margin-right: 4px;
-        }
+          padding: 9px 9.5px;
+          border-radius: 4px;
+          border: 1px solid rgba(251,251,251,0.2);
+          color: $color-white;
+          transition: all 0.3s;
 
-        .lang-arrow{
-          width: 6px;
-          height: auto;
-          transition: all 0.2s;
+          @media(max-width: 1200px){
+            font-size: 14px;
+          }
         }
 
         &.open{
-          .lang-arrow{
-            transform: rotate(180deg);
+
+          .lang-name{
+            background-color: $color-white;
+            border: 1px solid $color-white;
+            border-radius: 4px 4px 0 0;
+            color: $color-black;
           }
+
         }
       }
-
 
       .lang-list{
         position: absolute;
         display: none;
+        margin: 0;
+        padding: 3px 9.5px 0;
+        background-color: $color-white;
+        border-radius: 0 0 4px 4px;
+        border: 1px solid $color-white;
+
+        .lang-item{
+          list-style: none;
+          margin-bottom: 12px;
+
+          a{
+            font-size: 16px;
+            line-height: 1.6;
+            color: $color-black!important;
+
+            @media(max-width: 1200px){
+              font-size: 14px;
+            }
+          }
+
+          &:last-child{
+            margin-bottom: 8px;
+          }
+        }
 
         .current-lang{
           display: none;
+        }
+      }
+    }
+
+    .mob-lang-wrapper{
+      display: none;
+      padding: 9px 8px;
+      border-radius: 4px;
+      background-color: $color-white;
+      margin: 0 auto 48px;
+      gap: 12px;
+
+      @media(max-width: 992px){
+        display: flex;
+      }
+
+      .lang-item{
+        list-style: none;
+
+        a{
+          padding: 0;
+          margin: 0;
+          color: $color-black !important;
+          text-transform: uppercase;
+        }
+
+        &.current-lang{
+          a{
+            color: $color-light-blue !important;
+          }
+
         }
       }
     }

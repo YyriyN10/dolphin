@@ -21,6 +21,10 @@
 
   .block-title{
     margin-bottom: 40px;
+
+    @media(max-width: 440px){
+      margin-bottom: 32px;
+    }
   }
 
   .content{
@@ -32,11 +36,29 @@
     gap: 32px;
     align-items: flex-start;
 
+    @media(max-width: 767px){
+      align-items: normal;
+    }
+
+    @media(max-width: 440px){
+      flex-wrap: wrap;
+      gap: 23px;
+    }
+
     .name{
       width: calc(33.33% - 16px);
       text-transform: uppercase;
       margin-bottom: 0;
-      font-size: 24px;
+      font-size: clamp(24px, 1.56vw, 30px);
+
+      @media(max-width: 1200px){
+        font-size: 22px;
+      }
+
+      @media(max-width: 992px){
+        display: none;
+        width: 100%;
+      }
     }
 
     .pic-wrapper{
@@ -44,23 +66,103 @@
       border-radius: 4px;
       overflow: hidden;
 
+      @media(max-width: 992px){
+        width: calc(50% - 16px);
+      }
+
+      @media(max-width: 440px){
+        width: 100%;
+      }
+
       img{
         width: 100%;
         height: auto;
+
+        @media(max-width: 767px){
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+
+        @media(max-width: 440px){
+          object-fit: unset;
+          height: 100%;
+        }
       }
     }
 
     .info{
       width: calc(33.33% - 16px);
 
+      @media(max-width: 992px){
+        width: calc(50% - 16px);
+      }
+
+      @media(max-width: 440px){
+        width: 100%;
+      }
+
+      .name{
+        display: none;
+
+        @media(max-width: 992px){
+          display: block;
+          margin-bottom: 32px;
+        }
+
+        @media(max-width: 767px){
+          font-size: 20px;
+          margin-bottom: 24px;
+        }
+      }
+
       .description{
         margin-bottom: 32px;
+        font-size: clamp(18px, 1.25vw, 24px);
+
+        @media(max-width: 1200px){
+          font-size: 16px;
+        }
+
+        @media(max-width: 767px){
+          margin-bottom: 24px;
+        }
       }
 
       a{
         color: $color-light-blue !important;
+        font-size: clamp(18px, 1.25vw, 24px);
+
+        @media(max-width: 1200px){
+          font-size: 16px;
+        }
       }
     }
+
+    &:nth-child(even){
+      @media(max-width: 992px){
+
+        .pic-wrapper{
+          order: 1;
+        }
+
+        .info{
+          order: 0;
+        }
+      }
+
+      @media(max-width: 440px){
+
+        .pic-wrapper{
+          order: 0;
+        }
+
+        .info{
+          order: 1;
+        }
+      }
+    }
+
 
   }
 
@@ -74,23 +176,35 @@
       padding: 16px 0;
       position: relative;
       transform-origin: center;
+      width: 110vw;
+      overflow: hidden;
+
+      @media(max-width: 992px){
+        padding: 10px 0;
+      }
 
       .js-marquee{
         font-size: 24px;
-        padding: 16px 0;
-        display: contents;
+
+        @media(max-width: 992px){
+          font-size: 20px;
+        }
+
+        @media(max-width: 575px){
+          font-size: 16px;
+        }
       }
 
       &.first-row{
         background-color: $color-dark-blue;
         z-index: 1;
-        transform: rotate(3deg);
+        transform: rotate(3deg) translateX(-5vw);
       }
 
       &.second-row{
         background-color: $color-light-blue;
         z-index: 2;
-        transform: rotate(-3deg);
+        transform: rotate(-3deg) translateX(-5vw);
       }
     }
   }

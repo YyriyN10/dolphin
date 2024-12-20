@@ -40,11 +40,11 @@
 
 			     <!-- Про нас -->
 			     <?php if ( $fields['dolphincargo_block_about_us_title'] && $fields['dolphincargo_block_about_us_text'] && $fields['dolphincargo_block_about_us_gallery']):?>
-				     <section class="about-us" >
+				     <section class="about-us indent-top-small indent-bottom-medium" >
 					     <?php get_template_part('template-parts/decor-lines');?>
 					     <div class="container-fluid">
 						     <div class="row">
-							     <div class="about-us__slider-wrapper col-lg-4">
+							     <div class="about-us__slider-wrapper col-lg-4 col-md-5">
 								     <div class="about-us__slider" id="about-us-slider">
                        <?php foreach( $fields['dolphincargo_block_about_us_gallery'] as $image ):?>
                          <div class="slide">
@@ -66,8 +66,8 @@
 								     </div>
 								     <?php get_template_part('template-parts/slider-navigation');?>
 							     </div>
-							     <div class="text-content col-lg-8">
-								     <h2 class="block-title"><?php echo $fields['dolphincargo_block_about_us_title'];?></h2>
+							     <div class="text-content col-lg-8 col-md-7 ">
+								     <h2 class="block-title small-title"><?php echo $fields['dolphincargo_block_about_us_title'];?></h2>
 								     <div class="text-content"><?php echo wpautop( $fields['dolphincargo_block_about_us_text']);?></div>
                      <?php if( $fields['dolphincargo_block_about_us_link'] ):?>
                        <?php foreach( $fields['dolphincargo_block_about_us_link'] as $item ):?>

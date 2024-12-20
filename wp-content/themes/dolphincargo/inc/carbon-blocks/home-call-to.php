@@ -28,7 +28,7 @@
 
 			     <!-- Ббок заклику до дії -->
 			     <?php if ( $fields['dolphincargo_home_call_to_title'] && $fields['dolphincargo_home_call_to_text'] && $fields['dolphincargo_home_call_to_image']):?>
-				     <section class="airplane-call-to" >
+				     <section class="airplane-call-to indent-bottom-small">
 					     <?php get_template_part('template-parts/decor-lines');?>
                <div class="light"><img src="<?php echo THEME_PATH;?>/assets/img/airplan-call-to-light.png" alt=""></div>
                <div class="plain">
@@ -40,8 +40,8 @@
                </div>
 					     <div class="container-fluid">
 						     <div class="row">
-							     <div class="content col-lg-8 offset-lg-4">
-								     <h2 class="block-title"><?php echo $fields['dolphincargo_home_call_to_title'];?></h2>
+							     <div class="content col-xl-8 offset-xl-4 col-lg-10 offset-lg-2">
+								     <h2 class="block-title big-title"><?php echo $fields['dolphincargo_home_call_to_title'];?></h2>
 								     <div class="text-content"><?php echo wpautop( $fields['dolphincargo_home_call_to_text']);?></div>
 								     <a href="#" class="button blue-btn"><?php echo esc_html( pll__( 'Надіслати заявку' ) ); ?></a>
 							     </div>

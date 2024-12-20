@@ -3,8 +3,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 160px;
-  padding-bottom: 308px;
+  padding-bottom: 15vw;
   position: relative;
+  cursor: none;
+
+  @media(max-width: 440px){
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 
   .container-fluid{
     position: relative;
@@ -17,6 +23,18 @@
     margin-bottom: 32px;
     line-height: 1.1;
     font-size: clamp(186px, 11.6vw, 222px);
+
+    @media(max-width: 1200px){
+      font-size: clamp(136px, 15.5vw, 186px);
+    }
+
+    @media(max-width: 767px){
+      font-size: clamp(86px, 17.73vw, 136px);
+    }
+
+    @media(max-width: 440px){
+      font-size: 20vw;
+    }
   }
 
   .who-are{
@@ -24,6 +42,15 @@
     line-height: 1.4;
     font-size: 24px;
     margin-bottom: 77px;
+
+    @media(max-width: 575px){
+      font-size: 22px;
+      margin-bottom: 50px;
+    }
+
+    @media(max-width: 440px){
+      font-size: 20px;
+    }
   }
 
   .circle-button{
@@ -42,12 +69,17 @@
     transform: translateX(-50%) translateY(-50%);
     text-align: center;
     font-size: 16px;
+    cursor: none;
+
+    @media(max-width: 992px){
+      display: none;
+    }
   }
 
   .numbers-list{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     row-gap: 32px;
     margin: 0;
     padding-top: 32px;
@@ -59,10 +91,20 @@
       content: '';
       position: absolute;
       height: 2px;
-      width: calc(100% + 44px);
+      /*width: calc(100% + 44px);*/
       left: -22px;
       right: -22px;
       background: rgba(251, 251, 251, 0.1);
+
+      @media(max-width: 1200px){
+        left: -3px;
+        right: -3px;
+      }
+
+      @media(max-width: 767px){
+        left: 0;
+        right: 0;
+      }
     }
 
     &:before{
@@ -75,12 +117,25 @@
 
     .item{
       list-style: none;
-      width: 33.33%;
+      width: calc(33.33% - ( 64px / 3) );
+
+      @media(max-width: 575px){
+        width: 100%;
+        text-align: center;
+      }
 
       .number-full{
         font-family: $f-bold;
         font-size: 42px;
         line-height: 1.2;
+
+        @media(max-width: 992px){
+          font-size: 38px;
+        }
+
+        @media(max-width: 767px){
+          font-size: 34px;
+        }
       }
     }
   }

@@ -53,6 +53,8 @@
 				        )
 			        );
 		        ?>
+
+            <ul class="mob-lang-wrapper"><?php pll_the_languages( $langArgs ); ?></ul>
           </nav>
 	        <?php
 		        $langArgs = array(
@@ -70,14 +72,15 @@
                 </button>
 
                 <ul class="lang-list">
-		              <?php
-			              pll_the_languages($langArgs);
-		              ?>
+		              <?php pll_the_languages( $langArgs ); ?>
                 </ul>
 
               </div>
 
-		        <?php endif;?>
+		      <?php endif;?>
+          <button class="menu-btn close-type" id="menu-btn">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
     </div>

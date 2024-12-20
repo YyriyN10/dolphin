@@ -72,40 +72,7 @@
 		     } );
 	}
 
-	add_action( 'carbon_fields_register_fields', 'dolphincargo_seo_block' );
 
-	function dolphincargo_seo_block(){
-		Block::make( __( 'Seo Block' ) )
-		     ->add_fields( array(
-			     Field::make_text('dolphincargo_home_page_seo_title', 'Заголовок блоку'),
-			     Field::make_rich_text('dolphincargo_home_page_seo_text', 'Текст'),
-
-		     ) )
-
-		     ->set_category( 'dolphincargo-common-category' )
-		     ->set_icon('info')
-
-
-		     ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
-			     ?>
-
-           <!-- SEO блок -->
-           <?php if ( $fields['dolphincargo_home_page_seo_title'] && $fields['dolphincargo_home_page_seo_text'] ):?>
-             <section class="seo-block" >
-               <div class="container-fluid">
-                 <div class="row">
-                   <div class="content col-12">
-                     <h2 class="block-title"><?php echo $fields['dolphincargo_home_page_seo_title'];?></h2>
-                     <div class="text-content"><?php echo wpautop( $fields['dolphincargo_home_page_seo_text']);?></div>
-                   </div>
-                 </div>
-               </div>
-             </section>
-           <?php endif;?>
-
-			     <?php
-		     } );
-	}
 
 	add_action( 'carbon_fields_register_fields', 'dolphincargo_our_services_list' );
 
@@ -139,7 +106,7 @@
                </div>
                <div class="container-fluid">
                  <div class="row">
-                   <h2 class="block-title col-12 text-center"><?php echo $fields['dolphincargo_our_services_title'];?></h2>
+                   <h2 class="block-title big-title col-12 text-center"><?php echo $fields['dolphincargo_our_services_title'];?></h2>
                  </div>
                  <div class="row content">
                    <?php foreach( $fields['dolphincargo_our_services_list'] as $item ):?>
@@ -163,7 +130,8 @@
                        </div>
 
                        <div class="info">
-                         <div class="description"><?php echo get_the_excerpt( $item['id'] );?></div>
+                         <h3 class="name"><?php echo get_the_title( $item['id'] );?></h3>
+                         <p class="description"><?php echo get_the_excerpt( $item['id'] );?></p>
                          <a href="<?php echo get_the_permalink( $item['id'] );?>"><?php echo esc_html( pll__( 'Дізнатись більше' ) ); ?></a>
                        </div>
 
@@ -176,11 +144,13 @@
                  <div class="run-rows-wrapper">
                    <div class="run-row first-row">
                      <?php echo $fields['dolphincargo_our_services_run_text'];?>
-
+                     <?php echo $fields['dolphincargo_our_services_run_text'];?>
+                     <?php echo $fields['dolphincargo_our_services_run_text'];?>
                    </div>
                    <div class="run-row second-row">
                      <?php echo $fields['dolphincargo_our_services_run_text'];?>
-
+                     <?php echo $fields['dolphincargo_our_services_run_text'];?>
+                     <?php echo $fields['dolphincargo_our_services_run_text'];?>
                    </div>
                  </div>
                <?php endif;?>

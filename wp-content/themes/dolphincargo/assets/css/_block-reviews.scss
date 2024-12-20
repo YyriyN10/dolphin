@@ -1,7 +1,5 @@
 .reviews{
   position: relative;
-  padding-top: 180px;
-  padding-bottom: 90px;
 
   .container-fluid{
     position: relative;
@@ -10,6 +8,10 @@
 
   .block-title{
     margin-bottom: 40px;
+
+    @media(max-width: 440px){
+      margin-bottom: 32px;
+    }
   }
 
   &__slider{
@@ -21,9 +23,17 @@
 
     .slide{
       margin: 0 16px;
-      background-color: $color-dark-blue;
+      background: $bg-blue-gradient;
       padding: 32px;
       height: auto;
+
+      @media(max-width: 992px){
+        padding: 24px;
+      }
+
+      @media(max-width: 440px){
+        padding: 16px;
+      }
 
       .info{
         display: flex;
@@ -48,6 +58,10 @@
 
           .name{
             margin-bottom: 0;
+
+            @media(max-width: 767px){
+              font-size: 16px;
+            }
           }
 
           .position{
@@ -55,6 +69,10 @@
             margin-top: 8px;
             font-family: $f-light;
             font-size: 16px;
+
+            @media(max-width: 767px){
+              font-size: 14px;
+            }
           }
         }
       }
@@ -62,9 +80,18 @@
       .text-review-wrapper{
         .text{
           margin-bottom: 16px;
+          font-size: clamp(16px, 1.25vw, 24px);
 
           p:last-child{
             margin-bottom: 0;
+          }
+        }
+
+        .button{
+          color: $color-light-blue !important;
+
+          @media(max-width: 767px){
+            font-size: 16px;
           }
         }
       }
@@ -77,6 +104,7 @@
           height: auto;
           position: relative;
           z-index: 1;
+          border-radius: 4px;
         }
 
         .play{

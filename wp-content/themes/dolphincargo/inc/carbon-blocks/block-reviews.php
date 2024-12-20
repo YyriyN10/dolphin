@@ -36,11 +36,11 @@
 
 			      		  if ( $reviewsList->have_posts() ) :?>
 						        <?php if ( $fields['dolphincargo_block_reviews_title'] ):?>
-							        <section class="reviews" >
+							        <section class="reviews indent-top-big indent-bottom-small" >
 								        <?php get_template_part('template-parts/decor-lines');?>
 								        <div class="container-fluid">
 									        <div class="row">
-										        <h2 class="block-title col-12 text-center"><?php echo $fields['dolphincargo_block_reviews_title'];?></h2>
+										        <h2 class="block-title small-title col-12 text-center"><?php echo $fields['dolphincargo_block_reviews_title'];?></h2>
 									        </div>
 									        <div class="row">
 										        <div class="reviews__slider-wrapper col-12">

@@ -80,3 +80,5 @@ require ('carbon-blocks/block-about-us.php');
 require ('carbon-blocks/block-advantages.php');
 require ('carbon-blocks/block-reviews.php');
 require ('carbon-blocks/block-faq.php');
+require ('carbon-blocks/blocl-blog.php');
+require ('carbon-blocks/block-seo.php');
