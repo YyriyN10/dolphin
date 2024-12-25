@@ -10,4 +10,100 @@
     position: relative;
     z-index: 3;
   }
+
+  .content{
+    align-items: center;
+  }
+
+  .block-pic{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+
+    svg{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: auto;
+      z-index: 1;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    .pic-wrapper{
+      width: 43.4vw;
+      position: relative;
+      z-index: 2;
+
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .text-content{
+    margin: 0;
+  }
+
+  .main-info{
+    padding: 32px;
+    border: 1px solid rgba(6, 127, 239, 0.5);
+    text-align: center;
+    margin-bottom: 32px;
+    
+    .achievement-value{
+      text-transform: uppercase;
+      font-family: $f-med;
+      font-size: 64px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .achievement-description{
+      border-radius: 5px;
+      background-color: $color-dark-blue;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+
+  .achievement-list{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    row-gap: 32px;
+
+    .item{
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+
+      svg{
+        width: 58px;
+        height: auto;
+        margin-right: 32px;
+      }
+
+      div{
+        width: calc(100% - 90px);
+      }
+
+      .name{
+        font-size: 24px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .text{
+        p{
+          margin-bottom: 8px;
+
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
 }
