@@ -82,3 +82,6 @@ require ('carbon-blocks/block-reviews.php');
 require ('carbon-blocks/block-faq.php');
 require ('carbon-blocks/blocl-blog.php');
 require ('carbon-blocks/block-seo.php');
+require ('carbon-blocks/service-main-screen.php');
+require ('carbon-blocks/block-other-services.php');
+require ('carbon-blocks/block-achievement.php');

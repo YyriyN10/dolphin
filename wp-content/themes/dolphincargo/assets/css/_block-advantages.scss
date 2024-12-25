@@ -90,6 +90,8 @@
     }
 
     &.image{
+      transition: all 0.3s;
+
       .inner{
         position: relative;
         display: flex;
@@ -109,6 +111,9 @@
       }
 
       &.image-top{
+        transition-delay: 1s;
+        transform: translateX(100vw);
+
         @media(max-width: 992px){
           order: 1;
         }
@@ -118,6 +123,8 @@
       }
 
       &.image-bottom{
+        transition-delay: 2s;
+        transform: translateX(-100vw);
 
         @media(max-width: 992px){
           display: none;
@@ -132,6 +139,17 @@
       .inner{
         border-color: rgba(6, 127, 239, 0.5);
       }
+    }
+  }
+
+  &.visible{
+
+    .our-advantages__item.image.image-top{
+      transform: translateX(0);
+    }
+
+    .our-advantages__item.image.image-bottom{
+      transform: translateX(0);
     }
   }
 }

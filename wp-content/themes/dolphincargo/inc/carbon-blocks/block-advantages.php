@@ -34,10 +34,10 @@
 
 			     <!-- Переваги -->
 			     <?php if ( $fields['dolphincargo_block_advantages_title'] && $fields['dolphincargo_block_advantages_list'] ):?>
-				     <section class="our-advantages" >
+				     <section class="our-advantages animation-tracking" >
 					     <?php get_template_part('template-parts/decor-lines');?>
 					     <div class="container-fluid">
-						     <div class="row">
+						     <div class="row first-up">
 							     <h2 class="block-title small-title col-12 text-center"><?php echo $fields['dolphincargo_block_advantages_title'];?></h2>
 						     </div>
 						     <div class="row content">
@@ -77,7 +77,7 @@
                            </div>
                          </div>
                        <?php endif;?>
-                       <div class="our-advantages__item text col-lg-4 col-sm-6">
+                       <div class="our-advantages__item text col-lg-4 col-sm-6 second-up">
                          <div class="inner">
                          <span class="number">
                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,7 +90,7 @@
                          </div>
                        </div>
                      <?php else:?>
-                       <div class="our-advantages__item text col-lg-4 col-sm-6">
+                       <div class="our-advantages__item text col-lg-4 col-sm-6 second-up">
                          <div class="inner">
                          <span class="number">
                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">

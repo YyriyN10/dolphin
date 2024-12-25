@@ -31,6 +31,10 @@
     justify-content: flex-end;
     gap: 32px;
     width: 100%;
+
+    @media(max-width: 767px){
+      justify-content: center;
+    }
   }
 
   .light{

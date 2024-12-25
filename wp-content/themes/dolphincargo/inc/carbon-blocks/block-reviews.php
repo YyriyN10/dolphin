@@ -36,13 +36,13 @@
 
 			      		  if ( $reviewsList->have_posts() ) :?>
 						        <?php if ( $fields['dolphincargo_block_reviews_title'] ):?>
-							        <section class="reviews indent-top-big indent-bottom-small" >
+							        <section class="reviews indent-top-big indent-bottom-small animation-tracking" >
 								        <?php get_template_part('template-parts/decor-lines');?>
 								        <div class="container-fluid">
-									        <div class="row">
+									        <div class="row first-up">
 										        <h2 class="block-title small-title col-12 text-center"><?php echo $fields['dolphincargo_block_reviews_title'];?></h2>
 									        </div>
-									        <div class="row">
+									        <div class="row second-up">
 										        <div class="reviews__slider-wrapper col-12">
 											        <div class="reviews__slider" id="reviews-slider">
 												        <?php while ( $reviewsList->have_posts() ) : $reviewsList->the_post(); ?>
@@ -95,11 +95,8 @@
 	function dolphincargo_reviews_card_video(){
 		Block::make( __( 'Video review' ) )
 		     ->add_fields( array(
-			     Field::make_file('dolphincargo_reviews_card_video_file', 'Відео відгуку')
-            ->set_type('video')
-            ->set_value_type('url'),
-           Field::make_image('dolphincargo_reviews_card_video_poster', 'Постер для відео')
-            ->set_type('image')
+			     Field::make_text('dolphincargo_reviews_card_video_id', 'ID відео з Youtube')
+            ->set_help_text('Повне посилання https://www.youtube.com/watch?v=_lfVn9GRA9Aб, ID  _lfVn9GRA9Aб'),
 
 		     ) )
 
@@ -110,25 +107,15 @@
 			     ?>
 
              <div class="video-review">
-               <img
-                  src="<?php echo wp_get_attachment_image_src( $fields['dolphincargo_reviews_card_video_poster'], 'full')[0];?>"
-                  <?php
-                    $altText = get_post_meta( $fields['dolphincargo_reviews_card_video_poster'], '_wp_attachment_image_alt', TRUE);
 
-                    if( !empty( $altText ) ):?>
-                      alt="<?php echo get_post_meta( $altText, '_wp_attachment_image_alt', TRUE);?>"
-                  <?php else:?>
-                      alt="<?php the_title();?>"
-                  <?php endif;?>
-               >
-               <a href="#" class="play" data-video="<?php echo $fields['dolphincargo_reviews_card_video_file'];?>">
+               <div class="youtube" id="<?php echo $fields['dolphincargo_reviews_card_video_id'];?>"></div>
+
+               <a href="#" class="play open-video-modal" data-video="<?php echo $fields['dolphincargo_reviews_card_video_id'];?>">
                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                    <rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#16246F"/>
                    <path d="M28.5 17.134C29.1667 17.5189 29.1667 18.4811 28.5 18.866L13.5 27.5263C12.8333 27.9112 12 27.4301 12 26.6603L12 9.33975C12 8.56995 12.8333 8.08882 13.5 8.47372L28.5 17.134Z" fill="#16246F"/>
                  </svg>
                </a>
-
-
              </div>
 
 			     <?php
@@ -155,13 +142,18 @@
 	             $textLength = mb_strlen( $fields['dolphincargo_reviews_card_text_content']);
 
 	             if ( $textLength > 187 ):?>
+                 <div class="full-text">
+                   <?php
+		                 echo wpautop( $fields['dolphincargo_reviews_card_text_content'] );
+	                 ?>
+                 </div>
                  <div class="text">
 			             <?php
 				             $excerpt = mb_substr( $fields['dolphincargo_reviews_card_text_content'], 0, 187) . '...';
 				             echo wpautop( $excerpt );
 			             ?>
                  </div>
-                 <a href="#" rel="nofollow" class="button"><?php echo esc_html( pll__( 'Читати повний відгук' ) ); ?></a>
+                 <a href="#" rel="nofollow" id="<?php the_ID();?>" class="button open-text-modal"><?php echo esc_html( pll__( 'Читати повний відгук' ) ); ?></a>
               <?php else:?>
                  <div class="text">
 			             <?php

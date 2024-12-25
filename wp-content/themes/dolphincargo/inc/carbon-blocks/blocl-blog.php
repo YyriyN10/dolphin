@@ -43,16 +43,16 @@
 
 			     if ( $blogList->have_posts() ) :?>
 				     <?php if ( $fields['dolphincargo_block_blog_title'] ):?>
-					     <section class="blog-block indent-top-small indent-bottom-small" >
+					     <section class="blog-block indent-top-small indent-bottom-small animation-tracking" >
 						     <?php get_template_part('template-parts/decor-lines');?>
                  <div class="light">
                    <img src="<?php echo THEME_PATH;?>/assets/img/blog-block-light.png" alt="<?php echo get_bloginfo('name');?>">
                  </div>
 						     <div class="container-fluid">
-							     <div class="row">
+							     <div class="row first-up">
 								     <h2 class="block-title small-title col-12 text-center"><?php echo $fields['dolphincargo_block_blog_title'];?></h2>
 							     </div>
-							     <div class="row content">
+							     <div class="row content second-up">
 								     <?php while ( $blogList->have_posts() ) : $blogList->the_post(); ?>
 									     <a href="<?php the_permalink();?>" class="blog-post col-lg-4 col-sm-6">
 										     <span class="inner">
@@ -78,7 +78,7 @@
 								     <?php endwhile;?>
 							     </div>
 							     <?php if( $fields['dolphincargo_block_blog_link'] ):?>
-								     <div class="row button-wrapper">
+								     <div class="row button-wrapper third-up">
 									     <div class="col-12 text-center">
 										     <?php foreach( $fields['dolphincargo_block_blog_link'] as $link ):?>
 											     <a href="<?php get_the_permalink( $link['id']);?>" class="button blue-btn"><?php echo esc_html( pll__( 'Читати блог' ) ); ?></a>

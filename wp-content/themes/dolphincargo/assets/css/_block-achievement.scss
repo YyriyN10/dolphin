@@ -1,0 +1,13 @@
+.services-achievement{
+  position: relative;
+
+  .light{
+    position: absolute;
+    z-index: 1;
+  }
+
+  .container-fluid{
+    position: relative;
+    z-index: 3;
+  }
+}

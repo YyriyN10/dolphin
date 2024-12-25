@@ -27,17 +27,17 @@
 
 			     <!-- SEO блок -->
 			     <?php if ( $fields['dolphincargo_home_page_seo_title'] && $fields['dolphincargo_home_page_seo_text'] ):?>
-				     <section class="seo-block indent-top-small indent-bottom-big" >
+				     <section class="seo-block indent-top-small indent-bottom-big animation-tracking" >
 					     <?php get_template_part('template-parts/decor-lines');?>
 
 					     <div class="container-fluid">
 						     <div class="row">
 							     <div class="content col-12">
-								     <h2 class="block-title small-title text-center"><?php echo $fields['dolphincargo_home_page_seo_title'];?></h2>
+								     <h2 class="block-title small-title text-center first-up"><?php echo $fields['dolphincargo_home_page_seo_title'];?></h2>
 								     <?php if( $fields['dolphincargo_home_page_seo_subtitle'] ):?>
-									     <h3 class="subtitle text-center"><?php echo $fields['dolphincargo_home_page_seo_subtitle'];?></h3>
+									     <h3 class="subtitle text-center first-up"><?php echo $fields['dolphincargo_home_page_seo_subtitle'];?></h3>
 								     <?php endif;?>
-								     <div class="text-content"><?php echo wpautop( $fields['dolphincargo_home_page_seo_text']);?></div>
+								     <div class="text-content second-up"><?php echo wpautop( $fields['dolphincargo_home_page_seo_text']);?></div>
 							     </div>
 						     </div>
 					     </div>

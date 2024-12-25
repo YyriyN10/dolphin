@@ -43,6 +43,7 @@
 		         ) )
 
 		         ->add_tab( 'Опції форми', array(
-
+								Field::make_image('dolphincargo_option_form_image', 'Зображення у блоці з формою')
+			            ->set_type('image')
 		         ) );
 	}

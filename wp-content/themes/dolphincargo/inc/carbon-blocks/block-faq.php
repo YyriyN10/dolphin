@@ -33,16 +33,16 @@
 			         if ( $fields['dolphincargo_block_faq_title'] && $fields['dolphincargo_block_faq_list'] ):
 			      ?>
 			         <!-- F.A.Q -->
-			         <section class="block-faq indent-top-small indent-bottom-small">
+			         <section class="block-faq indent-top-small indent-bottom-small animation-tracking">
 				         <?php get_template_part('template-parts/decor-lines');?>
                  <div class="light">
                    <img src="<?php echo THEME_PATH;?>/assets/img/faq-block-light.png" alt="<?php echo get_bloginfo('name');?>">
                  </div>
 			           <div class="container-fluid">
-			             <div class="row">
+			             <div class="row first-up">
 			               <h2 class="block-title small-title col-12 text-center"><?php echo $fields['dolphincargo_block_faq_title'];?></h2>
 			             </div>
-			             <div class="row">
+			             <div class="row second-up">
 				             <div class="accordion col-12" id="accordion-faq">
 
 					             <?php foreach( $fields['dolphincargo_block_faq_list'] as $index => $item ):?>

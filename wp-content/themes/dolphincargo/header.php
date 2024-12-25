@@ -55,6 +55,37 @@
 		        ?>
 
             <ul class="mob-lang-wrapper"><?php pll_the_languages( $langArgs ); ?></ul>
+
+            <?php
+/*	            $fbLink = carbon_get_theme_option('dolphincargo_option_facebook_link');
+	            $instLink = carbon_get_theme_option('dolphincargo_option_instagram_link');
+
+	            if ( !empty( $fbLink ) || !empty( $instLink )):
+            */?><!--
+                <div class="menu-social menu-contacts">
+                  <h3 class="contact-name"><?php /*echo esc_html( pll__( 'Соціальні мережі' ) ); */?></h3>
+                  <?php /*echo get_template_part('template-parts/social-wrapper');*/?>
+                </div>
+            --><?php /*endif;*/?>
+	          <?php echo get_template_part('template-parts/social-wrapper');?>
+
+            <?php
+/*              if( !empty( carbon_get_theme_option('dolphincargo_option_contact_email') ) ):*/?><!--
+                <div class="menu-mail menu-contacts">
+                  <h3 class="contact-name"><?php /*echo esc_html( pll__( 'Пошта' ) ); */?></h3>
+	                <?php /*echo get_template_part('template-parts/email');*/?>
+                </div>
+            --><?php /*endif;*/?>
+	          <?php echo get_template_part('template-parts/email');?>
+
+            <?php /*if( !empty( carbon_get_theme_option('dolphincargo_option_contact_phone') ) ):*/?><!--
+              <div class="menu-phone menu-contacts">
+                <h3 class="contact-name"><?php /*echo esc_html( pll__( 'Телефон' ) ); */?></h3>
+	              <?php /*echo get_template_part('template-parts/phone');*/?>
+              </div>
+            --><?php /*endif;*/?>
+	          <?php echo get_template_part('template-parts/phone');?>
+
           </nav>
 	        <?php
 		        $langArgs = array(

@@ -80,6 +80,35 @@
 				false
 			);
 
+			pll_register_string(
+				'dolphincargo_title_contact_social',
+				'Соціальні мережі',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_title_contact_email',
+				'Пошта',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_title_contact_phone',
+				'Телефон',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_title_contact_address',
+				'Адреса',
+				'Заголовки',
+				false
+			);
+
+
 			/**
 			 * Forms
 			 */
@@ -97,6 +126,32 @@
 				'Форми',
 				false
 			);
+
+			pll_register_string(
+				'dolphincargo_form_modal_title',
+				'Залиште заявку і наш менеджер зв’яжеться з вами!',
+				'Форми',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_form_main_title',
+				'Є питання?',
+				'Форми',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_form_main_text',
+				'Залиште заявку і наш менеджер зв’яжеться з вами! ',
+				'Форми',
+				false
+			);
+
+
+
+
+
 
 
 

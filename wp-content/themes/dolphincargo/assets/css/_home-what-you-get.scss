@@ -1,6 +1,5 @@
 .home-what-you-get{
   position: relative;
-  margin-top: -30px;
   padding-bottom: 204px;
 
   @media(max-width: 992px){
@@ -14,21 +13,24 @@
   .text-element{
     position: relative;
     z-index: 3;
-    width: calc(100% - 90px);
-    margin: 0 auto 50px;
+    width: auto;
+    height: 19vw;
+    margin: 0 auto 7vw;
     display: block;
 
     @media(max-width: 992px){
-      margin-bottom: 15vw;
+      margin-bottom: 10vw;
     }
 
     @media(max-width: 767px){
       width: calc( 100% - 50px);
     }
 
-    @media(max-width: 575px){
-      width: calc( 100% - 10px);
+    @media(max-width: 440px){
+      width: auto;
+      height: 19vw;
     }
+
   }
 
   .light{
@@ -130,13 +132,13 @@
       width: 50vw;
       overflow: hidden;
       left: 0;
-      top: -35.3vw;
+      top: -41vw;
 
       @media(max-width: 992px){
         left: auto;
         right: -70px;
         width: 40vw;
-        top: -45vw;
+        top: -44vw;
       }
 
       @media(max-width: 767px){
@@ -145,13 +147,91 @@
 
       @media(max-width: 575px){
         right: 5px;
+        width: 50vw;
       }
 
       img{
         width: 100%;
         height: auto;
-        transition: all 0.2s;
+        transition: all 0.3s;
+        transform: translateY(-23vw);
+        
+        @media(max-width: 992px){
+          transform: translateY(-18vw);
+        }
+
+        @media(max-width: 575px){
+          transform: translateY(-22vw);
+        }
       }
     }
   }
+
+  &.visible{
+    .pic-container{
+      .img-container{
+        img{
+          animation: container-mov 1.5s linear 1 forwards;
+
+          @media(max-width: 1200px){
+            animation: container-mov-1200 1.5s linear 1 forwards;
+          }
+
+          @media(max-width: 992px){
+            animation: container-mov-992 1.5s linear 1 forwards;
+          }
+
+          @media(max-width: 575px){
+            animation: container-mov-575 1.5s linear 1 forwards;
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes container-mov {
+
+    0%{
+      transform: translateY(-23vw);
+    }
+
+    100%{
+      transform: translateY(-5vw);
+    }
+  }
+
+  @keyframes container-mov-1200 {
+
+    0%{
+      transform: translateY(-23vw);
+    }
+
+    100%{
+      transform: translateY(0vw);
+    }
+  }
+
+  @keyframes container-mov-992 {
+
+    0%{
+      transform: translateY(-18vw);
+    }
+
+    100%{
+      transform: translateY(0vw);
+    }
+  }
+
+  @keyframes container-mov-575 {
+
+    0%{
+      transform: translateY(-22vw);
+    }
+
+    100%{
+      transform: translateY(0vw);
+    }
+  }
+
+
 }

@@ -42,6 +42,9 @@
 							     <?php if( $fields['dolphincargo_home_page_main-screen_who_are_we'] ):?>
                      <p class="who-are"><?php echo $fields['dolphincargo_home_page_main-screen_who_are_we'];?></p>
 							     <?php endif;?>
+                   <a href="#" rel="nofollow" class="button blue-btn" data-toggle="modal" data-target="#formModal">
+		                 <?php echo esc_html( pll__( 'Отримати консультацію' ) ); ?>
+                   </a>
                  </div>
                </div>
                <?php if( $fields['dolphincargo_home_page_our_numbers_list'] ):?>
@@ -63,7 +66,7 @@
                <?php endif;?>
 
              </div>
-             <a href="#" rel="nofollow" class="circle-button">
+             <a href="#" rel="nofollow" class="circle-button" data-toggle="modal" data-target="#formModal">
 		           <?php echo esc_html( pll__( 'Отримати консультацію' ) ); ?>
              </a>
            </section>
@@ -101,18 +104,23 @@
 			     <?php if ( $fields['dolphincargo_our_services_title'] && $fields['dolphincargo_our_services_list'] ):?>
              <section class="our-services" >
 	             <?php get_template_part('template-parts/decor-lines');?>
+               <?php if( ! is_front_page() ):?>
+                 <div class="service-light">
+                   <img src="<?php echo THEME_PATH;?>/assets/img/hom-what-light.png" alt="">
+                 </div>
+               <?php endif;?>
                <div class="light">
                  <img src="<?php echo THEME_PATH;?>/assets/img/home-services-light.png" alt="">
                </div>
                <div class="container-fluid">
-                 <div class="row">
-                   <h2 class="block-title big-title col-12 text-center"><?php echo $fields['dolphincargo_our_services_title'];?></h2>
+                 <div class="row animation-tracking">
+                   <h2 class="block-title big-title col-12 text-center first-up"><?php echo $fields['dolphincargo_our_services_title'];?></h2>
                  </div>
                  <div class="row content">
                    <?php foreach( $fields['dolphincargo_our_services_list'] as $item ):?>
-                     <div class="service-item col-12">
-                       <h3 class="name"><?php echo get_the_title( $item['id'] );?></h3>
-                       <div class="pic-wrapper">
+                     <div class="service-item col-12 animation-tracking">
+                       <h3 class="name first-up"><?php echo get_the_title( $item['id'] );?></h3>
+                       <div class="pic-wrapper second-up">
                          <img
                              class="lazy"
                              data-src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $item['id'] ), 'full')[0];?>"
@@ -129,7 +137,7 @@
                          >
                        </div>
 
-                       <div class="info">
+                       <div class="info third-up">
                          <h3 class="name"><?php echo get_the_title( $item['id'] );?></h3>
                          <p class="description"><?php echo get_the_excerpt( $item['id'] );?></p>
                          <a href="<?php echo get_the_permalink( $item['id'] );?>"><?php echo esc_html( pll__( 'Дізнатись більше' ) ); ?></a>

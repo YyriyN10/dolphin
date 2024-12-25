@@ -23,6 +23,8 @@ function scripts(){
     'js/jquery.lazy.js',
     'js/jquery.marquee.js',
     'js/slick.min.js',
+    'js/jquery.viewportchecker.js',
+    'js/youtube.js',
     'js/js.js'//завжди останній, важлива послідовність
   ])
     .pipe(concat('main.min.js'))//ім'я згенерованого файлу

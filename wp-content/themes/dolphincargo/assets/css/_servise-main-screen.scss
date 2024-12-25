@@ -1,0 +1,86 @@
+.service-main-screen{
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 160px;
+  padding-bottom: 15vw;
+  position: relative;
+  cursor: none;
+  height: 120vh;
+
+  @media(max-width: 440px){
+    padding-top: 100px;
+  }
+
+  .container-fluid{
+    position: relative;
+    z-index: 3;
+  }
+
+  .main-title{
+    text-transform: uppercase;
+    font-family: $f-med;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    font-size: clamp(64px, 4.68vw, 90px);
+
+    @media(max-width: 767px){
+      font-size: 52px;
+    }
+
+    @media(max-width: 575px){
+      font-size: 12vw;
+    }
+  }
+
+  .who-are{
+    font-size: clamp(24px, 1.56vw, 30px);
+    margin-bottom: 0;
+    max-width: clamp(450px, 28.15vw, 540px);
+
+    @media(max-width: 1024px){
+      margin-bottom: 40px;
+    }
+
+    @media(max-width: 575px){
+      font-size: 22px;
+    }
+
+    @media(max-width: 440px){
+      font-size: 20px;
+    }
+  }
+
+  .button{
+    display: none;
+
+    margin-bottom: 50px;
+
+    @media(max-width: 1024px){
+      display: inline-block;
+    }
+  }
+
+  .circle-button{
+    position: absolute;
+    z-index: 10;
+    width: 142px;
+    height: 142px;
+    border-radius: 50%;
+    background-color: $color-light-blue;
+    color: $color-white!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    font-size: 16px;
+    cursor: none;
+
+    @media(max-width: 1024px){
+      display: none;
+    }
+  }
+}

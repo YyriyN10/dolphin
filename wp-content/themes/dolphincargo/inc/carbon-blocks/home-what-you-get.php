@@ -28,7 +28,7 @@
 
 			     <!-- Що ви отримуєте -->
 			     <?php if( $fields['dolphincargo_home_page_what_you_get_list'] ):?>
-				     <section class="home-what-you-get">
+				     <section class="home-what-you-get animation-tracking">
 					     <?php get_template_part('template-parts/decor-lines');?>
                <svg class="text-element" width="1344" height="273" viewBox="0 0 1344 273" fill="none" xmlns="http://www.w3.org/2000/svg">
                  <mask id="path-1-outside-1_295_2425" maskUnits="userSpaceOnUse" x="0" y="0.527344" width="1344" height="272" fill="black">
@@ -62,7 +62,7 @@
 
                <div class="container-fluid">
 						     <div class="row">
-							     <ul class="get-list col-xl-6 col-lg-7 col-md-9">
+							     <ul class="get-list col-xl-6 col-lg-7 col-md-9 first-up">
 								     <?php foreach( $fields['dolphincargo_home_page_what_you_get_list'] as $index=>$item ):?>
 									     <li class="item">
                          <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
