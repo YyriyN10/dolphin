@@ -1,0 +1,43 @@
+.services-calculate-shipping{
+  position: relative;
+
+  .container-fluid{
+    position: relative;
+    z-index: 3;
+  }
+
+  .block-title{
+    margin-bottom: 24px;
+  }
+
+  .text{
+    font-size: clamp(24px, 1.56vw, 30px);
+    margin-bottom: 40px;
+
+    @media(max-width: 440px){
+      margin-bottom: 32px;
+    }
+
+    p{
+      margin-bottom: 8px;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .pic{
+    display: flex;
+
+    .pic-wrapper{
+      width: 50vw;
+
+      img{
+        width: 50vw;
+        height: auto;
+        max-width: 50vw;
+      }
+    }
+  }
+}

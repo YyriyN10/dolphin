@@ -40,10 +40,10 @@
 				     <section class="services-warranty indent-top-small indent-bottom-small animation-tracking">
 					     <?php get_template_part('template-parts/decor-lines');?>
 					     <div class="container-fluid">
-						     <div class="row">
+						     <div class="row first-up">
 							     <h2 class="block-title big-title col-12 text-center"><?php echo $fields['dolphincargo_warranty_title'];?></h2>
 						     </div>
-						     <div class="row content">
+						     <div class="row content second-up">
 							     <?php foreach( $fields['dolphincargo_warranty_list'] as $item ):?>
 								     <?php if( $fields['dolphincargo_warranty_logic'] == 'yes' ):?>
 							          <div class="warranty-item go-modal col-lg-3" data-toggle="modal" data-target="#formModal">
@@ -63,6 +63,7 @@
 													     alt="<?php echo the_title();?>"
 											     <?php endif;?>
 										     >
+                         <span class="more"><?php echo esc_html( pll__( 'Отримати консультацію' ) ); ?></span>
 									     </div>
 									     <p class="name"><?php echo $item['name'];?></p>
 								     </div>

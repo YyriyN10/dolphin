@@ -1,0 +1,49 @@
+<?php
+
+	if ( ! defined( 'ABSPATH' ) ) {
+		exit;
+	}
+
+	use Carbon_Fields\Block;
+	use Carbon_Fields\Field;
+
+	add_action( 'carbon_fields_register_fields', 'dolphincargo_block_delivery_steps' );
+
+	function dolphincargo_block_delivery_steps(){
+		Block::make( __( 'Delivery steps' ) )
+		     ->add_fields( array(
+			     Field::make_text('dolphincargo_delivery_steps_title', 'Заголовок'),
+			     Field::make_complex('dolphincargo_delivery_steps_list', 'Перелік кроків')
+						->add_fields( array(
+							Field::make_text('text', 'Текст кроку')
+						)),
+			     Field::make_image('dolphincargo_delivery_steps_road_pic', 'Зображення поверхні поякій йде рух')
+			          ->set_type('image'),
+			     Field::make_image('dolphincargo_delivery_steps_transport_pic', 'Зображення транспорту')
+			          ->set_type('image'),
+		     ) )
+
+		     ->set_category( 'dolphincargo-services-category' )
+		     ->set_icon('editor-ol')
+
+		     ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+			     ?>
+
+			     <?php
+			     if( $fields['dolphincargo_delivery_steps_title'] && $fields['dolphincargo_delivery_steps_list'] && $fields['dolphincargo_delivery_steps_road_pic'] && $fields['dolphincargo_delivery_steps_transport_pic']):
+				     ?>
+				     <!-- Кроки доставки -->
+				     <section class="services-delivery-steps indent-top-small indent-bottom-small animation-tracking">
+					     <?php get_template_part('template-parts/decor-lines');?>
+					     <div class="container-fluid">
+						     <div class="row">
+							     <h2 class="block-title big-title text-center col-12"><?php echo $fields['dolphincargo_delivery_steps_title'];?></h2>
+						     </div>
+						    <div class="row"></div>
+				     </section>
+			     <?php endif;?>
+
+			     <?php
+		     } );
+	}
+

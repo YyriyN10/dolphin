@@ -1,0 +1,63 @@
+.services-warranty{
+  position: relative;
+
+  .container-fluid{
+    position: relative;
+    z-index: 3;
+  }
+
+  .block-title{
+    margin-bottom: 40px;
+
+    @media(max-width: 440px){
+      margin-bottom: 32px;
+    }
+  }
+
+  .warranty-item{
+    .pic-wrapper{
+      overflow: hidden;
+      position: relative;
+      border-radius: 4px;
+      margin-bottom: 15px;
+
+      img{
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .more{
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: rgba(0,0,0,0.4);
+        transition: all 0.2s;
+        opacity: 0;
+        font-size: 16px;
+        z-index: 2;
+      }
+    }
+
+    .name{
+      margin-bottom: 0;
+      font-size: clamp(18px, 1.25vw, 24px);
+    }
+
+    &.go-modal{
+      cursor: pointer;
+
+      &:hover{
+        .pic-wrapper{
+          .more{
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

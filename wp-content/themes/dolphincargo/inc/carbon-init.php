@@ -86,3 +86,4 @@ require ('carbon-blocks/service-main-screen.php');
 require ('carbon-blocks/block-other-services.php');
 require ('carbon-blocks/block-achievement.php');
 require ('carbon-blocks/block-warranty.php');
+require ('carbon-blocks/block-calculate-shipping.php');
