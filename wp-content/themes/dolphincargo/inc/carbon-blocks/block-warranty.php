@@ -46,9 +46,9 @@
 						     <div class="row content second-up">
 							     <?php foreach( $fields['dolphincargo_warranty_list'] as $item ):?>
 								     <?php if( $fields['dolphincargo_warranty_logic'] == 'yes' ):?>
-							          <div class="warranty-item go-modal col-lg-3" data-toggle="modal" data-target="#formModal">
+							          <div class="warranty-item go-modal col-lg-3 col-sm-6" data-toggle="modal" data-target="#formModal">
 									   <?php else:?>
-								        <div class="warranty-item col-lg-3">
+								        <div class="warranty-item col-lg-3 col-sm-6">
 								     <?php endif;?>
 
 									     <div class="pic-wrapper">

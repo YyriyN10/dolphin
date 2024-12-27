@@ -39,19 +39,18 @@
 					     <div class="light light-right"><img src="<?php echo THEME_PATH;?>/assets/img/airplan-call-to-light.png" alt=""></div>
 					     <div class="container-fluid">
 						     <div class="row content">
-							     <div class="col-md-6 block-pic">
-                     <svg width="1268" height="1422" viewBox="0 0 1268 1422" fill="none" xmlns="http://www.w3.org/2000/svg">
+							     <div class="col-lg-6 block-pic">
+                     <svg width="890" height="938" viewBox="0 0 890 938" fill="none" xmlns="http://www.w3.org/2000/svg">
                        <g style="mix-blend-mode:luminosity" opacity="0.2">
-                         <path d="M986.973 246.314C991.482 250.414 995.991 254.513 1000.5 258.612C1131.66 372.164 1214.86 540.236 1214.86 727.575C1214.86 1070.28 936.969 1348.21 594.315 1348.21C475.862 1348.21 365.606 1315.01 271.336 1257.62C148.784 1187.52 52.0538 1076.84 0 944.019C73.3672 1219.08 324.619 1422 623.006 1422C978.776 1422 1267.33 1133.41 1267.33 777.587C1267.33 557.043 1156.25 362.325 986.973 246.314Z" fill="#0F0F0F"/>
-                         <path d="M125.831 864.492C125.831 571.391 348.802 366.835 623.416 366.835C630.794 366.835 638.172 366.835 645.549 367.245C636.122 397.58 623.416 418.076 604.152 448.821C577.92 490.224 563.575 491.044 577.101 503.752C589.397 514.82 651.698 502.932 695.144 461.119C716.457 441.032 734.902 408.648 748.837 380.772C825.074 401.679 898.441 436.933 951.315 491.864C973.448 515.23 1016.48 583.279 1030.83 592.707C1045.18 601.726 1077.56 603.366 1067.72 569.751C1057.88 536.137 1052.55 541.056 1052.55 515.64C1052.55 490.634 1057.06 464.808 1056.24 436.523C1054.19 371.344 993.531 289.358 927.132 237.706C839.009 169.247 743.919 142.602 646.369 136.043V133.583C634.893 132.763 623.416 132.353 611.94 132.353C594.725 99.1489 558.247 48.3174 491.437 22.4917C387.33 -16.8618 366.836 5.27452 366.426 15.5228C365.606 39.2989 432.416 80.702 438.154 154.9C185.672 223.358 0 454.97 0 730.035C0 1039.12 248.383 1215.8 248.383 1215.8C248.383 1215.8 125.831 1081.76 125.831 864.492ZM646.369 365.195V363.145C646.779 363.145 646.779 363.145 647.189 363.145C646.779 363.965 646.369 364.375 646.369 365.195Z" fill="#0F0F0F"/>
-                         <path d="M784.495 523.429C724.244 516.87 666.042 525.889 613.578 547.615C629.563 547.615 645.548 548.025 661.533 550.074C878.766 574.26 1035.34 769.388 1011.15 986.652C1004.6 1045.27 985.742 1099.38 957.051 1146.94C1030.42 1091.18 1081.65 1006.74 1092.31 907.945C1113.62 716.917 975.906 544.745 784.495 523.429Z" fill="#464646"/>
-                         <path d="M649.234 634.931C781.623 707.079 866.467 852.195 854.171 1012.07C845.973 1120.7 794.739 1215.39 718.503 1281.39C843.514 1241.22 937.785 1128.9 948.032 990.752C961.967 810.382 828.759 652.968 649.234 634.931Z" fill="#464646"/>
-                         <path d="M545.125 768.568C542.256 768.158 539.387 768.158 536.518 767.748C637.346 829.648 699.237 946.069 685.302 1071.92C673.825 1176.04 612.754 1262.95 528.32 1311.32C659.889 1305.17 770.965 1204.33 785.72 1069.05C802.525 919.833 694.729 785.375 545.125 768.568Z" fill="#464646"/>
-                         <path d="M750.893 414.387C744.744 424.635 734.907 438.163 719.742 453.74C800.897 457.43 876.723 482.435 941.483 523.429C887.79 473.007 823.03 435.293 750.893 414.387Z" fill="#464646"/>
-                         <path d="M241.826 909.995C241.826 702.979 379.953 527.938 568.905 472.187C569.725 471.367 570.134 470.547 570.544 469.727C583.25 454.97 604.154 419.306 617.27 396.35C361.509 398.399 154.523 606.235 154.523 862.852C154.523 1065.77 284.043 1237.94 464.387 1302.3C331.179 1222.36 241.826 1076.43 241.826 909.995Z" fill="#464646"/>
+                         <path d="M704.891 303.174C706.373 306.033 707.856 308.892 709.338 311.751C753.51 392.096 763.91 490.664 729.537 583.515C666.657 753.369 477.928 840.133 308.099 777.262C249.39 755.528 200.836 718.841 164.643 673.099C116.764 615.87 89.1298 543.265 87.7001 467.885C73.5936 617.677 160.89 764.349 308.78 819.098C485.11 884.375 681.076 794.284 746.363 617.928C786.829 508.62 767.504 391.732 704.891 303.174Z" fill="#0F0F0F"/>
+                         <path d="M164.658 451.557C218.437 306.287 366.481 245.814 502.588 296.201C506.245 297.555 509.902 298.908 513.483 300.465C503.245 313.77 493.186 321.598 477.998 333.301C457.399 349.009 450.139 346.783 454.511 355.563C458.575 363.305 491.634 368.844 520.839 356.092C535.088 350.047 550.172 337.38 562.194 326.122C596.143 350.471 626.037 381.406 642.164 418.333C648.847 433.975 657.691 475.598 663.071 482.904C668.527 490.006 684.274 496.76 685.566 478.294C686.859 459.829 683.315 461.289 687.978 448.693C692.567 436.299 699.54 424.326 704.323 410.157C715.267 377.476 700.244 325.711 676.812 287.927C645.697 237.828 603.456 207.174 556.311 186.025L556.762 184.806C551.225 182.294 545.612 179.985 539.924 177.879C537.484 158.263 528.731 126.377 500.357 101.318C455.978 62.7115 441.759 69.9227 439.676 74.9269C434.907 86.5606 460.423 119.34 449.653 157.167C311.955 144.771 177.433 225.498 126.963 361.828C70.251 515.022 160.939 648.164 160.939 648.164C160.939 648.164 124.794 559.24 164.658 451.557ZM514.265 299.6L514.642 298.584C514.845 298.659 514.845 298.659 515.048 298.734C514.694 299.065 514.416 299.193 514.265 299.6Z" fill="#0F0F0F"/>
+                         <path d="M553.692 403.369C525.033 389.063 494.531 382.854 464.542 383.996C472.465 386.929 480.313 390.065 487.859 394.014C591.088 445.859 632.887 571.299 581.038 674.544C567.032 702.395 547.758 725.755 524.813 744.059C571.406 729.888 612.293 697.435 635.702 650.425C681.316 559.656 644.649 449.054 553.692 403.369Z" fill="#464646"/>
+                         <path d="M466.193 433.815C518.571 493.865 533.996 581.356 498.568 658.338C474.573 710.675 431.805 748.208 381.91 766.931C451.241 769.958 518.573 731.585 548.999 664.995C589.001 578.155 551.862 475.694 466.193 433.815Z" fill="#464646"/>
+                         <path d="M390.073 480.947C388.726 480.217 387.304 479.69 385.957 478.961C424.574 528.141 433.887 597.198 403.889 657.016C379.097 706.517 332.882 738.384 282.159 746.867C348.497 767.96 422.052 738.359 454.187 674.019C489.894 603.146 461.137 516.726 390.073 480.947Z" fill="#464646"/>
+                         <path d="M557.043 343.158C552.115 347.109 544.757 352.009 534.383 356.947C573.929 373.666 606.922 399.973 631.498 432.173C614.137 397.33 588.96 366.756 557.043 343.158Z" fill="#464646"/>
+                         <path d="M213.797 495.391C251.78 392.787 352.357 331.376 456.237 338.413C456.793 338.157 457.147 337.826 457.501 337.495C466.506 332.512 483.41 318.671 494.123 309.7C366.984 263.788 226.261 328.819 179.176 456.007C141.945 556.579 174.548 665.677 252.123 730.665C200.768 666.604 183.259 577.88 213.797 495.391Z" fill="#464646"/>
                        </g>
                      </svg>
-
                      <div class="pic-wrapper">
 									     <img
 									        class="lazy"
@@ -66,7 +65,7 @@
 									     >
 								     </div>
 							     </div>
-							     <div class="text-content col-md-6">
+							     <div class="text-content col-lg-6">
 								     <div class="main-info">
 									     <p class="achievement-value"><?php echo $fields['dolphincargo_achievement_main'];?></p>
 									     <p class="achievement-description"><?php echo $fields['dolphincargo_achievement_description'];?></p>
@@ -75,41 +74,41 @@
 									     <ul class="achievement-list">
 										     <?php foreach( $fields['dolphincargo_achievement_list'] as $index=>$item ):?>
 											     <li class="item">
-												     <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-													     <g filter="url(#filter0_b_295_2436_<?php echo $index;?>)">
-														     <rect x="0.5" y="0.5" width="57" height="57" rx="4.5" stroke="url(#paint0_radial_295_2436_<?php echo $index;?>)"/>
-														     <rect x="0.5" y="0.5" width="57" height="57" rx="4.5" stroke="url(#paint1_radial_295_2436_<?php echo $index;?>)"/>
-														     <rect x="0.5" y="0.5" width="57" height="57" rx="4.5" stroke="url(#paint2_radial_295_2436_<?php echo $index;?>)"/>
-														     <path d="M26 35L32 29L26 23" stroke="#067FEF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-													     </g>
-													     <defs>
-														     <filter id="filter0_b_295_2436_<?php echo $index;?>" x="-42" y="-42" width="142" height="142" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-															     <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-															     <feGaussianBlur in="BackgroundImageFix" stdDeviation="21"/>
-															     <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_295_2436_<?php echo $index;?>"/>
-															     <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_295_2436_<?php echo $index;?>" result="shape"/>
-														     </filter>
-														     <radialGradient id="paint0_radial_295_2436_<?php echo $index;?>)" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1.81952 0.999993) rotate(44.8459) scale(77.828 143.094)">
-															     <stop stop-color="white"/>
-															     <stop offset="1" stop-color="white" stop-opacity="0"/>
-														     </radialGradient>
-														     <radialGradient id="paint1_radial_295_2436_<?php echo $index;?>)" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(2.17518 -0.304655) rotate(49.3593) scale(77.8999 129.652)">
-															     <stop stop-color="#067FEF" stop-opacity="0.6"/>
-															     <stop offset="1" stop-color="#067FEF" stop-opacity="0.2"/>
-														     </radialGradient>
-														     <radialGradient id="paint2_radial_295_2436_<?php echo $index;?>)" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1 1) rotate(44.8459) scale(77.828 143.094)">
-															     <stop stop-color="#16246F" stop-opacity="0.4"/>
-															     <stop offset="1" stop-color="#16246F" stop-opacity="0"/>
-														     </radialGradient>
-													     </defs>
-												     </svg>
+                             <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <g filter="url(#filter0_b_295_2436)">
+                                 <rect x="0.5" y="0.5" width="57" height="57" rx="4.5" stroke="url(#paint0_radial_295_2436)"/>
+                                 <rect x="0.5" y="0.5" width="57" height="57" rx="4.5" stroke="url(#paint1_radial_295_2436)"/>
+                                 <rect x="0.5" y="0.5" width="57" height="57" rx="4.5" stroke="url(#paint2_radial_295_2436)"/>
+                                 <path d="M26 35L32 29L26 23" stroke="#067FEF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                               </g>
+                               <defs>
+                                 <filter id="filter0_b_295_2436" x="-42" y="-42" width="142" height="142" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                   <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                   <feGaussianBlur in="BackgroundImageFix" stdDeviation="21"/>
+                                   <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_295_2436"/>
+                                   <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_295_2436" result="shape"/>
+                                 </filter>
+                                 <radialGradient id="paint0_radial_295_2436" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1.81952 0.999993) rotate(44.8459) scale(77.828 143.094)">
+                                   <stop stop-color="white"/>
+                                   <stop offset="1" stop-color="white" stop-opacity="0"/>
+                                 </radialGradient>
+                                 <radialGradient id="paint1_radial_295_2436" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(2.17518 -0.304655) rotate(49.3593) scale(77.8999 129.652)">
+                                   <stop stop-color="#067FEF" stop-opacity="0.6"/>
+                                   <stop offset="1" stop-color="#067FEF" stop-opacity="0.2"/>
+                                 </radialGradient>
+                                 <radialGradient id="paint2_radial_295_2436" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1 1) rotate(44.8459) scale(77.828 143.094)">
+                                   <stop stop-color="#16246F" stop-opacity="0.4"/>
+                                   <stop offset="1" stop-color="#16246F" stop-opacity="0"/>
+                                 </radialGradient>
+                               </defs>
+                             </svg>
 												     <div>
 													     <p class="name"><?php echo $item['name'];?></p>
 													     <div class="text"><?php echo wpautop( $item['description'] );?></div>
 												     </div>
 											     </li>
 										     <?php endforeach;?>
-									     </ul>
+                       </ul>
 								     <?php endif;?>
 							     </div>
 						     </div>

@@ -108,6 +108,15 @@
 				false
 			);
 
+			pll_register_string(
+				'dolphincargo_step_text',
+				'Крок',
+				'Заголовки',
+				false
+			);
+
+
+
 
 			/**
 			 * Forms

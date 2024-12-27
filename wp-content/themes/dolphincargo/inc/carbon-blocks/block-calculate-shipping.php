@@ -30,14 +30,17 @@
 				     <!-- Розрахунок вартості доставки -->
 				     <section class="services-calculate-shipping indent-top-small indent-bottom-small animation-tracking">
 					     <?php get_template_part('template-parts/decor-lines');?>
+               <div class="light"><img src="<?php echo THEME_PATH;?>/assets/img/home-services-light.png" alt=""></div>
 					     <div class="container-fluid">
 						     <div class="row">
-							     <div class="text-content col-lg-6">
+							     <div class="text-content col-lg-6 first-up">
 								     <h2 class="block-title big-title"><?php echo $fields['dolphincargo_calculate_shipping_title'];?></h2>
 								     <div class="text"><?php echo wpautop( $fields['dolphincargo_calculate_shipping_text']);?></div>
-								     <a href="#" rel="nofollow" class="button blue-btn" data-toggle="modal" data-target="#formModal"><?php echo esc_html( pll__( 'Надіслати заявку' ) ); ?></a>
+								     <a href="#" rel="nofollow" class="button blue-btn" data-toggle="modal" data-target="#formModal">
+                       <?php echo esc_html( pll__( 'Надіслати заявку' ) ); ?>
+                     </a>
 							     </div>
-							     <div class="pic col-lg-6">
+							     <div class="pic col-lg-6 second-up">
 								     <div class="pic-wrapper">
 									     <img
 									        class="lazy"

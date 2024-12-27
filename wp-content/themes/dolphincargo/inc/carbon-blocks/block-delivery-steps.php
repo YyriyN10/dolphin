@@ -39,7 +39,30 @@
 						     <div class="row">
 							     <h2 class="block-title big-title text-center col-12"><?php echo $fields['dolphincargo_delivery_steps_title'];?></h2>
 						     </div>
-						    <div class="row"></div>
+                 <div class="row content content-top">
+                   <?php foreach( $fields['dolphincargo_delivery_steps_list'] as $index=>$item ):?>
+                     <?php if( $index < 4 ):?>
+                       <div class="step col-lg-3">
+                         <p class="step__number">
+                           <?php echo esc_html( pll__( 'Крок' ) ); ?> <?php echo $index + 1;?>
+                         </p>
+                         <p class="step-text"><?php echo $item['text'];?></p>
+                       </div>
+                     <?php endif;?>
+                   <?php endforeach;?>
+                 </div>
+                 <div class="row content content-bottom">
+							     <?php foreach( $fields['dolphincargo_delivery_steps_list'] as $index=>$item ):?>
+								     <?php if( $index > 3 ):?>
+                       <div class="step col-lg-3">
+                         <p class="step__number">
+											     <?php echo esc_html( pll__( 'Крок' ) ); ?> <?php echo $index + 1;?>
+                         </p>
+                         <p class="step-text"><?php echo $item['text'];?></p>
+                       </div>
+								     <?php endif;?>
+							     <?php endforeach;?>
+                 </div>
 				     </section>
 			     <?php endif;?>
 

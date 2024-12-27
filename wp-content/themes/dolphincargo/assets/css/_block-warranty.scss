@@ -14,7 +14,22 @@
     }
   }
 
+  .content{
+    row-gap: 32px;
+  }
+
   .warranty-item{
+
+    @media(max-width: 575px){
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media(max-width: 340px){
+      width: 90%;
+    }
+
     .pic-wrapper{
       overflow: hidden;
       position: relative;
@@ -55,6 +70,10 @@
         .pic-wrapper{
           .more{
             opacity: 1;
+
+            @media(max-width: 1024px){
+              opacity: 0;
+            }
           }
         }
       }

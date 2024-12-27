@@ -1,0 +1,54 @@
+.services-advantages-delivery{
+  position: relative;
+
+  .container-fluid{
+    position: relative;
+    z-index: 3;
+  }
+
+  .block-title{
+    margin-bottom: 40px;
+
+    @media(max-width: 440px){
+      margin-bottom: 32px;
+    }
+  }
+
+  .content{
+    padding: 0;
+    margin: 0;
+  }
+
+  .item{
+    list-style: none;
+    text-align: center;
+
+    .icon{
+      width: 120px;
+      margin: 0 auto 24px;
+
+      .svg-pic{
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .name{
+      text-transform: uppercase;
+      font-size: clamp(24px, 1.56vw, 30px);
+      margin-bottom: 8px;
+    }
+
+    .description{
+      font-size: clamp(18px, 1.25vw, 24px);
+
+      p{
+        margin-bottom: 8px;
+
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

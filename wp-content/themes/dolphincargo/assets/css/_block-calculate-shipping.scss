@@ -1,6 +1,20 @@
 .services-calculate-shipping{
   position: relative;
 
+  .light{
+    position: absolute;
+    z-index: 1;
+    width: 957px;
+    top: 0;
+    right: 0;
+    transform: translateY(-30%);
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+
   .container-fluid{
     position: relative;
     z-index: 3;
@@ -14,8 +28,17 @@
     font-size: clamp(24px, 1.56vw, 30px);
     margin-bottom: 40px;
 
+    @media(max-width: 1200px){
+      font-size: 22px;
+    }
+
+    @media(max-width: 575px){
+      font-size: 20px;
+    }
+
     @media(max-width: 440px){
       margin-bottom: 32px;
+      font-size: 18px;
     }
 
     p{
@@ -30,13 +53,31 @@
   .pic{
     display: flex;
 
+    @media(max-width: 992px){
+      margin-top: 32px;
+    }
+
     .pic-wrapper{
       width: 50vw;
+
+      @media(max-width: 992px){
+        width: 100%;
+        transform: translateX(91px);
+      }
+
+      @media(max-width: 575px){
+        transform: translateX(20px);
+      }
 
       img{
         width: 50vw;
         height: auto;
         max-width: 50vw;
+
+        @media(max-width: 992px){
+          width: 100%;
+          max-width: 100%;
+        }
       }
     }
   }
