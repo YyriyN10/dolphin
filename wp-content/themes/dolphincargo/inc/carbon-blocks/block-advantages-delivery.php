@@ -36,13 +36,14 @@
 				     <!-- Переваги -->
 				     <section class="services-advantages-delivery indent-top-small indent-bottom-small animation-tracking">
 					     <?php get_template_part('template-parts/decor-lines');?>
+               <div class="bg-image"><img src="<?php echo THEME_PATH;?>/assets/img/big-service-bg.png" alt="<?php echo $fields['dolphincargo_advantages_delivery_title'];?>"></div>
 					     <div class="container-fluid">
 						     <div class="row">
-							     <h2 class="block-title big-title text-center col-12"><?php echo $fields['dolphincargo_advantages_delivery_title'];?></h2>
+							     <h2 class="block-title big-title col-xl-8 offset-xl-4 col-lg-10 offset-lg-2 col-12"><?php echo $fields['dolphincargo_advantages_delivery_title'];?></h2>
 						     </div>
 						     <ul class="row content">
 							     <?php foreach( $fields['dolphincargo_advantages_delivery_list'] as $item ):?>
-								     <li class="item col-lg-4">
+								     <li class="item col-lg-4 col-sm-6">
 									     <div class="icon">
 										     <img src="<?php echo $item['icon'];?>" class="svg-pic" alt="<?php echo $item['name'];?>">
 									     </div>

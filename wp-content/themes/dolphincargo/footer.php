@@ -38,13 +38,22 @@
 
               <button type="submit" class="button blue-btn"><?php echo esc_html( pll__( 'Надіслати заявку' ) ); ?></button>
             </form>
-            <div class="form-pic">
+            <div class="contacts-wrapper">
+              <div class="menu-contacts menu-address">
+                <h3 class="contact-name"><?php echo esc_html( pll__( 'Адреса' ) ); ?></h3>
+                <p class="address"><?php echo carbon_get_theme_option('dolphincargo_option_rial_address'.dolphincargo_lang_prefix());?></p>
+              </div>
+	            <?php get_template_part('template-parts/phone');?>
+	            <?php get_template_part('template-parts/email');?>
+	            <?php get_template_part('template-parts/social-wrapper');?>
+            </div>
+            <!--<div class="form-pic">
               <img
                  class="lazy"
-                 data-src="<?php echo wp_get_attachment_image_src( carbon_get_theme_option('dolphincargo_option_form_image'), 'full')[0];?>"
-                 alt="<?php echo get_post_meta( carbon_get_theme_option('dolphincargo_option_form_image'), '_wp_attachment_image_alt', TRUE);?>"
+                 data-src="<?php /*echo wp_get_attachment_image_src( carbon_get_theme_option('dolphincargo_option_form_image'), 'full')[0];*/?>"
+                 alt="<?php /*echo get_post_meta( carbon_get_theme_option('dolphincargo_option_form_image'), '_wp_attachment_image_alt', TRUE);*/?>"
               >
-            </div>
+            </div>-->
             <svg class="icon" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_b_452_628)">
                 <rect x="57.5" y="57.5" width="57" height="57" rx="4.5" transform="rotate(-180 57.5 57.5)" stroke="url(#paint0_radial_452_628)"/>
@@ -76,17 +85,17 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <!--<div class="row">
         <div class="content col-12">
           <div class="menu-contacts menu-address">
-            <h3 class="contact-name"><?php echo esc_html( pll__( 'Адреса' ) ); ?></h3>
-            <p class="address"><?php echo carbon_get_theme_option('dolphincargo_option_rial_address'.dolphincargo_lang_prefix());?></p>
+            <h3 class="contact-name"><?php /*echo esc_html( pll__( 'Адреса' ) ); */?></h3>
+            <p class="address"><?php /*echo carbon_get_theme_option('dolphincargo_option_rial_address'.dolphincargo_lang_prefix());*/?></p>
           </div>
-			    <?php get_template_part('template-parts/phone');?>
-			    <?php get_template_part('template-parts/email');?>
-			    <?php get_template_part('template-parts/social-wrapper');?>
+			    <?php /*get_template_part('template-parts/phone');*/?>
+			    <?php /*get_template_part('template-parts/email');*/?>
+			    <?php /*get_template_part('template-parts/social-wrapper');*/?>
         </div>
-      </div>
+      </div>-->
     </div>
     <div class="bg-pic"><img src="<?php echo THEME_PATH;?>/assets/img/footer-bg.png" alt=""></div>
 	</footer>

@@ -89,3 +89,5 @@ require ('carbon-blocks/block-warranty.php');
 require ('carbon-blocks/block-calculate-shipping.php');
 require ('carbon-blocks/block-delivery-steps.php');
 require ('carbon-blocks/block-advantages-delivery.php');
+require ('carbon-blocks/block-csrgo-services.php');
+require ('carbon-blocks/block-call-to-action.php');

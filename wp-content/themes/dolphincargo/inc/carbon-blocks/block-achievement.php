@@ -33,13 +33,13 @@
 			     if( $fields['dolphincargo_achievement_image'] && $fields['dolphincargo_achievement_main'] && $fields['dolphincargo_achievement_description']):
 				     ?>
 				     <!-- Інші сервіси -->
-				     <section class="services-achievement indent-top-small indent-bottom-small animation-tracking">
+				     <section class="services-achievement indent-top-small indent-bottom-small">
 					     <?php get_template_part('template-parts/decor-lines');?>
 					     <div class="light light-left"><img src="<?php echo THEME_PATH;?>/assets/img/airplan-call-to-light.png" alt=""></div>
 					     <div class="light light-right"><img src="<?php echo THEME_PATH;?>/assets/img/airplan-call-to-light.png" alt=""></div>
 					     <div class="container-fluid">
 						     <div class="row content">
-							     <div class="col-lg-6 block-pic">
+							     <div class="col-lg-6 block-pic second-up">
                      <svg width="890" height="938" viewBox="0 0 890 938" fill="none" xmlns="http://www.w3.org/2000/svg">
                        <g style="mix-blend-mode:luminosity" opacity="0.2">
                          <path d="M704.891 303.174C706.373 306.033 707.856 308.892 709.338 311.751C753.51 392.096 763.91 490.664 729.537 583.515C666.657 753.369 477.928 840.133 308.099 777.262C249.39 755.528 200.836 718.841 164.643 673.099C116.764 615.87 89.1298 543.265 87.7001 467.885C73.5936 617.677 160.89 764.349 308.78 819.098C485.11 884.375 681.076 794.284 746.363 617.928C786.829 508.62 767.504 391.732 704.891 303.174Z" fill="#0F0F0F"/>
@@ -65,9 +65,9 @@
 									     >
 								     </div>
 							     </div>
-							     <div class="text-content col-lg-6">
+							     <div class="text-content first-up col-lg-6">
 								     <div class="main-info">
-									     <p class="achievement-value"><?php echo $fields['dolphincargo_achievement_main'];?></p>
+									     <p class="achievement-value" data-text="<?php echo $fields['dolphincargo_achievement_main'];?>"></p>
 									     <p class="achievement-description"><?php echo $fields['dolphincargo_achievement_description'];?></p>
 								     </div>
 								     <?php if( $fields['dolphincargo_achievement_list'] ):?>

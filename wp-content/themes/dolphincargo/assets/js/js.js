@@ -291,6 +291,52 @@ jQuery(function($) {
   });
 
   /**
+   * Service step animation
+   */
+
+  if ( $('.services-delivery-steps').length ){
+
+    let animationTracking = $('.animation-wrapper');
+
+    const topStepsTracking = $('.services-delivery-steps .content');
+
+    animationTracking.each(function () {
+
+      let thisTrack = $(this);
+
+      thisTrack.viewportChecker({
+
+        offset: 300,
+
+        callbackFunction: function (elem, action) {
+
+        }
+      });
+    });
+
+    let adaptiveOffset = 300;
+
+    if ( windWidth < 600 ){
+      adaptiveOffset = 150;
+    }
+
+    topStepsTracking.each(function () {
+
+      let thisTrack = $(this);
+
+      thisTrack.viewportChecker({
+
+        offset: adaptiveOffset,
+
+        callbackFunction: function (elem, action) {
+
+        }
+      });
+    });
+
+  }
+
+  /**
    * Open video popup
    */
 
@@ -346,6 +392,50 @@ jQuery(function($) {
 
 
   });
+
+  /**
+   * Typed service achievement
+   */
+
+  if ( $('.services-achievement').length ){
+
+    const achievementTyped = $('.services-achievement .achievement-value').attr('data-text');
+
+    let animationTracking = $('.services-achievement');
+
+    animationTracking.each(function () {
+
+      let thisTrack = $(this);
+
+      thisTrack.viewportChecker({
+
+        offset: 300,
+
+        callbackFunction: function (elem, action) {
+
+          $('.visible .first-up').addClass('animate');
+
+          setTimeout(function () {
+            $('.visible .second-up').addClass('animate');
+
+            let textType = new Typed(".services-achievement.visible .achievement-value", {
+              strings: [achievementTyped],
+              typeSpeed: 150,
+              showCursor: false,
+              loopCount:1
+            });
+
+          }, 500);
+
+          setTimeout(function () {
+            $('.visible .third-up').addClass('animate');
+          }, 700);
+
+        }
+      });
+    });
+
+  }
 
   /**
    * Other services slider

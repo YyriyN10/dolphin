@@ -1,6 +1,20 @@
 .services-advantages-delivery{
   position: relative;
 
+  .bg-image{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: -20.27vw;
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+
   .container-fluid{
     position: relative;
     z-index: 3;
@@ -8,6 +22,10 @@
 
   .block-title{
     margin-bottom: 40px;
+
+    @media(max-width: 992px){
+      text-align: center;
+    }
 
     @media(max-width: 440px){
       margin-bottom: 32px;
@@ -17,15 +35,35 @@
   .content{
     padding: 0;
     margin: 0;
+    justify-content: center;
+    row-gap: 32px;
   }
 
   .item{
     list-style: none;
     text-align: center;
 
+    @media(max-width: 575px){
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media(max-width: 340px){
+      width: 100%;
+    }
+
     .icon{
       width: 120px;
       margin: 0 auto 24px;
+
+      @media(max-width: 1200px){
+        width: 100px;
+      }
+
+      @media(max-width: 575px){
+        width: 80px;
+      }
 
       .svg-pic{
         width: 100%;
@@ -37,6 +75,14 @@
       text-transform: uppercase;
       font-size: clamp(24px, 1.56vw, 30px);
       margin-bottom: 8px;
+
+      @media(max-width: 767px){
+        font-size: 22px;
+      }
+
+      @media(max-width: 440px){
+        font-size: 20px;
+      }
     }
 
     .description{

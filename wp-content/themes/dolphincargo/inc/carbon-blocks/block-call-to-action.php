@@ -28,35 +28,35 @@
 			     if( $fields['dolphincargo_call_to_action_title'] && $fields['dolphincargo_call_to_action_image'] ):
 				     ?>
 				     <!-- Заклик до дії -->
-				     <section class="block-call-to-actopn indent-top-small indent-bottom-small animation-tracking">
+				     <section class="block-call-to-acton indent-top-small indent-bottom-small animation-tracking">
 					     <?php get_template_part('template-parts/decor-lines');?>
 					     <div class="container-fluid">
 						     <div class="row">
 							     <div class="content col-12">
-								     <div class="pic-wrapper">
-									     <img
-									        class="lazy"
-									        data-src="<?php echo wp_get_attachment_image_src( $fields['dolphincargo_call_to_action_image'], 'full')[0];?>"
-									        <?php
-										        $altText = get_post_meta( $fields['dolphincargo_call_to_action_image'], '_wp_attachment_image_alt', TRUE);
-										        if( !empty( $altText ) ):?>
-											        alt="<?php echo $altText;?>"
-											    <?php else:?>
-											        alt="<?php echo $fields['dolphincargo_call_to_action_title'];?>"
-									        <?php endif;?>
-									     >
-								     </div>
-								     <div class="text-content">
-									     <h2 class="block-title big-title"><?php echo $fields['dolphincargo_call_to_action_title'];?></h2>
-									     <?php if( !empty( $fields['dolphincargo_call_to_action_text'] ) ):?>
-										     <div class="text"><?php echo wpautop( $fields['dolphincargo_call_to_action_text'] );?></div>
-									     <?php endif;?>
-									     <a href="#" rel="nofollow" class="button blue-btn"><?php echo esc_html( pll__( 'Отримати консультацію' ) ); ?></a>
-								     </div>
+                     <div class="inner">
+                       <div class="pic-wrapper">
+                         <img
+                             class="lazy"
+                             data-src="<?php echo wp_get_attachment_image_src( $fields['dolphincargo_call_to_action_image'], 'full')[0];?>"
+			                     <?php
+				                     $altText = get_post_meta( $fields['dolphincargo_call_to_action_image'], '_wp_attachment_image_alt', TRUE);
+				                     if( !empty( $altText ) ):?>
+                               alt="<?php echo $altText;?>"
+				                     <?php else:?>
+                               alt="<?php echo $fields['dolphincargo_call_to_action_title'];?>"
+				                     <?php endif;?>
+                         >
+                       </div>
+                       <div class="text-content">
+                         <h2 class="block-title big-title"><?php echo $fields['dolphincargo_call_to_action_title'];?></h2>
+		                     <?php if( !empty( $fields['dolphincargo_call_to_action_text'] ) ):?>
+                           <div class="text"><?php echo wpautop( $fields['dolphincargo_call_to_action_text'] );?></div>
+		                     <?php endif;?>
+                         <a href="#" rel="nofollow" class="button blue-btn"><?php echo esc_html( pll__( 'Отримати консультацію' ) ); ?></a>
+                       </div>
+                     </div>
 							     </div>
-
 						     </div>
-
 					     </div>
 				     </section>
 			     <?php endif;?>

@@ -25,6 +25,7 @@ function scripts(){
     'js/slick.min.js',
     'js/jquery.viewportchecker.js',
     'js/youtube.js',
+    'js/typed.js',
     'js/js.js'//завжди останній, важлива послідовність
   ])
     .pipe(concat('main.min.js'))//ім'я згенерованого файлу
