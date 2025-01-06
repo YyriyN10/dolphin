@@ -34,18 +34,18 @@
 			     if( $fields['dolphincargo_cargo_services_title'] && $fields['dolphincargo_cargo_services_list'] ):
 				     ?>
 				     <!-- Рівень сервісу -->
-				     <section class="services-service-level indent-top-small indent-bottom-small animation-tracking">
+				     <section class="services-service-level indent-top-small indent-bottom-small">
 					     <?php get_template_part('template-parts/decor-lines');?>
 					     <div class="container-fluid">
-						     <div class="row">
-							     <div class="block-header col-xl-8 col-lg-10 offset-xl-4 offset-lg-2 first-up">
-								     <h2 class="block-title big-title"><?php echo $fields['dolphincargo_cargo_services_title'];?></h2>
+						     <div class="row animation-tracking">
+							     <div class="block-header col-xl-8 col-lg-10 offset-xl-4 offset-lg-2">
+								     <h2 class="block-title big-title first-up"><?php echo $fields['dolphincargo_cargo_services_title'];?></h2>
 								     <?php if( !empty( $fields['dolphincargo_cargo_services_text'] ) ):?>
-									     <div class="text"><?php echo wpautop( $fields['dolphincargo_cargo_services_text'] );?></div>
+									     <div class="text second-up"><?php echo wpautop( $fields['dolphincargo_cargo_services_text'] );?></div>
 								     <?php endif;?>
 							     </div>
 						     </div>
-						     <div class="row content second-up">
+						     <div class="row content">
 							     <?php foreach( $fields['dolphincargo_cargo_services_list'] as $item ):?>
 								     <div class="level-card col-lg-4 col-md-6">
 									     <p class="name"><?php echo $item['name'];?></p>

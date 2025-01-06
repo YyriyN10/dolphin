@@ -268,6 +268,15 @@
           @media(max-width: 575px){
             font-size: 12px;
           }
+
+        }
+
+        a{
+          transition: all 0.3s;
+
+          &:hover{
+            color: $color-light-blue !important;
+          }
         }
 
         .social-wrapper{
@@ -278,24 +287,11 @@
           }
 
           li{
+            a{
+              color: $color-white !important;
 
-            &:first-child{
-              a{
-                color: $color-white !important;
-
-                &:hover{
-                  color: $color-light-blue !important;
-                }
-              }
-            }
-
-            &:last-child{
-              a{
+              &:hover{
                 color: $color-light-blue !important;
-
-                &:hover{
-                  color: $color-white !important;
-                }
               }
             }
           }

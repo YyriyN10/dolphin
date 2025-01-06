@@ -27,8 +27,8 @@
 					     'road' => 'Зображення поверхні по якій йде рух',
 				     ) ),
 			     Field::make_image('dolphincargo_delivery_steps_road_pic_more', 'Додаткове зображення поверхні по якій йде рух')
-             ->set_help_text('Якщо в дизайні требва додати глибину, тобто розсташувати ще оин шар позаду перших двох')
-			          ->set_type('image'),
+              ->set_help_text('Якщо в дизайні треба додати глибину, тобто розташувати ще один шар позаду перших двох')
+			        ->set_type('image'),
 
 		     ) )
 
@@ -60,6 +60,60 @@
                      <?php endif;?>
                    <?php endforeach;?>
                  </div>
+               </div>
+               <div class="animation-wrapper">
+                 <?php if( $fields['dolphincargo_delivery_steps_image_position'] == 'transport' ):?>
+                  <div class="transport-wrapper top-level">
+                 <?php else:?>
+                    <div class="transport-wrapper bottom-level">
+                 <?php endif;?>
+                   <img
+                      class="lazy"
+                      data-src="<?php echo wp_get_attachment_image_src( $fields['dolphincargo_delivery_steps_transport_pic'], 'full')[0];?>"
+                      <?php
+                        $altText = get_post_meta( $fields['dolphincargo_delivery_steps_transport_pic'], '_wp_attachment_image_alt', TRUE);
+                        if( $altText ):?>
+                          alt="<?php echo $altText;?>"
+                      <?php else:?>
+                          alt="<?php the_title();?>"
+                      <?php endif;?>
+                   >
+                 </div>
+	               <?php if( $fields['dolphincargo_delivery_steps_image_position'] == 'transport' ):?>
+                    <div class="road-wrapper bottom-level">
+		             <?php else:?>
+                    <div class="road-wrapper top-level">
+			           <?php endif;?>
+                       <img
+                           class="lazy"
+                           data-src="<?php echo wp_get_attachment_image_src( $fields['dolphincargo_delivery_steps_road_pic'], 'full')[0];?>"
+					               <?php
+						               $altText = get_post_meta( $fields['dolphincargo_delivery_steps_road_pic'], '_wp_attachment_image_alt', TRUE);
+						               if( $altText ):?>
+                             alt="<?php echo $altText;?>"
+						               <?php else:?>
+                             alt="<?php the_title();?>"
+						               <?php endif;?>
+                       >
+                     </div>
+                      <?php if( $fields['dolphincargo_delivery_steps_road_pic_more'] ):?>
+                        <div class="back-layer">
+                          <img
+                              class="lazy"
+                              data-src="<?php echo wp_get_attachment_image_src( $fields['dolphincargo_delivery_steps_road_pic_more'], 'full')[0];?>"
+			                      <?php
+				                      $altText = get_post_meta( $fields['dolphincargo_delivery_steps_road_pic_more'], '_wp_attachment_image_alt', TRUE);
+				                      if( $altText ):?>
+                                alt="<?php echo $altText;?>"
+				                      <?php else:?>
+                                alt="<?php the_title();?>"
+				                      <?php endif;?>
+                          >
+                        </div>
+                      <?php endif;?>
+
+               </div>
+               <div class="container-fluid">
                  <div class="row content content-bottom">
 							     <?php foreach( $fields['dolphincargo_delivery_steps_list'] as $index=>$item ):?>
 								     <?php if( $index > 3 ):?>

@@ -1,0 +1,36 @@
+.contact-main-screen{
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 160px;
+  padding-bottom: 15vw;
+  position: relative;
+  height: 105vh;
+  z-index: 4;
+
+  @media(max-width: 440px){
+    padding-top: 100px;
+  }
+
+  .container-fluid{
+    position: relative;
+    z-index: 3;
+  }
+
+  .main-title{
+    text-transform: uppercase;
+    font-family: $f-med;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    font-size: clamp(64px, 4.68vw, 90px);
+
+    @media(max-width: 767px){
+      font-size: 52px;
+    }
+
+    @media(max-width: 575px){
+      font-size: 12vw;
+    }
+  }
+
+}

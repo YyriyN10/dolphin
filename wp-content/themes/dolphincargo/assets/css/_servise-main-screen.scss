@@ -7,6 +7,7 @@
   position: relative;
   cursor: none;
   height: 120vh;
+  z-index: 4;
 
   @media(max-width: 440px){
     padding-top: 100px;

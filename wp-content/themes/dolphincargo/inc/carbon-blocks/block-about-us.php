@@ -71,7 +71,7 @@
 								     <div class="text-content second-up"><?php echo wpautop( $fields['dolphincargo_block_about_us_text']);?></div>
                      <?php if( $fields['dolphincargo_block_about_us_link'] ):?>
                        <?php foreach( $fields['dolphincargo_block_about_us_link'] as $item ):?>
-                         <a href="<?php the_permalink( $item['id']);?>" class="button second-up"><?php echo esc_html( pll__( 'Більше про нас' ) ); ?></a>
+                         <a href="<?php the_permalink( $item['id']);?>" class="button text-btn-white second-up"><?php echo esc_html( pll__( 'Більше про нас' ) ); ?></a>
                        <?php endforeach;?>
                      <?php endif;?>
 							     </div>

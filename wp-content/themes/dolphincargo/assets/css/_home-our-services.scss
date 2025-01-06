@@ -143,8 +143,7 @@
         }
       }
 
-      a{
-        color: $color-light-blue !important;
+      .button{
         font-size: clamp(18px, 1.25vw, 24px);
 
         @media(max-width: 1200px){

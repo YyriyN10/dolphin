@@ -88,11 +88,8 @@
         }
 
         .button{
-          color: $color-light-blue !important;
+          font-size: clamp(16px, 1.25vw, 24px);
 
-          @media(max-width: 767px){
-            font-size: 16px;
-          }
         }
       }
 

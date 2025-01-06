@@ -59,7 +59,12 @@
 				false
 			);
 
-
+			pll_register_string(
+				'dolphincargo_btn_go_home',
+				'Повернутись на головну',
+				'Кнопки',
+				false
+			);
 
 
 			/**
@@ -116,8 +121,6 @@
 			);
 
 
-
-
 			/**
 			 * Forms
 			 */
@@ -157,6 +160,23 @@
 				false
 			);
 
+			/**
+			 * 404
+			 */
+
+			pll_register_string(
+				'dolphincargo_404_page_first_text',
+				'Сторінки не знайдено',
+				'Сторінка 404',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_404_page_second_text',
+				'Вибачте, сторінка, яку ви шукаєте, не існує або була переміщена.',
+				'Сторінка 404',
+				false
+			);
 
 
 

@@ -16,6 +16,7 @@
       padding: 32px;
       background: rgba(0, 0, 0, 0.4);
       position: relative;
+      backdrop-filter: blur(42px);
 
       @media(max-width: 440px){
         padding: 24px;

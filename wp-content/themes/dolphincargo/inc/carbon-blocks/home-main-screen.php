@@ -140,7 +140,7 @@
                        <div class="info third-up">
                          <h3 class="name"><?php echo get_the_title( $item['id'] );?></h3>
                          <p class="description"><?php echo get_the_excerpt( $item['id'] );?></p>
-                         <a href="<?php echo get_the_permalink( $item['id'] );?>"><?php echo esc_html( pll__( 'Дізнатись більше' ) ); ?></a>
+                         <a href="<?php echo get_the_permalink( $item['id'] );?>" class="button text-btn-blue"><?php echo esc_html( pll__( 'Дізнатись більше' ) ); ?></a>
                        </div>
 
                      </div>

@@ -170,12 +170,12 @@ jQuery(function($) {
    * F.A.Q accordion
    */
 
-  if ( $('#accordion-faq').length ){
+  /*if ( $('#accordion-faq').length ){
 
     $('.card:first-child .card-link').removeClass('collapsed');
     $('.card:first-child .collapse').addClass('show');
 
-  }
+  }*/
 
   /**
    * Main screen cursor
@@ -335,6 +335,25 @@ jQuery(function($) {
     });
 
   }
+
+  /**
+   * Services service level animation
+   */
+  if ( $('.services-service-level').length ){
+
+    const topStepsTracking = $('.services-service-level .content');
+
+    topStepsTracking.viewportChecker({
+
+      offset: 300,
+
+      callbackFunction: function (elem, action) {
+
+      }
+    });
+
+  }
+
 
   /**
    * Open video popup

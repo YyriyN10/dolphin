@@ -153,7 +153,7 @@
 				             echo wpautop( $excerpt );
 			             ?>
                  </div>
-                 <a href="#" rel="nofollow" id="<?php the_ID();?>" class="button open-text-modal"><?php echo esc_html( pll__( 'Читати повний відгук' ) ); ?></a>
+                 <a href="#" rel="nofollow" id="<?php the_ID();?>" class="button text-btn-blue open-text-modal"><?php echo esc_html( pll__( 'Читати повний відгук' ) ); ?></a>
               <?php else:?>
                  <div class="text">
 			             <?php

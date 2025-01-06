@@ -34,7 +34,7 @@
 						     <div class="row">
 							     <div class="content col-12">
                      <div class="inner">
-                       <div class="pic-wrapper">
+                       <div class="pic-wrapper first-up">
                          <img
                              class="lazy"
                              data-src="<?php echo wp_get_attachment_image_src( $fields['dolphincargo_call_to_action_image'], 'full')[0];?>"
@@ -47,7 +47,7 @@
 				                     <?php endif;?>
                          >
                        </div>
-                       <div class="text-content">
+                       <div class="text-content second-up">
                          <h2 class="block-title big-title"><?php echo $fields['dolphincargo_call_to_action_title'];?></h2>
 		                     <?php if( !empty( $fields['dolphincargo_call_to_action_text'] ) ):?>
                            <div class="text"><?php echo wpautop( $fields['dolphincargo_call_to_action_text'] );?></div>

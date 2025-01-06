@@ -54,9 +54,27 @@
 		);
 
 		$categories[] = array(
+			'slug'  => 'dolphincargo-how-category',
+			'title' => 'Dolphin Cargo How work',
+			'icon'  => 'admin-tools'
+		);
+
+		$categories[] = array(
 			'slug'  => 'dolphincargo-reviews-category',
 			'title' => 'Dolphin Cargo Reviews Blocks',
 			'icon'  => 'testimonial'
+		);
+
+		$categories[] = array(
+			'slug'  => 'dolphincargo-contact-category',
+			'title' => 'Dolphin Cargo Contacts',
+			'icon'  => 'index-card'
+		);
+
+		$categories[] = array(
+			'slug'  => 'dolphincargo-thx-category',
+			'title' => 'Dolphin Cargo Thank you!',
+			'icon'  => 'heart'
 		);
 
 		return $categories;
@@ -67,11 +85,11 @@
 	 */
 
 	require ('carbon-blocks/page-option.php');
-	require ('carbon-blocks/post-types.php');
+	/*require ('carbon-blocks/post-types.php');*/
 	require ('carbon-blocks/page-home.php');
 	require ('carbon-blocks/page-about.php');
 	require ('carbon-blocks/page-how-we-work.php');
-	require ('carbon-blocks/page-services.php');
+	/*require ('carbon-blocks/page-services.php');*/
 
 require ('carbon-blocks/home-main-screen.php');
 require ('carbon-blocks/home-what-you-get.php');
@@ -91,3 +109,7 @@ require ('carbon-blocks/block-delivery-steps.php');
 require ('carbon-blocks/block-advantages-delivery.php');
 require ('carbon-blocks/block-csrgo-services.php');
 require ('carbon-blocks/block-call-to-action.php');
+require ('carbon-blocks/blocl-contact-content.php');
+require ('carbon-blocks/block-contact-main-screen.php');
+require ('carbon-blocks/block-thx.php');
+require ('carbon-blocks/block-slogan.php');

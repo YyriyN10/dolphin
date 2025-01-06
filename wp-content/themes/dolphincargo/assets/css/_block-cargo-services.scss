@@ -46,9 +46,17 @@
   .content{
     row-gap: 32px;
     justify-content: center;
+
+    &.visible{
+      .level-card{
+        opacity: 1;
+      }
+    }
   }
 
   .level-card{
+    opacity: 0;
+    transition: all 0.3s;
 
     &:nth-child(even){
       margin-top: 77px;
@@ -106,6 +114,30 @@
           font-size: clamp(16px, 1.25vw, 24px);
         }
       }
+    }
+
+    &:nth-child(1){
+      transition-delay: 0.1s;
+    }
+
+    &:nth-child(2){
+      transition-delay: 0.4s;
+    }
+
+    &:nth-child(3){
+      transition-delay: 0.7s;
+    }
+
+    &:nth-child(4){
+      transition-delay: 1s;
+    }
+
+    &:nth-child(5){
+      transition-delay: 1.3s;
+    }
+
+    &:nth-child(6){
+      transition-delay: 1.6s;
     }
   }
 }

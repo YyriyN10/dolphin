@@ -265,17 +265,18 @@ svg{
 .button{
   display: inline-block;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s;
   border: none;
   font-family: $f-med;
 
   &.blue-btn{
     padding: 20px 105px;
     border-radius: 5px;
-    background-color: $color-light-blue;
+    background-color: $color-light-blue !important;
     text-transform: uppercase;
     color: $color-white;
     font-size: 16px;
+    transition: all 0.3s;
 
     @media(max-width: 992px){
       padding: 20px 95px;
@@ -293,50 +294,29 @@ svg{
       padding: 15px 30px;
       font-size: 14px;
     }
-  }
 
-  &.yellow-btn{
-    padding: 16px 32px;
-    background-color: $color-yellow;
-    border-radius: 5px;
-    font-size: 16px;
-    line-height: 1.4;
-    color: $color-black !important;
-
-  }
-
-  &.arrow-btn{
-    font-size: 18px;
-    color: $color-dark-blue !important;
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.2s;
-
-    svg{
-      width: 24px;
-      height: auto;
-      margin-left: 8px;
-
-      path{
-        stroke: $color-dark-blue;
-        transition: all 0.2s;
-      }
+    &:hover{
+      background-color: $color-dark-blue !important;
     }
-    
+  }
+
+  &.text-btn-white{
+    color: $color-white !important;
+
     &:hover{
       color: $color-light-blue !important;
-      
-      svg{
-        path{
-          stroke: $color-light-blue;
-        }
-      }
     }
   }
 
-  &:hover{
+  &.text-btn-blue{
+    color: $color-light-blue !important;
 
+    &:hover{
+      color: $color-white !important;
+    }
   }
+
+
 }
 
 /*--- Slider controls ---*/
@@ -584,26 +564,14 @@ svg{
       text-transform: uppercase;
       font-size: 16px;
       transition: all 0.3s;
-    }
+      color: $color-white !important;
 
-    &:first-child{
-      a{
-        color: $color-white !important;
-
-        &:hover{
-          color: $color-light-blue !important;
-        }
+      &:hover{
+        color: $color-light-blue !important;
       }
     }
 
     &:last-child{
-      a{
-        color: $color-light-blue !important;
-
-        &:hover{
-          color: $color-white !important;
-        }
-      }
       margin-right: 0;
 
       &:after{
