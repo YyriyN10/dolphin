@@ -86,19 +86,25 @@
 											<?php endif;?>
 										</div>
 								     <div class="office__image col-lg-4 col-sm-6">
-									     <img
-									        class="lazy"
-									        data-src="<?php echo wp_get_attachment_image_src( $$contact['image'], 'full')[0];?>"
-									        <?php
-										        $altText = get_post_meta( $contact['image'], '_wp_attachment_image_alt', TRUE);
-										        if( $altText ):?>
-											        alt="<?php echo $altText;?>"
-											    <?php else:?>
-											        alt="<?php echo get_post_meta( $contact['name'], '_wp_attachment_image_alt', TRUE);?>"
-									        <?php endif;?>
-									     >
+                       <div class="inner">
+                         <img
+                             class="lazy"
+                             data-src="<?php echo wp_get_attachment_image_src( $$contact['image'], 'full')[0];?>"
+		                       <?php
+			                       $altText = get_post_meta( $contact['image'], '_wp_attachment_image_alt', TRUE);
+			                       if( $altText ):?>
+                               alt="<?php echo $altText;?>"
+			                       <?php else:?>
+                               alt="<?php echo get_post_meta( $contact['name'], '_wp_attachment_image_alt', TRUE);?>"
+			                       <?php endif;?>
+                         >
+                       </div>
 								     </div>
-								     <div class="office__map col-lg-4 col-sm-12"><?php echo $contact['map'];?></div>
+								     <div class="office__map col-lg-4 col-sm-12">
+                       <div class="inner">
+                         <iframe src="<?php echo $contact['map'];?>" width="800" height="600" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                       </div>
+                     </div>
 							     </div>
 						     <?php endforeach;?>
 					     </div>

@@ -60,6 +60,13 @@
 			);
 
 			pll_register_string(
+				'dolphincargo_btn_read_more',
+				'Читати далі',
+				'Кнопки',
+				false
+			);
+
+			pll_register_string(
 				'dolphincargo_btn_go_home',
 				'Повернутись на головну',
 				'Кнопки',

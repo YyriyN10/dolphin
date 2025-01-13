@@ -40,6 +40,7 @@ function blog_post_type() {
 	'publicly_queryable' => true,
 	'show_ui'            => true,
 	'show_in_menu'       => true,
+	'show_in_rest'       => true,
 	'query_var'          => true,
 	'rewrite'            => array( 'slug' => 'blog' ),
 	'capability_type'    => 'post',

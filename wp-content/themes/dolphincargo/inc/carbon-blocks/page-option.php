@@ -37,7 +37,9 @@
 					              'post_type' => 'page',
 				              )
 			              ) )
-			              ->set_max( 1 )
+			              ->set_max( 1 ),
+			         Field::make_text('dolphincargo_option_blog_posts_page', 'Вкажіть кількість постів на сторінці блогу')
+			          ->set_attribute('type', 'number')
 
 
 		         ) )

@@ -64,8 +64,6 @@ jQuery(function($) {
       pauseOnHover: false
     });
 
-
-
     $('.second-row').marquee({
       speed: 75,
       gap: 30,
@@ -75,6 +73,18 @@ jQuery(function($) {
       pauseOnHover: false
     });
 
+  }
+
+  if( $('.marquee-wrapper').length ){
+
+    $('.run-row').marquee({
+      speed: 75,
+      gap: 30,
+      delayBeforeStart: 0,
+      direction: 'left',
+      duplicated: true,
+      pauseOnHover: false
+    });
   }
 
   /**
@@ -511,6 +521,43 @@ jQuery(function($) {
       $('#other-services-slider').slick('slickNext');
     });
   }
+
+  /**
+   * Blog pagination
+   */
+
+  $(document).on('click', '#pagination a', function (e) {
+
+    e.preventDefault();
+
+    console.log(100);
+
+    let thisNumber = $(this);
+
+    let pageNumber = Number( thisNumber.text() );
+
+    $('ul.page-numbers .page-numbers.current').removeClass('current');
+
+    thisNumber.addClass('current');
+
+    let data = {
+
+      action: 'blog_pagination',
+      currentPage: pageNumber,
+
+    }
+
+    $.post( dolphincargo_ajax.url, data, function(response) {
+
+      if( $.trim(response) !== ''){
+
+        $('#blog-list').html(response.posts);
+        $('#pagination').html(response.pagination);
+
+      }
+    });
+
+  })
 
 
   //SCROLL MENU

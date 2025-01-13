@@ -77,6 +77,12 @@
 			'icon'  => 'heart'
 		);
 
+		$categories[] = array(
+			'slug'  => 'dolphincargo-blog-post-category',
+			'title' => 'Dolphin Cargo Blog Post',
+			'icon'  => 'edit-page'
+		);
+
 		return $categories;
 	} );
 
@@ -113,3 +119,7 @@ require ('carbon-blocks/blocl-contact-content.php');
 require ('carbon-blocks/block-contact-main-screen.php');
 require ('carbon-blocks/block-thx.php');
 require ('carbon-blocks/block-slogan.php');
+require ('carbon-blocks/block-cooperation-stage.php');
+require ('carbon-blocks/block-representation.php');
+require ('carbon-blocks/block-blog-post-text-part.php');
+require ('carbon-blocks/block-blog_post_media_part.php');
