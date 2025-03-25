@@ -11,6 +11,8 @@
 /wp-content/plugins/index.php
 /wp-content/themes/index.php
 /wp-content/themes/dolphincargo/assets/node_modules
+/wp-content/themes/dolphincargo/assets/img/load
+/wp-content/themes/dolphincargo/vendor
 /wp-includes/
 /index.php
 /license.txt
