@@ -24,6 +24,7 @@
     .slide{
       margin: 0 16px;
       background: $bg-blue-gradient;
+      backdrop-filter: blur(42px);
       padding: 32px;
       height: auto;
 
@@ -46,10 +47,17 @@
           overflow: hidden;
           border-radius: 50%;
           margin-right: 16px;
-
-          img{
-            width: 100%;
-            height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(rgba(255,169,143,1) 0%, rgba(255,132,151,1) 100%);
+          
+          p{
+            color: $color-white;
+            text-transform: uppercase;
+            font-family: $f-bold;
+            font-size: 44px;
+            margin-bottom: 0;
           }
         }
 
@@ -80,7 +88,16 @@
       .text-review-wrapper{
         .text{
           margin-bottom: 16px;
-          font-size: clamp(16px, 1.25vw, 24px);
+          font-size: 22px;
+          /*font-size: clamp(16px, 1.25vw, 24px);*/
+
+          @media(max-width: 2000px){
+            font-size: 18px;
+          }
+
+          @media(max-width: 1440px){
+            font-size: 16px;
+          }
 
           p:last-child{
             margin-bottom: 0;
@@ -88,7 +105,18 @@
         }
 
         .button{
-          font-size: clamp(16px, 1.25vw, 24px);
+          /*font-size: clamp(16px, 1.25vw, 24px);*/
+
+          font-size: 22px;
+          /*font-size: clamp(16px, 1.25vw, 24px);*/
+
+          @media(max-width: 2000px){
+            font-size: 18px;
+          }
+
+          @media(max-width: 1440px){
+            font-size: 16px;
+          }
 
         }
       }

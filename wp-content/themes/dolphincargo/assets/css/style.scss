@@ -1,12 +1,15 @@
 /*--- IMPORT ---*/
 
-@import "fonts";
+/*@import "fonts";*/
 @import "variables";
 @import "basic";
 @import "popup";
 @import "slick";
 @import "slick-teame";
 @import "bootstrap.css";
+@import "intlTelInput.css";
+
+
 
 
 /*--- Header ---*/
@@ -128,4 +131,64 @@
 /*--- Blog single ---*/
 
 @import "blog-single";
+
+/*--- Problem block ---*/
+
+@import "block-problem";
+
+/*--- Problem solving block ---*/
+
+@import "block-problem-solving";
+
+/*--- How we work block ---*/
+
+@import "block-how-we-work";
+
+/*--- About us main screen ---*/
+
+@import "block-about-us-main-screen";
+
+/*--- About company block ---*/
+
+@import "block-about-company";
+
+/*--- Our goals block ---*/
+
+@import "block-our-goals";
+
+/*--- Price main screen ---*/
+
+@import "price-main-screen";
+
+/*--- Price delivery list ---*/
+
+@import "price-delivery-list";
+
+/*--- Price why us ---*/
+
+@import "block-price-why-us";
+
+/*--- Taobao main screen ---*/
+
+@import "block-taobao-main-screen";
+
+/*--- Taobao more choice ---*/
+
+@import "block-taobao-more-choice";
+
+/*--- Taobao difficultiest solutions ---*/
+
+@import "block-taobao-difficulties-solutions";
+
+/*--- Taobao how order ---*/
+
+@import "block-taobao-how-orde";
+
+/*--- Taobao call to action ---*/
+
+@import "block-taobao-call-to-acton";
+
+/*--- Taobao price ---*/
+
+@import "block-taobao-price";
 

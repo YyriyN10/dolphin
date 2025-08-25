@@ -19,13 +19,14 @@ const sass = gulpSass(dartSass);*/
 }*/
 function scripts(){
   return src([//файли які потрібно об'єднати та зжати
-    'js/bootstrap.js',
+    /*'js/bootstrap.js',*/
     'js/jquery.lazy.js',
-    'js/jquery.marquee.js',
-    'js/slick.min.js',
+    /*'js/jquery.marquee.js',*/
+    /*'js/slick.min.js',*/
     'js/jquery.viewportchecker.js',
     'js/youtube.js',
     'js/typed.js',
+    /*'js/intlTelInput.min.js',*/
     'js/js.js'//завжди останній, важлива послідовність
   ])
     .pipe(concat('main.min.js'))//ім'я згенерованого файлу

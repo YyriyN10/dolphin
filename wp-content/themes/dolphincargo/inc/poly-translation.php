@@ -73,6 +73,43 @@
 				false
 			);
 
+			pll_register_string(
+				'dolphincargo_btn_get_calc',
+				'Замовити прорахунок',
+				'Кнопки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_btn_menu',
+				'Меню',
+				'Кнопки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_btn_go_to_price',
+				'Проглянути ціни',
+				'Кнопки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_btn_calc',
+				'Розрахувати обʼєм',
+				'Кнопки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_btn_taobao_calc',
+				'Розрахувати вартість',
+				'Кнопки',
+				false
+			);
+
+
+
 
 			/**
 			 * Titles
@@ -127,6 +164,66 @@
 				false
 			);
 
+			pll_register_string(
+				'dolphincargo_calc_title',
+				'Розрахунок обʼєму вантажу',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_calc_result',
+				'Обʼєм вантажу',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_calc_data_type_title',
+				'Одиниці виміру',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_calc_data_type_1',
+				'Метри',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_calc_data_type_2',
+				'Cантиметри',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_calc_data_type_3',
+				'Міліметри',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_calc_sizes_title',
+				'Габарити',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_calc_box_count',
+				'Кількість коробок',
+				'Заголовки',
+				false
+			);
+
+
+
+
+
 
 			/**
 			 * Forms
@@ -163,6 +260,27 @@
 			pll_register_string(
 				'dolphincargo_form_main_text',
 				'Залиште заявку і наш менеджер зв’яжеться з вами! ',
+				'Форми',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_form_calc_placeholder_white',
+				'Ширина: м',
+				'Форми',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_form_calc_placeholder_height',
+				'Висота: м',
+				'Форми',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_form_calc_placeholder_length',
+				'Довжина: м',
 				'Форми',
 				false
 			);

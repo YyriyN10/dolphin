@@ -1,0 +1,95 @@
+.taobao-more-choice{
+  position: relative;
+  background-color: $color-black;
+  z-index: 2;
+  color: $color-white;
+
+  &:before{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 904px;
+    height: 670px;
+    border-radius: 1000px;
+    background-color: $color-dark-blue;
+    filter: blur(130px);
+    top: -35px;
+    left: 0;
+    transform: translateX(-30%);
+
+    @media(max-width: 575px){
+      top: 170px;
+    }
+  }
+
+  .container-fluid{
+    position: relative;
+    z-index: 2;
+  }
+
+  .block-title{
+    margin-bottom: 40px;
+
+    @media(max-width: 440px){
+      margin-bottom: 32px;
+    }
+  }
+
+  .pic-wrapper{
+    @media(max-width: 767px){
+      order: 2;
+    }
+
+    .inner{
+      border-radius: 4px;
+      overflow: hidden;
+
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .text-content{
+    @media(max-width: 767px){
+      order: 1;
+      margin-bottom: 32px;
+    }
+
+    .text{
+      margin-bottom: 16px;
+
+      p{
+        margin-bottom: 8px;
+
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .list-wrapper{
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 4px;
+
+      .item{
+        list-style: none;
+        display: flex;
+        align-items: center;
+
+        svg{
+          width: 24px;
+          margin-right: 8px;
+        }
+
+        span{
+          width: calc(100% - 32px);
+
+        }
+      }
+    }
+  }
+}

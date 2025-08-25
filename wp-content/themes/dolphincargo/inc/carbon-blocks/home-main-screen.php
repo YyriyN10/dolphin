@@ -15,8 +15,18 @@
 			     Field::make_text('dolphincargo_home_page_main_screen_title', 'Головний заголовок'),
 			     Field::make_text('dolphincargo_home_page_main-screen_who_are_we', 'Чим займаємось'),
 			     Field::make_image('dolphincargo_home_page_main-screen_image', 'Зображення')
+				     ->set_help_text('Зображення для моніторів з розширенням менше за 2000рх')
 			          ->set_type('image')
 			          ->set_value_type('url'),
+			     Field::make_image('dolphincargo_home_page_main-screen_image_larg', 'Зображення для великих екранів')
+			          ->set_help_text('Зображення для моніторів з розширенням більше за 2000рх')
+			          ->set_type('image')
+			          ->set_value_type('url'),
+			     Field::make_image('dolphincargo_main_screen_image_mob', 'Зображення мобільних пристроїв')
+			          ->set_help_text('При необхідності')
+			          ->set_type('image')
+			          ->set_value_type('url'),
+
 			     Field::make_complex('dolphincargo_home_page_our_numbers_list', 'Перелік здобутків у числах')
 			          ->add_fields(array(
 				          Field::make_text('number', 'Число'),
@@ -33,8 +43,47 @@
 			     ?>
 
            <!-- головний екран -->
-           <section class="main-screen home-main-screen" style="background-image: url(<?php echo $fields['dolphincargo_home_page_main-screen_image'];?>)">
-             <?php get_template_part('template-parts/decor-lines');?>
+           <section class="main-screen home-main-screen" >
+
+               <style>
+
+                 .home-main-screen{
+                   background-image: url(<?php echo $fields['dolphincargo_home_page_main-screen_image'];?>);
+                 }
+
+                <?php if( !empty($fields['dolphincargo_home_page_main-screen_image_larg']) ):?>
+
+                 @media (min-width: 2001px) {
+                   .home-main-screen{
+                     background-image: url(<?php echo $fields['dolphincargo_home_page_main-screen_image_larg'];?>);
+                   }
+                 }
+                 <?php endif;?>
+
+
+                 <?php if( !empty($fields['dolphincargo_home_page_main-screen_image']) ):?>
+                   @media (max-width: 2000px) {
+                     .home-main-screen{
+                       background-image: url(<?php echo $fields['dolphincargo_home_page_main-screen_image'];?>);
+                     }
+                   }
+                 <?php endif;?>
+                 <?php if( !empty($fields['dolphincargo_main_screen_image_mob']) ):?>
+                   @media (max-width: 575px) {
+                     .home-main-screen{
+                       background-image: url(<?php echo $fields['dolphincargo_main_screen_image_mob'];?>);
+                     }
+                   }
+                 <?php endif;?>
+
+               </style>
+
+             <div class="cursor-container" data-toggle="modal" data-target="#formModal">
+               <div class="circle-button">
+		             <?php echo esc_html( pll__( 'Отримати консультацію' ) ); ?>
+               </div>
+             </div>
+
              <div class="container-fluid">
                <div class="row">
                  <div class="content col-12">
@@ -42,9 +91,9 @@
 							     <?php if( $fields['dolphincargo_home_page_main-screen_who_are_we'] ):?>
                      <p class="who-are"><?php echo $fields['dolphincargo_home_page_main-screen_who_are_we'];?></p>
 							     <?php endif;?>
-                   <a href="#" rel="nofollow" class="button blue-btn" data-toggle="modal" data-target="#formModal">
+                   <div class="button blue-btn" data-toggle="modal" data-target="#formModal">
 		                 <?php echo esc_html( pll__( 'Отримати консультацію' ) ); ?>
-                   </a>
+                   </div>
                  </div>
                </div>
                <?php if( $fields['dolphincargo_home_page_our_numbers_list'] ):?>
@@ -66,9 +115,6 @@
                <?php endif;?>
 
              </div>
-             <a href="#" rel="nofollow" class="circle-button" data-toggle="modal" data-target="#formModal">
-		           <?php echo esc_html( pll__( 'Отримати консультацію' ) ); ?>
-             </a>
            </section>
 
 			     <?php
@@ -110,7 +156,7 @@
                  </div>
                <?php endif;?>
                <div class="light">
-                 <img src="<?php echo THEME_PATH;?>/assets/img/home-services-light.png" alt="">
+                 <!--<img src="<?php /*echo THEME_PATH;*/?>/assets/img/home-services-light.png" alt="">-->
                </div>
                <div class="container-fluid">
                  <div class="row animation-tracking">
@@ -119,22 +165,28 @@
                  <div class="row content">
                    <?php foreach( $fields['dolphincargo_our_services_list'] as $item ):?>
                      <div class="service-item col-12 animation-tracking">
-                       <h3 class="name first-up"><?php echo get_the_title( $item['id'] );?></h3>
+                       <h3 class="name first-up">
+                         <a href="<?php echo get_the_permalink( $item['id'] );?>">
+	                         <?php echo get_the_title( $item['id'] );?>
+                         </a>
+                       </h3>
                        <div class="pic-wrapper second-up">
-                         <img
-                             class="lazy"
-                             data-src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $item['id'] ), 'full')[0];?>"
-		                       <?php
+                         <a href="<?php echo get_the_permalink( $item['id'] );?>">
+                           <img
+                               class="lazy"
+                               data-src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $item['id'] ), 'full')[0];?>"
+		                         <?php
 
-			                       $altText = get_post_meta( get_post_thumbnail_id( $item['id'] ), '_wp_attachment_image_alt', TRUE);
+			                         $altText = get_post_meta( get_post_thumbnail_id( $item['id'] ), '_wp_attachment_image_alt', TRUE);
 
-			                       if( !empty( $altText ) ):?>
-                               alt="<?php echo get_post_meta( get_post_thumbnail_id( $item['id'] ), '_wp_attachment_image_alt', TRUE);?>"
+			                         if( !empty( $altText ) ):?>
+                                 alt="<?php echo get_post_meta( get_post_thumbnail_id( $item['id'] ), '_wp_attachment_image_alt', TRUE);?>"
 
-			                       <?php else:?>
-                               alt="<?php echo get_the_title( $item['id']);?>"
-			                       <?php endif;?>
-                         >
+			                         <?php else:?>
+                                 alt="<?php echo get_the_title( $item['id']);?>"
+			                         <?php endif;?>
+                           >
+                         </a>
                        </div>
 
                        <div class="info third-up">
@@ -150,15 +202,27 @@
                </div>
                <?php if( $fields['dolphincargo_our_services_run_text'] ):?>
                  <div class="run-rows-wrapper">
-                   <div class="run-row first-row">
-                     <?php echo $fields['dolphincargo_our_services_run_text'];?>
-                     <?php echo $fields['dolphincargo_our_services_run_text'];?>
-                     <?php echo $fields['dolphincargo_our_services_run_text'];?>
+                   <div class="first-row marque-row">
+                     <div class="marque-list marquee-move-left">
+		                   <?php
+			                   $marqueImage = carbon_get_theme_option('dolphincargo_option_marque_image');
+
+			                   for ($ml = 0; $ml < 11; $ml ++):?>
+                           <p class="marque-item"><?php echo $fields['dolphincargo_our_services_run_text'];?></p>
+                           <img src="<?php echo $marqueImage;?>" alt="<?php echo get_bloginfo('name');?>">
+			                   <?php endfor;?>
+                     </div>
                    </div>
-                   <div class="run-row second-row">
-                     <?php echo $fields['dolphincargo_our_services_run_text'];?>
-                     <?php echo $fields['dolphincargo_our_services_run_text'];?>
-                     <?php echo $fields['dolphincargo_our_services_run_text'];?>
+                   <div class="second-row marque-row">
+                     <div class="marque-list marquee-move-right">
+		                   <?php
+			                   $marqueImage = carbon_get_theme_option('dolphincargo_option_marque_image');
+
+			                   for ($mr = 0; $mr < 11; $mr ++):?>
+                           <p class="marque-item"><?php echo $fields['dolphincargo_our_services_run_text'];?></p>
+                           <img src="<?php echo $marqueImage;?>" alt="<?php echo get_bloginfo('name');?>">
+			                   <?php endfor;?>
+                     </div>
                    </div>
                  </div>
                <?php endif;?>

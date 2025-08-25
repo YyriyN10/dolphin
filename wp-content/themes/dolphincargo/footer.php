@@ -16,7 +16,6 @@
 ?>
   </main>
 	<footer class="site-footer">
-		<?php get_template_part('template-parts/decor-lines');?>
     <div class="light"><img src="<?php echo THEME_PATH;?>/assets/img/footer-light.png" alt=""></div>
     <div class="container-fluid">
       <div class="row">
@@ -26,14 +25,47 @@
               <h2 class="form-title"><?php echo esc_html( pll__( 'Є питання?' ) ); ?></h2>
               <p class="form-call"><?php echo esc_html( pll__( 'Залиште заявку і наш менеджер зв’яжеться з вами! ' ) ); ?></p>
               <input type="hidden" name="action" value="contact_form">
+              <?php
+                $currentPageLang = ICL_LANGUAGE_CODE;
+
+                $thxPageUrl = '';
+
+                if ( $currentPageLang == 'uk' && !empty(carbon_get_theme_option('dolphincargo_option_form_thx_page_ua')) ){
+
+	                $thxPageUrl = carbon_get_theme_option('dolphincargo_option_form_thx_page_ua')[0]['id'];
+
+                }
+
+	              if ( $currentPageLang == 'ru' && !empty(carbon_get_theme_option('dolphincargo_option_form_thx_page_ru'))){
+		              $thxPageUrl = carbon_get_theme_option('dolphincargo_option_form_thx_page_ru')[0]['id'];
+	              }
+
+	              if ( $currentPageLang == 'en' && !empty(carbon_get_theme_option('dolphincargo_option_form_thx_page_en'))){
+		              $thxPageUrl = carbon_get_theme_option('dolphincargo_option_form_thx_page_en')[0]['id'];
+	              }
+
+	              if ( $thxPageUrl == '' ){
+		              $thxPageUrl = get_site_url('/').'/thx';
+                }else{
+		              $thxPageUrl = get_permalink($thxPageUrl);
+                }
+
+	              $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+              ?>
+
+              <input type="hidden" name="thx-target" value="<?php echo base64_encode($thxPageUrl);;?>">
+              <!--<input type="hidden" name="page-url" value="<?php /*the_permalink();*/?>">-->
+              <input type="hidden" name="page-url" value="<?php echo $actual_link;?>">
+
+              <input type="hidden" name="page-name" value="<?php the_title();?>">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="<?php echo esc_html( pll__( 'Ім’я' ) ); ?>">
+                <input type="text" name="name" class="form-control" placeholder="<?php echo esc_html( pll__( 'Ім’я' ) ); ?>" required>
               </div>
               <div class="form-group">
-                <input type="tel" class="form-control" placeholder="+380">
+                <input type="tel" name="phone" class="form-control" placeholder="+380" required>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email">
+                <input type="email" name="email" class="form-control" placeholder="Email" required>
               </div>
 
               <button type="submit" class="button blue-btn"><?php echo esc_html( pll__( 'Надіслати заявку' ) ); ?></button>
@@ -47,13 +79,7 @@
 	            <?php get_template_part('template-parts/email');?>
 	            <?php get_template_part('template-parts/social-wrapper');?>
             </div>
-            <!--<div class="form-pic">
-              <img
-                 class="lazy"
-                 data-src="<?php /*echo wp_get_attachment_image_src( carbon_get_theme_option('dolphincargo_option_form_image'), 'full')[0];*/?>"
-                 alt="<?php /*echo get_post_meta( carbon_get_theme_option('dolphincargo_option_form_image'), '_wp_attachment_image_alt', TRUE);*/?>"
-              >
-            </div>-->
+
             <svg class="icon" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_b_452_628)">
                 <rect x="57.5" y="57.5" width="57" height="57" rx="4.5" transform="rotate(-180 57.5 57.5)" stroke="url(#paint0_radial_452_628)"/>

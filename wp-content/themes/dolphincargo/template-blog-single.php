@@ -33,8 +33,8 @@
           <path d="M213.797 495.391C251.78 392.787 352.357 331.376 456.237 338.413C456.793 338.157 457.147 337.826 457.501 337.495C466.506 332.512 483.41 318.671 494.123 309.7C366.984 263.788 226.261 328.819 179.176 456.007C141.945 556.579 174.548 665.677 252.123 730.665C200.768 666.604 183.259 577.88 213.797 495.391Z" fill="#464646"/>
         </g>
       </svg>
-      <div class="light light-top"><img src="<?php echo THEME_PATH;?>/assets/img/airplan-call-to-light.png" alt=""></div>
-      <div class="light light-left"><img src="<?php echo THEME_PATH;?>/assets/img/airplan-call-to-light.png" alt=""></div>
+      <div class="light light-top"><img src="<?php echo THEME_PATH;?>/assets/img/light-post-top.png" alt=""></div>
+      <div class="light light-left"><img src="<?php echo THEME_PATH;?>/assets/img/light-post.png" alt=""></div>
       <div class="container-fluid">
         <div class="row">
           <h1 class="block-title big-title col-12 text-center"><?php the_title();?></h1>

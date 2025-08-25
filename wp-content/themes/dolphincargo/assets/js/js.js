@@ -20,6 +20,33 @@ jQuery(function($) {
   $('.lazy').lazy();
 
   /**
+   * Header desktop phone
+   */
+
+  $('#desktop-phone-list').on('click', function (e) {
+
+    e.preventDefault();
+
+    $(this).toggleClass('active');
+
+    $(this).find('.phone-list').slideToggle(300);
+
+  })
+
+  //SCROLL MENU
+
+  $(document).on('click', '.scroll-to', function (e) {
+      e.preventDefault();
+
+      let href = $(this).attr('href');
+
+      $('html, body').animate({
+          scrollTop: $(href).offset().top
+      }, 1000);
+
+  });
+
+  /**
    * Current lang
    */
 
@@ -37,64 +64,13 @@ jQuery(function($) {
   })
 
   /**
-   * Arrow btn hover
-   */
-
-    $('.arrow-btn').hover(
-      function () {
-        $(this).find('path').attr('d', 'M22 12L16 18M22 12L16 6M22 12L2.5 12');
-      },
-      function () {
-        $(this).find('path').attr('d', 'M19 12L13 18M19 12L13 6M19 12L5 12');
-      }
-    )
-
-  /**
-   * Marque
-   */
-
-  if( $('.run-rows-wrapper').length ){
-
-    $('.first-row').marquee({
-      speed: 75,
-      gap: 30,
-      delayBeforeStart: 0,
-      direction: 'left',
-      duplicated: true,
-      pauseOnHover: false
-    });
-
-    $('.second-row').marquee({
-      speed: 75,
-      gap: 30,
-      delayBeforeStart: 0,
-      direction: 'left',
-      duplicated: true,
-      pauseOnHover: false
-    });
-
-  }
-
-  if( $('.marquee-wrapper').length ){
-
-    $('.run-row').marquee({
-      speed: 75,
-      gap: 30,
-      delayBeforeStart: 0,
-      direction: 'left',
-      duplicated: true,
-      pauseOnHover: false
-    });
-  }
-
-  /**
    * About us slider
    */
 
   if ( $('#about-us-slider').length ){
 
     $('#about-us-slider').slick({
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -193,29 +169,70 @@ jQuery(function($) {
 
   if ( $('.home-main-screen').length ){
 
-    const customCursorContainer = $('.home-main-screen');
+    const customCursorContainer = $('.home-main-screen .cursor-container');
     const customCursor = $('.circle-button');
 
     customCursorContainer.on('mousemove', function (event) {
       customCursor.css({
         left: event.pageX + 'px',
-        top: event.pageY + 'px'
+        top: event.pageY + 'px',
+        opacity: 1
+      });
+    });
+
+    customCursorContainer.on('mouseleave ', function (event) {
+      customCursor.css({
+        opacity: 0
       });
     });
   }
 
-  if ( $('.service-main-screen').length ){
+  if ( $('.service-main-screen .cursor-container').length ){
 
-    const customCursorContainer = $('.service-main-screen');
+    const customCursorContainer = $('.service-main-screen .cursor-container');
     const customCursor = $('.circle-button');
 
     customCursorContainer.on('mousemove', function (event) {
+      let rect = this.getBoundingClientRect();
       customCursor.css({
-        left: event.pageX + 'px',
-        top: event.pageY + 'px'
+        left: event.clientX - rect.left + 'px',
+        top: event.clientY - rect.top + 'px',
+        opacity: 1
+      });
+    });
+
+    customCursorContainer.on('mouseleave ', function (event) {
+
+      customCursor.css({
+        opacity: 0
+      });
+    });
+
+  }
+
+  if ( $('.about-us-main-screen .cursor-container').length ){
+
+    const customCursorContainer = $('.about-us-main-screen .cursor-container');
+    const customCursor = $('.circle-button');
+
+    customCursorContainer.on('mousemove', function (event) {
+      let rect = this.getBoundingClientRect();
+      customCursor.css({
+        left: event.clientX - rect.left + 'px',
+        top: event.clientY - rect.top + 'px',
+        opacity: 1
+      });
+    });
+
+    customCursorContainer.on('mouseleave ', function (event) {
+
+      customCursor.css({
+        opacity: 0
       });
     });
   }
+
+
 
   /**
    * Fixed Menu
@@ -233,12 +250,24 @@ jQuery(function($) {
   });
 
   let positionScrollHeader = $(window).scrollTop();
+  const calculatorBtn = $('#calculator-btn');
+  const calculatorType1Btn = $('#calculator-type-1');
 
   $(window).scroll(function() {
 
     let scroll = $(window).scrollTop();
 
+    if(scroll > windHeight){
+      calculatorBtn.addClass('visible');
+      calculatorType1Btn.addClass('visible');
+    }else{
+      calculatorBtn.removeClass('visible');
+      calculatorType1Btn.removeClass('visible');
+    }
+
     if( scroll > positionScrollHeader ) {
+
+      langWrapper.find('.lang-list').slideUp(300);
 
       if ( $('.header-navigation.open-menu').length ){
         $('.site-header').addClass('fixed-header-visible');
@@ -299,6 +328,70 @@ jQuery(function($) {
       }
     });
   });
+
+  /**
+   * Phone mask
+   */
+
+  $('input[type=tel]').intlTelInput({
+    preferredCountries: ["ua"],
+  });
+
+  $('input[type=tel]').on('countrychange', function(e, countryData) {
+    jQuery(this).val('+'+countryData.dialCode);
+  });
+
+  $('input[type=tel]').val('+' + $('input[type=tel]').intlTelInput("getSelectedCountryData").dialCode);
+
+  $.fn.forceNumbericOnly = function() {
+    return this.each(function() {
+      jQuery(this).keydown(function(e) {
+        var key = e.charCode || e.keyCode || 0;
+        return (key == 8 || key == 9 || key == 46 || (key >= 37 && key <= 40) || (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key == 107 || key == 109 || key == 173 || key == 61);
+      });
+    });
+  };
+
+  $('input[type=tel]').forceNumbericOnly();
+
+  $('input[type=tel]').attr('maxlength', 13);
+
+
+
+  /**
+   * Container animation
+   */
+
+  /*if ( $('.home-what-you-get').length ){
+
+    const blockPosition = Math.round($('.home-what-you-get').offset().top);
+
+    let scrollPosition = 0;
+
+    function displayPageYOffset() {
+
+      scrollPosition = window.pageYOffset;
+    }
+
+// Оновлюємо зміщення при скролінгу
+    window.addEventListener('scroll', displayPageYOffset);
+
+// Ініціалізація значення при завантаженні сторінки
+    displayPageYOffset();
+
+    $('.home-what-you-get').viewportChecker({
+
+      offset: 300,
+
+      callbackFunction: function (elem, action) {
+
+        $('.visible .img-container').css({'transform' : 'translateY('+ (blockPosition - scrollPosition) +'px)'});
+
+      }
+    });
+  }*/
+
+
 
   /**
    * Service step animation
@@ -530,8 +623,6 @@ jQuery(function($) {
 
     e.preventDefault();
 
-    console.log(100);
-
     let thisNumber = $(this);
 
     let pageNumber = Number( thisNumber.text() );
@@ -558,345 +649,319 @@ jQuery(function($) {
     });
 
   })
+  /**
+   * UTM
+   */
+  //
 
+  let utmList = sessionStorage.getItem("utmList");
 
-  //SCROLL MENU
+  if ( utmList ){
+    storageUtm(utmList);
+  }else{
+    let currentUtmList = window.location.search.substring(1);
 
-  /*jQuery('#primary-menu li a').addClass('scroll-to');
+    if ( currentUtmList != '' ){
+      sessionStorage.setItem("utmList", currentUtmList);
 
-  jQuery(document).on('click', '.scroll-to', function (e) {
-    e.preventDefault();
+      storageUtm(currentUtmList);
+    }
+  }
 
-    let href = jQuery(this).attr('href');
+  function storageUtm(utmList){
 
-    jQuery('html, body').animate({
-      scrollTop: jQuery(href).offset().top
-    }, 1000);
+    let utmArray = utmList.split('&');
 
-  });*/
-
-  //Смена категории курсов
-
-  /*jQuery('.page-template-template-home .curses-cat-wrapper .cat').on('click', function (e) {
-    e.preventDefault();
-
-    jQuery('.page-template-template-home .curses-cat-wrapper .cat').removeClass('active-cat');
-
-    jQuery(this).addClass('active-cat');
-
-    var subCatId = jQuery(this).data('subcatid');
-
-    var allCat = jQuery(this).data('allcat');
-
-    var currentLang = jQuery(this).data('lang');
-
-    var pageCatNavWrapper = jQuery('#mor-curses-dtn-wrap');
-
-    var allCatPosts = Number(jQuery(this).attr('data-allposts'));
-
-    pageCatNavWrapper.attr('data-allposts', allCatPosts);
-
-    var targetAllPosts = Number(pageCatNavWrapper.attr('data-allposts'));
-
-    if ( targetAllPosts <= 6 ){
-      pageCatNavWrapper.addClass('d-none');
-    }else{
-      pageCatNavWrapper.removeClass('d-none');
+    function checkUtm(utmName) {
+      for (let i = 0; i < utmArray.length; i++) {
+        let pair = utmArray[i].split('=');
+        if (decodeURIComponent(pair[0]) == utmName) {
+          return decodeURIComponent(pair[1]);
+        }
+      }
     }
 
-    let data = {
+    let utm_source = checkUtm('utm_source') ? checkUtm('utm_source') : "";
+    let utm_medium = checkUtm('utm_medium') ? checkUtm('utm_medium') : "";
+    let utm_campaign = checkUtm('utm_campaign') ? checkUtm('utm_campaign') : "";
+    let utm_term = checkUtm('utm_term') ? checkUtm('utm_term') : "";
+    let utm_content = checkUtm('utm_content') ? checkUtm('utm_content') : "";
 
-      action: 'change_curses_category',
-      allCat: allCat,
-      currentLang: currentLang,
-      subCatId: subCatId
-    };
 
-    jQuery.post( myajax.url, data, function(response) {
+    let forms = $('form');
+    $.each(forms, function (index, form) {
+      let thisForm = $(form);
+      thisForm.append('<input type="hidden" name="utm_source" value="' + utm_source + '">');
+      thisForm.append('<input type="hidden" name="utm_medium" value="' + utm_medium + '">');
+      thisForm.append('<input type="hidden" name="utm_campaign" value="' + utm_campaign + '">');
+      thisForm.append('<input type="hidden" name="utm_term" value="' + utm_term + '">');
+      thisForm.append('<input type="hidden" name="utm_content" value="' + utm_content + '">');
 
-      if(jQuery.trim(response) !== ''){
+      let thisPageUrl = thisForm.find('input[name = page-url]').val();
+      thisForm.find('input[name = page-url]').val(thisPageUrl + '?' + utmList);
+    });
+  }
 
-        jQuery('#curses-list').html(response);
-      }
+
+  $('form').on('submit', function (e) {
+    e.preventDefault();
+
+    const thisForm = $(this);
+
+    thisForm.find('.button').addClass('form-accepted');
+
+    sessionStorage.removeItem("utmList");
+
+    let name = thisForm.find('input[name = name]').val();
+    let phone = thisForm.find('input[name = phone]').val();
+    let email = thisForm.find('input[name = email]').val();
+    let action = thisForm.find('input[name = action]').val();
+    let thxPage = atob(thisForm.find('input[name = thx-target]').val());
+    let pageName = thisForm.find('input[name = page-name]').val();
+    let pageUrl = thisForm.find('input[name = page-url]').val();
+
+    let utmSource = thisForm.find('input[name = utm_source]').val();
+    let utmMedium = thisForm.find('input[name = utm_medium]').val();
+    let utmCampaign = thisForm.find('input[name = utm_campaign]').val();
+    let utmTerm = thisForm.find('input[name = utm_term]').val();
+    let utmContent = thisForm.find('input[name = utm_content]').val();
+
+    const formData = {
+      action: action,
+      name: name,
+      phone: phone,
+      email: email,
+      pageName: pageName,
+      pageUrl: pageUrl,
+      utmSource: utmSource,
+      utmMedium: utmMedium,
+      utmCampaign: utmCampaign,
+      utmTerm: utmTerm,
+      utmContent: utmContent,
+    }
+
+    $.post( dolphincargo_ajax.url, formData, function(response) {
+
+      fbq("track","Lead");
+      window.location.href = thxPage;
+
     });
 
-  });*/
+  })
 
-  //Вывод больше курсов
+  /**
+   * Price slider
+   */
 
-  /*if ( jQuery('.page-template-template-home').length ){
+  if ( $('.services-delivery-price-list').length ){
 
-    var activeCat = jQuery('.curses-cat-wrapper .cat.active-cat');
-    var allPosts = Number(activeCat.attr('data-allposts'));
+    $('#services-delivery-price-slider').slick({
+      autoplay: false,
+      autoplaySpeed: 2000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      adaptiveHeight: true,
+      asNavFor: '#services-delivery-price-slider-nav'
+    });
 
-    jQuery('#mor-curses-dtn-wrap').attr('data-allposts', allPosts);
+    $('#services-delivery-price-slider-nav').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      asNavFor: '#services-delivery-price-slider',
+      focusOnSelect: true,
+      variableWidth: true,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 575,
+          settings: {
+            slidesToShow: 2
+          }
+        }
+      ]
+    });
 
-    var targetAllPosts = Number(jQuery('#mor-curses-dtn-wrap').attr('data-allposts'));
-
-    var btnMore = jQuery('#more-curses');
-
-    btnMore.attr('data-currentcat', activeCat.attr('data-subcatid'));
-    btnMore.attr('data-allcat', activeCat.attr('data-allcat'));
-
-    btnMore.on('click', function (e) {
+    $('.services-delivery-price-list .prev').click(function(e){
       e.preventDefault();
 
-      var curseLeng = jQuery(this).attr('data-lang');
-      var curseCurrentCat = Number(jQuery(this).attr('data-currentcat'));
-      var curseAllCat = Number(jQuery(this).attr('data-allcat'));
-
-      var moreCurses = {
-        action: 'more_curses',
-        currentLang: curseLeng,
-        allCat: curseAllCat,
-        currentCat: curseCurrentCat
-      };
-
-      jQuery.post( myajax.url, moreCurses, function(response) {
-
-        if(jQuery.trim(response) !== ''){
-
-          jQuery('#curses-list').append(response);
-        }
-      });
-
-      jQuery('#mor-curses-dtn-wrap').addClass('d-none');
-
+      $('#services-delivery-price-slider').slick('slickPrev');
+      $('#services-delivery-price-slider-nav').slick('slickPrev');
     });
 
-  }*/
+    $('.services-delivery-price-list .next').click(function(e){
+      e.preventDefault();
 
-  //Fancybox Init
+      $('#services-delivery-price-slider').slick('slickNext');
+      $('#services-delivery-price-slider-nav').slick('slickNext');
+    });
+  }
 
-  /*jQuery('[data-fancybox]').fancybox({
-    protect: true,
-    loop : true,
-    fullScreen : true,
-    scrolling : 'yes',
-    image : {
-      preload : "auto",
-      protect : true
-    },
-    buttons: [
-      "zoom",
-      "slideShow",
-      "fullScreen",
-      "close"
-    ]
+  /**
+   * Calculator
+   */
 
-  });*/
-
-  //Webinar Countdown Timer
-
-  /*if ( jQuery('.courses-template-template-webinar-page').length ){
-
-    let startData = Number(jQuery('#timer').data('start'));
-
-    const date = new Date(startData*1000);
-
-    startData = new Date(date).getTime();
-
-    // Update the count down every 1 second
-    let dataTimer = setInterval(function() {
-
-      // Get today's date and time
-      let getDate = new Date().getTime();
-
-      // Find the distance between now and the count down date
-      let distance = startData - getDate;
-
-      // Time calculations for days, hours, minutes and seconds
-      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Display the result in the element with id="demo"
-
-      jQuery('#timer .day .date').text(days);
-      jQuery('#timer .hour .date').text(hours);
-      jQuery('#timer .minute .date').text(minutes);
-      jQuery('#timer .second .date').text(seconds);
+  const calcType1Width = $('#calc-type1-white');
+  const calcType1Height = $('#calc-type1-height');
+  const calcType1Length = $('#calc-type1-length');
+  const calcType1Count = $('#calc-type1-count');
+  let calcType1Metrics = $('#calculatorType1Modal .data-type-list input:checked').val();
 
 
-      // If the count down is finished, write some text
-      if (distance < 0) {
-        clearInterval(dataTimer);
+  let calcWidthValue = 0;
+  let calcHeightValue = 0;
+  let calcLengthValue = 0;
+  let calcCountValue = 1;
 
+  const calcResultWrapper = $('.calculator-result');
+  /*const formCalcResult = $('#cargo-volume');*/
+  const calcBtnGo = $('.calculator-wrapper .button');
+  /*const calcFormContact = $('#calculatorModal form');*/
+
+  let currentWidthPlaceholder = calcType1Width.attr('placeholder');
+  let currentHeightPlaceholder = calcType1Height.attr('placeholder');
+  let currentLengthPlaceholder = calcType1Length.attr('placeholder');
+
+  function changeCalcPlaceholder(calcType1Metrics) {
+
+    if ( calcType1Metrics == 'centimeters'){
+      calcType1Width.attr('placeholder', currentWidthPlaceholder + ' см');
+      calcType1Height.attr('placeholder', currentHeightPlaceholder + ' см');
+      calcType1Length.attr('placeholder', currentLengthPlaceholder + ' см');
+    }
+
+    if ( calcType1Metrics == 'millimeters'){
+      calcType1Width.attr('placeholder', currentWidthPlaceholder + ' мм');
+      calcType1Height.attr('placeholder', currentHeightPlaceholder + ' мм');
+      calcType1Length.attr('placeholder', currentLengthPlaceholder + ' мм');
+    }
+
+    if ( calcType1Metrics == 'meters'){
+      calcType1Width.attr('placeholder', currentWidthPlaceholder + ' м');
+      calcType1Height.attr('placeholder', currentHeightPlaceholder + ' м');
+      calcType1Length.attr('placeholder', currentLengthPlaceholder + ' м');
+    }
+  }
+
+  changeCalcPlaceholder(calcType1Metrics);
+
+  $('#calculatorType1Modal .data-type-list input').on('change', function () {
+
+    calcType1Metrics = $(this).val();
+
+    changeCalcPlaceholder(calcType1Metrics);
+
+  })
+
+
+  calcBtnGo.on('click', function (e) {
+    e.preventDefault();
+
+    calcWidthValue = calcType1Width.val();
+    calcHeightValue = calcType1Height.val();
+    calcLengthValue = calcType1Length.val();
+
+    if(calcType1Count.val() > 0){
+      calcCountValue = calcType1Count.val();
+    }
+
+
+    calcCargoValue(calcWidthValue, calcHeightValue, calcLengthValue, calcType1Metrics, calcCountValue);
+
+  });
+
+  function calcCargoValue(calcWidthValue, calcHeightValue, calcLengthValue, calcType1Metrics, calcCountValue){
+
+    let calcResult = calcLengthValue * calcWidthValue * calcHeightValue * calcCountValue;
+
+    if (calcResult > 0 ){
+
+      if (calcType1Metrics == 'millimeters'){
+        calcResult = calcResult /  1000000000;
       }
-    }, 1000);
+      if (calcType1Metrics == 'centimeters'){
+        calcResult = calcResult / 1000000;
+      }
 
-  }*/
-    // MAP INIT
-
-    /*function initMap() {
-        var location = {
-            lat: 48.268376,
-            lng: 25.9301257
-        };
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: location,
-            scrollwheel: false
-        });
-
-        var marker = new google.maps.Marker({
-            position: location,
-            map: map
-        });
-
-        var marker = new google.maps.Marker({ // кастомный марекр + подпись
-            position: location,
-            title:"Город, Улица, \n" +
-            "Дом, Квартира",
-            map: map,
-            icon: {
-                url: ('img/marker.svg'),
-                scaledSize: new google.maps.Size(141, 128)
-            }
-        });
-
-        jQuery.getJSON("map-style_dark.json", function(data) { // подключения стиля для гугл карты
-            map.setOptions({styles: data});
-        });
+      calcResultWrapper.find('span').text(calcResult.toFixed(3));
+      calcResultWrapper.slideDown(300);
 
     }
 
-    initMap();*/
-
-    // MOB-MENU
-
-    /*jQuery('#menu-btn').on('click', function (e) {
-       e.preventDefault();
-
-       jQuery('#mob-menu').toggleClass('active-menu');
-       jQuery(this).toggleClass('open-menu');
-    });
-
-    jQuery('#mob-menu a').on('click', function (e) {
-        e.preventDefault();
-
-        jQuery('#mob-menu').removeClass('active-menu');
-        jQuery('#menu-btn').removeClass('open-menu');
-    });*/
+  }
 
 
-    //SCROLL MENU
 
-    /*jQuery(document).on('click', '.scroll-to', function (e) {
-        e.preventDefault();
+  /*calcWidth.on('change', function () {
 
-        var href = jQuery(this).attr('href');
+    calcWidthValue = $(this).val();
 
-        jQuery('html, body').animate({
-            scrollTop: jQuery(href).offset().top
-        }, 1000);
+    calcCargoValue(calcWidthValue, calcHeightValue, calcLengthValue);
 
-    });*/
+  });
 
-    // CASTOME SLIDER ARROWS
+  calcHeight.on('change', function () {
 
-    /*jQuery('.mein-slider').slick({
+    calcHeightValue = $(this).val();
+
+    calcCargoValue(calcWidthValue, calcHeightValue, calcLengthValue);
+
+  });
+
+  calcLength.on('change', function () {
+
+    calcLengthValue = $(this).val();
+
+    calcCargoValue(calcWidthValue, calcHeightValue, calcLengthValue);
+
+  });*/
+
+  /**
+   * About us slider
+   */
+
+  if ( $('.our-contacts .office .slider-wrapper').length ){
+
+    $('.our-contacts .office .slider-wrapper').each(function () {
+
+      let thisSliderContainer = $(this);
+
+      let thisSlider = thisSliderContainer.find('.office-slider');
+      let thisPrevBtn = thisSliderContainer.find('.prev');
+      let thisNextBtn = thisSliderContainer.find('.next');
+
+      thisSlider.slick({
         autoplay: false,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
-        fade: true
+        fade: true,
+      });
+
+      thisPrevBtn.click(function(e){
+        e.preventDefault();
+
+        thisSlider.slick('slickPrev');
+      });
+
+      thisNextBtn.click(function(e){
+        e.preventDefault();
+
+        thisSlider.slick('slickNext');
+      });
 
     });
 
-    jQuery('.main-page .arrow-left').click(function(e){
-        e.preventDefault();
-
-        jQuery('.mein-slider').slick('slickPrev');
-    });
-
-    jQuery('.main-page .arrow-right').click(function(e){
-        e.preventDefault();
-
-        jQuery('.mein-slider').slick('slickNext');
-    });*/
-
-    // PHONE MASK
-
-    /*jQuery("input[type=tel]").mask("+38(999) 999-99-99");*/
-
-    // DTA VALUE REPLACE
-
-    /*jQuery('.open-form').on('click', function (e) {
-        e.preventDefault();
-        var type = jQuery(this).data('type');
-        jQuery('#type-form').find('input[name=type]').val(type);
-    });*/
-
-    // FORM LABEL FOCUS UP
-
-    /*jQuery('.form-control').on('focus', function() {
-        jQuery(this).closest('.form-control').find('label').addClass('active');
-    });
-
-    jQuery('.form-control').on('blur', function() {
-        var jQuerythis = jQuery(this);
-        if (jQuerythis.val() == '') {
-            jQuerythis.closest('.form-control').find('label').removeClass('active');
-        }
-    });*/
-
-    // SCROLL TOP.
-
-    /*jQuery(document).on('click', '.up-btn', function() {
-        jQuery('html, body').animate({
-            scrollTop: 0
-        }, 300);
-    });*/
-
-    // SHOW SCROLL TOP BUTTON.
-
-    /*jQuery(document).scroll(function() {
-        var y = jQuery(this).scrollTop();
-
-        if (y > 800) {
-            jQuery('.up-btn').fadeIn();
-        } else {
-            jQuery('.up-btn').fadeOut();
-        }
-    });*/
-
-    // UTM
-
-    /*function getQueryVariable(variable) {
-        var query = window.location.search.substring(1);
-        var vars = query.split('&');
-        for (var i = 0; i < vars.length; i++) {
-            var pair = vars[i].split('=');
-            if (decodeURIComponent(pair[0]) == variable) {
-                return decodeURIComponent(pair[1]);
-            }
-        }
-    }
-    utm_source = getQueryVariable('utm_source') ? getQueryVariable('utm_source') : "";
-    utm_medium = getQueryVariable('utm_medium') ? getQueryVariable('utm_medium') : "";
-    utm_campaign = getQueryVariable('utm_campaign') ? getQueryVariable('utm_campaign') : "";
-    utm_term = getQueryVariable('utm_term') ? getQueryVariable('utm_term') : "";
-    utm_content = getQueryVariable('utm_content') ? getQueryVariable('utm_content') : "";
-
-    var forms = jQuery('form');
-    jQuery.each(forms, function (index, form) {
-        jQueryform = jQuery(form);
-        jQueryform.append('<input type="hidden" name="utm_source" value="' + utm_source + '">');
-        jQueryform.append('<input type="hidden" name="utm_medium" value="' + utm_medium + '">');
-        jQueryform.append('<input type="hidden" name="utm_campaign" value="' + utm_campaign + '">');
-        jQueryform.append('<input type="hidden" name="utm_term" value="' + utm_term + '">');
-        jQueryform.append('<input type="hidden" name="utm_content" value="' + utm_content + '">');
-    });*/
+  }
 
 });
 
-// PRELOADER
 
-/*jQuery(window).on('load', function () {
-
-    jQuery('#loader').fadeOut(400);
-});*/

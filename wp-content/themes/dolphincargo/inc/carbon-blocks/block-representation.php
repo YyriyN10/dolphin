@@ -32,7 +32,7 @@
 			     <?php if ( $fields['dolphincargo_representation_title'] && $fields['dolphincargo_representation_map_pic'] && $fields['dolphincargo_representation_text_pic']):?>
 				     <section class="block-representation animation-tracking indent-top-big indent-bottom-small" >
 					     <?php get_template_part('template-parts/decor-lines');?>
-               <div class="light"><img src="<?php echo THEME_PATH;?>/assets/img/faq-block-light.png" alt="<?php the_title();?>"></div>
+               <div class="light"><img src="<?php echo THEME_PATH;?>/assets/img/light-h-2.png" alt="<?php the_title();?>"></div>
 					     <p class="image-text" style="background-image: url(<?php echo $fields['dolphincargo_representation_text_pic'];?>)">Dolphin</p>
 					     <div class="container-fluid">
 						     <div class="row first-up">

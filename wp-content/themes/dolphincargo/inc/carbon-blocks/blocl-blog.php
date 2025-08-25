@@ -52,7 +52,7 @@
 							     <div class="row first-up">
 								     <h2 class="block-title small-title col-12 text-center"><?php echo $fields['dolphincargo_block_blog_title'];?></h2>
 							     </div>
-							     <div class="row content second-up">
+							     <div class="row content blog-list second-up">
 								     <?php while ( $blogList->have_posts() ) : $blogList->the_post(); ?>
 									     <a href="<?php the_permalink();?>" class="blog-post col-lg-4 col-sm-6">
 										     <span class="inner">

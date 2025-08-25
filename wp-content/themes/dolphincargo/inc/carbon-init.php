@@ -13,7 +13,10 @@
 	function carbon_load() {
 		require get_template_directory() . '/vendor/autoload.php';
 		\Carbon_Fields\Carbon_Fields::boot();
+
 	}
+
+
 
 	/**
 	 * WPML Support
@@ -83,6 +86,18 @@
 			'icon'  => 'edit-page'
 		);
 
+		$categories[] = array(
+			'slug'  => 'dolphincargo-price-page-category',
+			'title' => 'Dolphin Cargo Price Page',
+			'icon'  => 'money-alt'
+		);
+
+		$categories[] = array(
+			'slug'  => 'dolphincargo-taobao-page-category',
+			'title' => 'Dolphin Cargo Taobao Page',
+			'icon'  => 'admin-page'
+		);
+
 		return $categories;
 	} );
 
@@ -92,9 +107,9 @@
 
 	require ('carbon-blocks/page-option.php');
 	/*require ('carbon-blocks/post-types.php');*/
-	require ('carbon-blocks/page-home.php');
+	/*require ('carbon-blocks/page-home.php');
 	require ('carbon-blocks/page-about.php');
-	require ('carbon-blocks/page-how-we-work.php');
+	require ('carbon-blocks/page-how-we-work.php');*/
 	/*require ('carbon-blocks/page-services.php');*/
 
 require ('carbon-blocks/home-main-screen.php');
@@ -123,3 +138,20 @@ require ('carbon-blocks/block-cooperation-stage.php');
 require ('carbon-blocks/block-representation.php');
 require ('carbon-blocks/block-blog-post-text-part.php');
 require ('carbon-blocks/block-blog_post_media_part.php');
+require ('carbon-blocks/block-problem.php');
+require ('carbon-blocks/block-problem-solving.php');
+require ('carbon-blocks/block-how-we-work.php');
+require ('carbon-blocks/block-about-us-main-screen.php');
+require ('carbon-blocks/block-about-company.php');
+require ('carbon-blocks/block-our-goals.php');
+
+require ('carbon-blocks/block-price-main-screen.php');
+require ('carbon-blocks/block-price-service-list.php');
+require ('carbon-blocks/block-price-why-us.php');
+
+require ('carbon-blocks/block-taobao-main-screen.php');
+require ('carbon-blocks/block-taobao-more-choice.php');
+require ('carbon-blocks/block-taobao-difficulties-solutions.php');
+require ('carbon-blocks/block-taobao-how-order.php');
+require ('carbon-blocks/block-taobao-call-to-action.php');
+require ('carbon-blocks/block-taobao-price.php');

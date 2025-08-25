@@ -1,0 +1,167 @@
+.block-price-why-us{
+  background-color: $color-black;
+  position: relative;
+  z-index: 3;
+
+  .bg-pic{
+    position: absolute;
+    width: 670px;
+    height: auto;
+    z-index: 2;
+    top: 0;
+    left: -160px;
+    transform: translateY(-45%);
+
+
+    @media(max-width: 1200px){
+      left: 75px;
+    }
+
+    @media(max-width: 992px){
+      width: 60vw;
+    }
+
+    @media(max-width: 767px){
+      left: 35px;
+      top: 30px;
+    }
+
+    @media(max-width: 660px){
+      width: 100vw;
+    }
+
+    @media(max-width: 575px){
+      left: 16px;
+    }
+  }
+
+  .light{
+    position: absolute;
+    z-index: 2;
+    width: 904px;
+    height: 670px;
+    border-radius: 1000px;
+    background-color: $color-dark-blue;
+    filter: blur(130px);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media(max-width: 767px){
+      bottom: 100px;
+    }
+
+    /*@media(max-width: 992px){
+      width: 200vw;
+    }
+
+    @media(max-width: 660px){
+      width: 300vw;
+    }*/
+  }
+
+  .container-fluid{
+    position: relative;
+    z-index: 3;
+  }
+
+  .block-title{
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 3;
+
+    @media(max-width: 440px){
+      margin-bottom: 32px;
+    }
+  }
+
+  .problem-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+    margin: 0;
+    position: relative;
+    z-index: 3;
+
+    .problem{
+      list-style: none;
+      width: calc(50% - 16px);
+      border-radius: 10px;
+      padding: 32px;
+      border: 1px solid rgba(6, 127, 239, 0.5);
+      background: rgba(20, 20, 20, 0.1);
+      overflow: hidden;
+      position: relative;
+      backdrop-filter: blur(10px);
+
+      &:before{
+        content: '';
+        inset: 1px;
+        position: absolute;
+        z-index: 1;
+        background: $bg-blue-gradient;
+      }
+
+      @media(max-width: 1024px){
+        padding: 24px;
+      }
+
+      @media(max-width: 660px){
+        width: 100%;
+      }
+
+      .name{
+        text-transform: uppercase;
+        line-height: 1.2;
+        margin-bottom: 16px;
+        /*font-size: clamp(22px, 1.56vw, 30px);*/
+        font-size: 26px;
+        position: relative;
+        z-index: 2;
+
+        @media(max-width: 2000px){
+          font-size: 24px;
+        }
+
+        @media(max-width: 1200px){
+          font-size: 22px;
+        }
+
+        @media(max-width: 440px){
+          font-size: 20px;
+        }
+      }
+
+      .reason-list{
+        padding: 0;
+        margin: 0;
+        gap: 16px;
+        position: relative;
+        z-index: 2;
+
+        li{
+          list-style: none;
+          background-image: url("../img/arrow.svg");
+          background-repeat: no-repeat;
+          background-size: 24px auto;
+          background-position: top left;
+          padding-left: 44px;
+
+          @media(max-width: 1024px){
+            padding-left: 32px;
+          }
+
+          @media(max-width: 440px){
+            background-size: 18px auto;
+            padding-left: 26px;
+          }
+
+          p{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -59,16 +59,27 @@
 					    </div>
 				    </div>
 				    <div class="run-rows-wrapper">
-					    <div class="run-row first-row">
-						    Services of the transportation & logistics company DOLPHIN CARGO
-						    Services of the transportation & logistics company DOLPHIN CARGO
-						    Services of the transportation & logistics company DOLPHIN CARGO
-					    </div>
-					    <div class="run-row second-row">
-						    Services of the transportation & logistics company DOLPHIN CARGO
-						    Services of the transportation & logistics company DOLPHIN CARGO
-						    Services of the transportation & logistics company DOLPHIN CARGO
-					    </div>
+              <div class="first-row marque-row">
+                <div class="marque-list marquee-move-left">
+							    <?php
+								    $marqueImage = carbon_get_theme_option('dolphincargo_option_marque_image');
+
+								    for ($ml = 0; $ml < 11; $ml ++):?>
+                      <p class="marque-item">Services of the transportation & logistics company DOLPHIN CARGO</p>
+                      <img src="<?php echo $marqueImage;?>" alt="<?php echo get_bloginfo('name');?>">
+								    <?php endfor;?>
+                </div>
+              </div>
+              <div class="second-row marque-row">
+                <div class="marque-list marquee-move-right">
+							    <?php
+								    $marqueImage = carbon_get_theme_option('dolphincargo_option_marque_image');
+
+								    for ($mr = 0; $mr < 11; $mr ++):?>
+                      <p class="marque-item">Services of the transportation & logistics company DOLPHIN CARGO</p>
+                      <img src="<?php echo $marqueImage;?>" alt="<?php echo get_bloginfo('name');?>">
+								    <?php endfor;?>
+                </div>
 				    </div>
 				    <div class="container-fluid">
 					    <div class="row blog-list" id="blog-list">

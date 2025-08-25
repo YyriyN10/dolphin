@@ -1,14 +1,79 @@
 .home-main-screen{
-  background-position: bottom center;
+  /*background-position: bottom center;*/
+  background-position: top center;
   background-repeat: no-repeat;
-  background-size: cover;
-  padding-top: 160px;
-  padding-bottom: 15vw;
+  background-size: 100% auto;
+  padding-top: 200px;
+  padding-bottom: 355px;
   position: relative;
   cursor: none;
+  /*height: 110vh;*/
+  min-height: 110vh;
+
+  @media(max-width: 2000px){
+    background-size: cover;
+    padding-top: 160px;
+    padding-bottom: 305px;
+    height: auto;
+    min-height: auto;
+  }
+
+  @media(max-width: 1200px){
+    padding-bottom: 250px;
+  }
 
   @media(max-width: 440px){
     padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  &:before{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background-color: $color-black;
+    opacity: 0.45;
+  }
+
+  &:after{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 574px;
+    /*background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 0.8) 95%, rgba(20, 20, 20, 1) 100%);*/
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 0.8) 70%, rgba(20, 20, 20, 1) 100%);
+    z-index: 1;
+
+    @media(max-width: 1200px){
+      height: 525px;
+    }
+
+    @media(max-width: 767px){
+      height: 475px;
+    }
+
+    @media(max-width: 440px){
+      height: 425px;
+    }
+  }
+
+  .cursor-container{
+    position: absolute;
+    z-index: 5;
+    top: 100px;
+    right: 0;
+    left: 0;
+    bottom: 300px;
+    height: auto;
+    overflow: hidden;
+
+    @media(max-width: 1024px){
+      display: none;
+      z-index: 0;
+    }
   }
 
   .container-fluid{
@@ -17,23 +82,71 @@
   }
 
   .main-title{
-    text-transform: uppercase;
-    font-family: $f-flex;
+    /*text-transform: uppercase;
+    font-family: $f-med;*/
+    /*margin-bottom: 32px;*/
+    /*margin-bottom: 0;*/
+    /*line-height: 1.1;*/
+    /*font-size: clamp(186px, 11.6vw, 222px);*/
+    line-height: 1.2;
+    font-family: $f-BeauSP-l;
     margin-bottom: 32px;
-    line-height: 1.1;
-    font-size: clamp(186px, 11.6vw, 222px);
+    /*font-size: 204px;*/
+    font-size: 127px;
+    max-width: 850px;
+
+
+    span{
+      display: block;
+      font-family: $f-BeauSP-b;
+      font-size: 176px;
+
+      @media(max-width: 2000px){
+        font-size: 166px;
+      }
+
+      @media(max-width: 1200px){
+        font-size: 156px;
+      }
+
+      @media(max-width: 992px){
+        font-size: 126px;
+      }
+
+      @media(max-width: 767px){
+        font-size: 18vw;
+      }
+
+      @media(max-width: 575px){
+        font-size: 19.3vw;
+      }
+    }
+
+    @media(max-width: 2000px){
+      font-size: 120px;
+      max-width: 790px;
+    }
 
     @media(max-width: 1200px){
-      font-size: clamp(136px, 15.5vw, 186px);
+      font-size: 113px;
+    }
+
+    @media(max-width: 992px){
+      font-size: 91px;
     }
 
     @media(max-width: 767px){
-      font-size: clamp(86px, 17.73vw, 136px);
+      font-size: 13vw;
     }
 
-    @media(max-width: 440px){
-      font-size: 20vw;
+    @media(max-width: 575px){
+      font-size: 14vw;
+      margin-bottom: 24px;
     }
+
+    /*@media(max-width: 440px){
+      font-size: 20vw;
+    }*/
   }
 
   .who-are{
@@ -83,6 +196,8 @@
     text-align: center;
     font-size: 16px;
     cursor: none;
+    opacity: 0;
+    transition: opacity 0.3s;
 
     @media(max-width: 1024px){
       display: none;
@@ -103,21 +218,22 @@
     &:after{
       content: '';
       position: absolute;
-      height: 2px;
+      height: 1px;
       /*width: calc(100% + 44px);*/
       left: -22px;
       right: -22px;
       background: rgba(251, 251, 251, 0.1);
 
       @media(max-width: 1200px){
-        left: -3px;
-        right: -3px;
+        left: -4px;
+        right: -4px;
       }
 
       @media(max-width: 767px){
         left: 0;
         right: 0;
       }
+
     }
 
     &:before{
@@ -141,6 +257,7 @@
         font-family: $f-bold;
         font-size: 42px;
         line-height: 1.2;
+        text-transform: uppercase;
 
         @media(max-width: 992px){
           font-size: 38px;
@@ -153,6 +270,7 @@
 
       .description{
         margin-bottom: 0;
+        font-family: $f-light;
       }
     }
   }

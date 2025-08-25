@@ -40,7 +40,7 @@
 
 			     <!-- Етапи співпраці -->
 			     <?php if ( $fields['dolphincargo_cooperation_stage_title'] && $fields['dolphincargo_cooperation_stage_list'] ):?>
-				     <section class="block-cooperation-stage animation-tracking indent-top-big indent-bottom-small" >
+				     <section class="block-cooperation-stage animation-tracking indent-bottom-small" >
 					     <?php get_template_part('template-parts/decor-lines');?>
 					     <div class="container-fluid">
 						     <div class="row first-up">

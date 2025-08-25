@@ -15,7 +15,13 @@
 			     Field::make_text('dolphincargo_call_to_action_title', 'Заголовок'),
 			     Field::make_rich_text('dolphincargo_call_to_action_text', 'Текст блоку'),
 			     Field::make_image('dolphincargo_call_to_action_image', 'Зображення')
-			      ->set_type('image')
+			      ->set_type('image'),
+           Field::make_select('dolphincargo_call_to_action_contact', 'Оберіть куди може перейти користувач')
+	           ->add_options( array(
+		           'form' => 'Форма зворотнього звʼязку',
+		           'social' => 'Соціальні мережі',
+
+	           ) )
 		     ) )
 
 		     ->set_category( 'dolphincargo-common-category' )
@@ -52,8 +58,14 @@
 		                     <?php if( !empty( $fields['dolphincargo_call_to_action_text'] ) ):?>
                            <div class="text"><?php echo wpautop( $fields['dolphincargo_call_to_action_text'] );?></div>
 		                     <?php endif;?>
-                         <a href="#" rel="nofollow" class="button blue-btn"><?php echo esc_html( pll__( 'Отримати консультацію' ) ); ?></a>
+                         <?php if( $fields['dolphincargo_call_to_action_contact'] == 'form' ):?>
+                           <div class="button blue-btn" data-toggle="modal" data-target="#formModal"><?php echo esc_html( pll__( 'Отримати консультацію' ) ); ?></div>
+                         <?php elseif ( $fields['dolphincargo_call_to_action_contact'] == 'social' ):?>
+	                         <?php get_template_part('template-parts/social-wrapper');?>
+                         <?php endif;?>
+
                        </div>
+                       <div class="light"><img src="<?php echo THEME_PATH;?>/assets/img/faq-block-light.png" alt="<?php echo $fields['dolphincargo_call_to_action_title'];?>"></div>
                      </div>
 							     </div>
 						     </div>

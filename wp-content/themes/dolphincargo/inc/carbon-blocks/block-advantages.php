@@ -38,7 +38,7 @@
 					     <?php get_template_part('template-parts/decor-lines');?>
 					     <div class="container-fluid">
 						     <div class="row first-up">
-							     <h2 class="block-title small-title col-12 text-center"><?php echo $fields['dolphincargo_block_advantages_title'];?></h2>
+							     <h2 class="block-title small-title col-xl-8 offset-xl-4 col-lg-10 offset-lg-2"><?php echo $fields['dolphincargo_block_advantages_title'];?></h2>
 						     </div>
 						     <div class="row content">
 							     <?php foreach( $fields['dolphincargo_block_advantages_list'] as $index => $item ):?>

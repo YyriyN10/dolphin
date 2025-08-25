@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Twenty-Four package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-07-30 17:07:44+0000\n"
+"PO-Revision-Date: 2024-12-29 17:47:48+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,6 +23,16 @@ msgstr "Twenty Twenty-Four призначений бути гнучким, ун�
 msgid "Twenty Twenty-Four"
 msgstr "Twenty Twenty-Four"
 
+#: patterns/text-centered-statement.php
+msgctxt "Pattern description"
+msgid "A centered text statement with a large amount of padding on all sides."
+msgstr "Відцентрований текст з великою кількістю відступів з усіх боків."
+
+#: patterns/hidden-posts-heading.php
+msgctxt "Pattern title"
+msgid "Posts heading"
+msgstr "Заголовок записів"
+
 #: patterns/text-title-left-image-right.php
 msgctxt "Pattern description"
 msgid "A title, a paragraph and a CTA button on the left with an image on the right."
@@ -30,7 +40,7 @@ msgstr "Заголовок, абзац і кнопка заклику до ді�
 
 #: patterns/text-project-details.php
 msgctxt "Pattern description"
-msgid "A text only section for project details."
+msgid "A text-only section for project details."
 msgstr "Тільки текстовий розділ для деталей проекту."
 
 #: patterns/text-feature-grid-3-col.php
@@ -45,27 +55,22 @@ msgstr "Хто стоїть за Études?"
 
 #: patterns/text-faq.php
 msgctxt "Pattern description"
-msgid "A FAQ section with a large FAQ heading and list of toggle questions and answers."
-msgstr "Розділ FAQ з великим заголовком та переліком питань і відповідей."
-
-#: patterns/text-centered-statement.php
-msgctxt "Pattern description"
-msgid "A centered text statement with a large paddings."
-msgstr "Відцентрований текст з великими відступами."
+msgid "A FAQ section with a large FAQ heading and a group of questions and answers."
+msgstr "Розділ поширених запитань з великим заголовком і групою запитань та відповідей."
 
 #: patterns/text-centered-statement-small.php
 msgctxt "Pattern description"
-msgid "A centered itallic text statement with compact padding."
+msgid "A centered italic text statement with compact padding."
 msgstr "Відцентрований курсивний текст із компактними відступами."
 
 #: patterns/text-alternating-images.php
 msgctxt "Pattern description"
-msgid "A text section, then a two column section with text in one and image in another."
-msgstr "Текстовий розділ, потім розділ з двох колонок з текстом в одній і зображенням в іншій."
+msgid "A text section, then a two-column section with text in one column and an image in the other."
+msgstr "Текстовий розділ, потім розділ з двох колонок з текстом в одній колонці та зображенням в іншій."
 
 #: patterns/testimonial-centered.php
 msgctxt "Pattern description"
-msgid "A centered testimonial section with a avatar, name, and job title."
+msgid "A centered testimonial section with an avatar, name, and job title."
 msgstr "Відцентрований розділ відгуків з аватаром, ім'ям та посадою."
 
 #: patterns/team-4-col.php
@@ -120,7 +125,7 @@ msgstr "Домашня сторінка портфоліо з описом і р
 
 #: patterns/page-home-portfolio-gallery.php
 msgctxt "Pattern description"
-msgid "A porfolio home page that features a gallery."
+msgid "A portfolio home page that features a gallery."
 msgstr "Домашня сторінка портфоліо з галереєю."
 
 #: patterns/page-home-business.php
@@ -683,13 +688,13 @@ msgstr "Inter"
 #: theme.json
 msgctxt "Color name"
 msgid "Contrast / Three"
-msgstr "Контраст / 3"
+msgstr "Контрастний / третинний"
 
 #: styles/fossil.json styles/ice.json styles/mint.json styles/onyx.json
 #: theme.json
 msgctxt "Color name"
 msgid "Contrast / Two"
-msgstr "Контраст / 2"
+msgstr "Контрастний / вторинний"
 
 #: styles/fossil.json
 msgctxt "Style variation name"
@@ -1306,6 +1311,7 @@ msgid "Previous: "
 msgstr "Попередній: "
 
 #: patterns/hidden-post-navigation.php:9 patterns/hidden-post-navigation.php:10
+#: patterns/hidden-posts-heading.php:10
 #: patterns/template-index-portfolio.php:16
 msgid "Posts"
 msgstr "Записи"

@@ -16,7 +16,9 @@
 			     Field::make_text('dolphincargo_home_call_to_title', 'Заголовок блоку'),
 			     Field::make_rich_text('dolphincargo_home_call_to_text', 'Текст'),
 			     Field::make_image('dolphincargo_home_call_to_image', 'Зображення літака')
-			      ->set_type('image')
+			      ->set_type('image'),
+           Field::make_text('dolphincargo_home_call_to_marque', 'Текст у бігучий рядок')
+            ->set_help_text('Не обовʼязкове поле')
 
 		     ) )
 
@@ -27,10 +29,39 @@
 			     ?>
 
 			     <!-- Ббок заклику до дії -->
-			     <?php if ( $fields['dolphincargo_home_call_to_title'] && $fields['dolphincargo_home_call_to_text'] && $fields['dolphincargo_home_call_to_image']):?>
-				     <section class="airplane-call-to indent-bottom-small animation-tracking">
+			     <?php if ( $fields['dolphincargo_home_call_to_title'] && $fields['dolphincargo_home_call_to_image']):?>
+             <?php if( !empty( $fields['dolphincargo_home_call_to_marque']) ):?>
+               <section class="airplane-call-to marque-type indent-bottom-small animation-tracking">
+                 <div class="run-rows-wrapper indent-top-big">
+                   <div class="first-row marque-row">
+                     <div class="marque-list marquee-move-left">
+			                 <?php
+				                 $marqueImage = carbon_get_theme_option('dolphincargo_option_marque_image');
+
+				                 for ($ml = 0; $ml < 11; $ml ++):?>
+                           <p class="marque-item"><?php echo $fields['dolphincargo_home_call_to_marque'];?></p>
+                           <img src="<?php echo $marqueImage;?>" alt="<?php echo get_bloginfo('name');?>">
+				                 <?php endfor;?>
+                     </div>
+                   </div>
+                   <div class="second-row marque-row">
+                     <div class="marque-list marquee-move-right">
+			                 <?php
+				                 $marqueImage = carbon_get_theme_option('dolphincargo_option_marque_image');
+
+				                 for ($mr = 0; $mr < 11; $mr ++):?>
+                           <p class="marque-item"><?php echo $fields['dolphincargo_home_call_to_marque'];?></p>
+                           <img src="<?php echo $marqueImage;?>" alt="<?php echo get_bloginfo('name');?>">
+				                 <?php endfor;?>
+                     </div>
+                   </div>
+                 </div>
+             <?php else:?>
+               <section class="airplane-call-to indent-bottom-small animation-tracking">
+             <?php endif;?>
+
 					     <?php get_template_part('template-parts/decor-lines');?>
-               <div class="light"><img src="<?php echo THEME_PATH;?>/assets/img/airplan-call-to-light.png" alt=""></div>
+               <!--<div class="light"><img src="<?php /*echo THEME_PATH;*/?>/assets/img/airplan-call-to-light.png" alt="<?php /*echo get_bloginfo('name');*/?>"></div>-->
                <div class="plain">
                  <img
                     class="lazy"
@@ -41,9 +72,18 @@
 					     <div class="container-fluid">
 						     <div class="row">
 							     <div class="content col-xl-8 offset-xl-4 col-lg-10 offset-lg-2">
-								     <h2 class="block-title big-title first-up"><?php echo $fields['dolphincargo_home_call_to_title'];?></h2>
-								     <div class="text-content second-up "><?php echo wpautop( $fields['dolphincargo_home_call_to_text']);?></div>
-								     <a href="#" class="button blue-btn third-up"><?php echo esc_html( pll__( 'Надіслати заявку' ) ); ?></a>
+                     <?php if( !empty( $fields['dolphincargo_home_call_to_text'] ) ):?>
+                       <h2 class="block-title big-title first-up"><?php echo $fields['dolphincargo_home_call_to_title'];?></h2>
+                       <div class="text-content second-up "><?php echo wpautop( $fields['dolphincargo_home_call_to_text']);?></div>
+                       <div class="button blue-btn third-up" data-toggle="modal" data-target="#formModal">
+                         <?php echo esc_html( pll__( 'Надіслати заявку' ) ); ?>
+                       </div>
+                     <?php else:?>
+                       <h2 class="block-title small-title first-up"><?php echo $fields['dolphincargo_home_call_to_title'];?></h2>
+                       <div class="button blue-btn second-up" data-toggle="modal" data-target="#formModal">
+                         <?php echo esc_html( pll__( 'Надіслати заявку' ) ); ?>
+                       </div>
+                     <?php endif;?>
 							     </div>
 						     </div>
 					     </div>

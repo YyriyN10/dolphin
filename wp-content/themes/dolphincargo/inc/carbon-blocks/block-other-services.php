@@ -13,13 +13,13 @@
 		Block::make( __( 'Other services' ) )
 		     ->add_fields( array(
 			     Field::make_text('dolphincargo_other_services_title', 'Заголовок блоку'),
-			     Field::make_association('dolphincargo_other_services_list', 'Перелік сервісів')
-			          ->set_types( array(
-				          array(
-					          'type'      => 'post',
-					          'post_type' => 'services',
-				          )
-			          ) ),
+			     Field::make_complex('dolphincargo_other_services_list', 'Перелік сервісів')
+			      ->add_fields(array(
+			          Field::make_text('name', 'Назва послуги'),
+                Field::make_rich_text('description', 'Короткий опис послуги'),
+                Field::make_image('image', 'Зображення послуги')
+                  ->set_type('image')
+            ))
 
 		     ) )
 
@@ -44,28 +44,30 @@
 			               <div class="content col-12">
 				               <div class="other-services__slider" id="other-services-slider">
 					               <?php foreach( $fields['dolphincargo_other_services_list'] as $item ):?>
-						               <a href="<?php echo get_the_permalink( $item['id']);?>" class="slide">
-												     <span class="inner">
-													     <span class="other-services__image">
+						               <div class="slide">
+												     <div class="inner">
+													     <div class="other-services__image" data-target="#formModal" data-toggle="modal">
 														     <img
-															     src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $item['id']), 'full')[0];?>"
+															     src="<?php echo wp_get_attachment_image_src( $item['image'], 'full')[0];?>"
 															     <?php
-																     $altText = get_post_meta( get_post_thumbnail_id( $item['id']), '_wp_attachment_image_alt', TRUE);
+																     $altText = get_post_meta( $item['image'], '_wp_attachment_image_alt', TRUE);
 
 																     if( !empty( $altText ) ):?>
 																	     alt="<?php echo $altText;?>"
 																     <?php else:?>
-																	     alt="<?php get_the_title( $item['id']);?>"
+																	     alt="<?php echo $item['name'];?>"
 																     <?php endif;?>
 														     >
-													     </span>
-													     <span class="other-services__title"><?php echo get_the_title( $item['id']);?></span>
-													     <span class="description">
-														     <?php echo get_the_excerpt( $item['id']);?>
-													     </span>
-													     <span class="button"><?php echo esc_html( pll__( 'Дізнатись більше' ) ); ?></span>
-												     </span>
-						               </a>
+													     </div>
+													     <div class="other-services__title" data-target="#formModal" data-toggle="modal"><?php echo $item['name'];?></div>
+													     <div class="description">
+														     <?php echo wpautop( $item['description'] );?>
+													     </div>
+													     <p class="button" data-target="#formModal" data-toggle="modal">
+                                 <?php echo esc_html( pll__( 'Дізнатись більше' ) ); ?>
+                               </p>
+												     </div>
+						               </div>
 					               <?php endforeach;?>
 				               </div>
 				               <?php get_template_part('template-parts/slider-navigation');?>

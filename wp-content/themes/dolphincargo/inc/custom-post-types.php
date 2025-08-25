@@ -160,3 +160,4 @@ add_action( 'init', 'blog_post_type' );
 	}
 
 	add_action( 'init', 'reviews_post_type' );
+

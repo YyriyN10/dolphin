@@ -46,7 +46,7 @@
 					     <?php get_template_part('template-parts/decor-lines');?>
 					     <div class="container-fluid">
 						     <div class="row">
-							     <h2 class="block-title big-title text-center col-12"><?php echo $fields['dolphincargo_delivery_steps_title'];?></h2>
+							     <h2 class="block-title big-title col-xl-8 offset-xl-4 col-lg-10 offset-lg-2"><?php echo $fields['dolphincargo_delivery_steps_title'];?></h2>
 						     </div>
                  <div class="row content content-top">
                    <?php foreach( $fields['dolphincargo_delivery_steps_list'] as $index=>$item ):?>
@@ -55,7 +55,7 @@
                          <p class="step__number">
                            <?php echo esc_html( pll__( 'Крок' ) ); ?> <?php echo $index + 1;?>
                          </p>
-                         <p class="step-text"><?php echo $item['text'];?></p>
+                         <p class="step__text"><?php echo $item['text'];?></p>
                        </div>
                      <?php endif;?>
                    <?php endforeach;?>
@@ -121,7 +121,7 @@
                          <p class="step__number">
 											     <?php echo esc_html( pll__( 'Крок' ) ); ?> <?php echo $index + 1;?>
                          </p>
-                         <p class="step-text"><?php echo $item['text'];?></p>
+                         <p class="step__text"><?php echo $item['text'];?></p>
                        </div>
 								     <?php endif;?>
 							     <?php endforeach;?>

@@ -67,6 +67,5 @@
         </radialGradient>
       </defs>
     </svg>
-
   </button>
 </div>

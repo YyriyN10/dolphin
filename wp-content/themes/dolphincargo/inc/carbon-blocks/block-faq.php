@@ -40,7 +40,7 @@
                  </div>
 			           <div class="container-fluid">
 			             <div class="row first-up">
-			               <h2 class="block-title small-title col-12 text-center"><?php echo $fields['dolphincargo_block_faq_title'];?></h2>
+			               <h2 class="block-title small-title col-xl-8 offset-xl-4 col-lg-10 offset-lg-2"><?php echo $fields['dolphincargo_block_faq_title'];?></h2>
 			             </div>
 			             <div class="row second-up">
 				             <div class="accordion col-12" id="accordion-faq">
