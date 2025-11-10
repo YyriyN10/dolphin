@@ -1,0 +1,294 @@
+.calculator-form-block{
+  position: relative;
+  z-index: 4;
+
+  &:before,
+  &:after{
+    position: absolute;
+    content: '';
+  }
+
+  &:before{
+    z-index: 1;
+    width: 1650px;
+    height: 1220px;
+    border-radius: 1000px;
+    background-color: $color-dark-blue;
+    filter: blur(130px);
+    top: -186px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &:after{
+    inset: 0;
+    border-radius: 4px;
+    background: radial-gradient(261.99% 124.63% at 1.95% 3.59%, rgba(12,21,80,0.6) 0%, rgba(20,20,20,0.6) 100%);
+    /*background: radial-gradient(261.99% 124.63% at 1.95% 3.59%, rgba(255, 0, 0,0.6) 0%, rgba(20,20,20,0.6) 100%);*/
+    backdrop-filter: blur(21px);
+    /*background-image: radial-gradient(circle farthest-side at left top, rgba(12,21,80,0.6) 0%,rgba(20,20,20,0.6) 100%);*/
+    z-index: 2;
+
+
+  }
+
+  .container-fluid{
+    position: relative;
+    z-index: 3;
+  }
+
+
+  .block-title{
+    margin-bottom: 16px;
+
+  }
+
+  .subtitle{
+    margin-bottom: 40px;
+    font-size: 24px;
+    position: relative;
+    z-index: 3;
+
+    @media(max-width: 1400px){
+      font-size: 22px;
+    }
+
+    @media(max-width: 992px){
+      font-size: 20px;
+    }
+
+    @media(max-width: 575px){
+      font-size: 18px;
+    }
+
+    @media(max-width: 440px){
+      font-size: 16px;
+    }
+  }
+
+  .form-wrapper{
+    position: relative;
+    z-index: 3;
+
+    .inner{
+      border-radius: 4px;
+      border: 1px solid rgba(6, 127, 239, 0.5);
+      position: relative;
+      background-color: $color-black;
+      overflow: hidden;
+      padding: 32px;
+      display: grid;
+      gap: 32px;
+
+      @media(max-width: 440px){
+        padding: 24px;
+        gap: 24px;
+      }
+
+      &:before{
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle farthest-side at left top, rgba(2,23,169,0.4) 0%,rgba(2,23,169,0.1) 100%);
+        z-index: 1;
+      }
+
+      .item-title{
+        font-size: 24px;
+        font-family: $f-med;
+        margin-bottom: 16px;
+
+        @media(max-width: 1400px){
+          font-size: 22px;
+        }
+
+        @media(max-width: 992px){
+          font-size: 20px;
+        }
+
+        @media(max-width: 575px){
+          font-size: 18px;
+        }
+
+        @media(max-width: 440px){
+          font-size: 16px;
+        }
+
+        span{
+          color: $color-light-blue;
+        }
+      }
+
+      .delivery-wrapper{
+        position: relative;
+        z-index: 2;
+
+        .data-type-list{
+          display: flex;
+          flex-wrap: wrap;
+          row-gap: 11px;
+          column-gap: 24px;
+
+          .form-check{
+            padding: 0;
+            cursor: pointer;
+            width: calc(50% - 12px);
+
+            @media(max-width: 767px){
+              width: 100%;
+            }
+
+            .form-check-label{
+              position: relative;
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+
+              .form-check-input{
+                display: none;
+                z-index: -1;
+                opacity: 0;
+              }
+
+              .label{
+                font-size: 18px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                @media(max-width: 1400px){
+                  font-size: 16px;
+                }
+
+                @media(max-width: 1200px){
+                  font-size: 14px;
+                }
+
+                &:before{
+                  content: '';
+                  width: 16px;
+                  height: 16px;
+                  border-radius: 2px;
+                  background-color: $color-white;
+                  margin-right: 8px;
+                }
+
+                &:after{
+                  content: '';
+                  width: 10px;
+                  height: 10px;
+                  background-color: $color-light-blue;
+                  position: absolute;
+                  left: 3px;
+                  top: 50%;
+                  transform: translateY(-5px);
+                  transition: all 0.3s;
+                  opacity: 0;
+                }
+              }
+            }
+
+            .form-check-label input:checked + .label:after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .form-group{
+        position: relative;
+        z-index: 10;
+        height: auto;
+        margin-bottom: 0;
+
+        select{
+          width: 100%;
+          background-color: rgba(0,0,0,0);
+          border-radius: 8px;
+          border: 1px solid rgba(255,255,255,0.6);
+          padding: 16px 20px;
+          color: $color-white;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background-image: url("../img/ri_arrow-up-s-line.svg");
+          background-repeat: no-repeat;
+          background-position: center right 16px;
+
+          &::placeholder{
+            opacity: 1;
+            color: $color-white;
+          }
+
+          option:not(:first-of-type) {
+            color:$color-black;
+          }
+        }
+
+        .form-control{
+          height: auto;
+          border-radius: 8px;
+          border: 1px solid rgba(255,255,255,0.6);
+          padding: 16px 20px;
+
+          &::-webkit-input-placeholder {
+            color: $color-white !important;
+            opacity: 1;
+          }
+          &:-moz-placeholder {
+            color: $color-white !important;
+            opacity: 1;
+          }
+          &::-moz-placeholder {
+            color: $color-white !important;
+            opacity: 1;
+          }
+          &:-ms-input-placeholder {
+            color: $color-white !important;
+            opacity: 1;
+          }
+        }
+
+        .intl-tel-input{
+          height: auto;
+          z-index: 10;
+
+          .form-control{
+            padding-left: 50px;
+          }
+        }
+      }
+
+      .contacts-wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+
+        @media(max-width: 440px){
+          gap: 24px;
+        }
+
+        .form-group{
+          width: 100%;
+
+          &:nth-child(2),
+          &:nth-child(3){
+            width: calc(50% - 16px);
+
+            @media(max-width: 767px){
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .button{
+        position: relative;
+        z-index: 2;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -257,7 +257,7 @@ define( 'THEME_PATH', get_template_directory_uri() );
 
 		$mailToList = carbon_get_theme_option('dolphincargo_option_form_mail_to_list');
 
-			function mailTest($name, $email, $phone, $utmSource, $utmMedium, $utmCampaign, $utmTerm, $utmContent, $pageName, $pageUrl, $mailToList){
+			function mailTest($name, $email, $phone, $utmSource, $utmMedium, $utmCampaign, $utmTerm, $utmContent, $pageName, $pageUrl, $mailToList, $calcDeliveryVolume, $calcDeliveryCategory){
 
 				if (!empty($mailToList)){
 					$sendMail = '';
@@ -273,7 +273,7 @@ define( 'THEME_PATH', get_template_directory_uri() );
 				$to = $sendMail;
 				$headers = "Content-type: text/plain; charset = UTF-8";
 				$subject = "Заявка з сайту Dolphin Cargo з $pageName";
-				$message = "Ім'я: $name \n Телефон: $phone \n Пошта: $email \n Адреса сторінки: $pageUrl\n\n UTM мітки: \n utmSource: $utmSource \n utmMedium: $utmMedium \n utmCampaign: $utmCampaign \n utmTerm: $utmTerm \n utmContent: $utmContent ";
+				$message = "Ім'я: $name \n Телефон: $phone \n Пошта: $email \n Адреса сторінки: $pageUrl\n\n UTM мітки: \n utmSource: $utmSource \n utmMedium: $utmMedium \n utmCampaign: $utmCampaign \n utmTerm: $utmTerm \n utmContent: $utmContent \n Обʼєм вантажу: $calcDeliveryCategory \n Категорія товарів: $calcDeliveryVolume";
 
 				$send = mail ($to, $subject, $message, $headers);
 			}
@@ -302,11 +302,14 @@ define( 'THEME_PATH', get_template_directory_uri() );
 		 * @param int 	 $komoFullenStageId ID етапу воронки
 		 * @param int 	 $komoLidCreatorUserId ID кормстувача який сворює лід
 		 *
+		 * @param string $calcDeliveryCategory Категорія вантажу
+		 * @param string $calcDeliveryVolume Обʼєм вантажу
+		 *
 		 * @return array Результат выполнения с ключами success, message и (опционально) response
 		 */
 
 
-		function createKommoLead($name, $email, $phone, $price, $utmSource, $utmMedium, $utmCampaign, $utmTerm, $utmContent, $pageName, $pageUrl, $komoSubdomne, $komoToken, $komoFunnelId, $komoFullenStageId, $komoLidCreatorUserId ) {
+		function createKommoLead($name, $email, $phone, $price, $utmSource, $utmMedium, $utmCampaign, $utmTerm, $utmContent, $pageName, $pageUrl, $komoSubdomne, $komoToken, $komoFunnelId, $komoFullenStageId, $komoLidCreatorUserId, $calcDeliveryVolume, $calcDeliveryCategory ) {
 			
 			// ==== Настройки Kommo ====
 			$subdomain = $komoSubdomne;    // Замените на ваш субдомен в Kommo
@@ -323,6 +326,8 @@ define( 'THEME_PATH', get_template_directory_uri() );
 			$fieldIdUtmContent = '';
 			$fieldIdUtmTerm = '';
 			$fieldIdLeadUrl = '';
+			$fieldIdCalcVolume = '';
+			$fieldIdProductCat = '';
 
 			if (!empty(carbon_get_theme_option('dolphincargo_option_form_como_utm_source'))){
 				$fieldIdUtmSource = carbon_get_theme_option('dolphincargo_option_form_como_utm_source');
@@ -341,6 +346,12 @@ define( 'THEME_PATH', get_template_directory_uri() );
 			}
 			if (!empty(carbon_get_theme_option('dolphincargo_option_form_como_lead_url'))){
 				$fieldIdLeadUrl = carbon_get_theme_option('dolphincargo_option_form_como_lead_url');
+			}
+			if (!empty(carbon_get_theme_option('dolphincargo_option_form_como_calc_volume'))){
+				$fieldIdCalcVolume = carbon_get_theme_option('dolphincargo_option_form_como_calc_volume');
+			}
+			if (!empty(carbon_get_theme_option('dolphincargo_option_form_como_product_cat'))){
+				$fieldIdProductCat = carbon_get_theme_option('dolphincargo_option_form_como_product_cat');
 			}
 
 
@@ -405,7 +416,20 @@ define( 'THEME_PATH', get_template_directory_uri() );
 										'values'   => [
 											['value' => $pageUrl]
 										]
+									],
+									[
+										'field_id' => intval($fieldIdCalcVolume), // calc volume
+										'values'   => [
+											['value' => $calcDeliveryVolume]
+										]
+									],
+									[
+										'field_id' => intval($fieldIdProductCat), // product category
+										'values'   => [
+											['value' => $calcDeliveryCategory]
+										]
 									]
+
 								]
 							]
 						]
@@ -472,6 +496,10 @@ define( 'THEME_PATH', get_template_directory_uri() );
 		$utmTerm = isset($_POST['utmTerm']) ? clearData($_POST['utmTerm']) : '';
 		$utmContent = isset($_POST['utmContent']) ? clearData($_POST['utmContent']) : '';
 
+		$calcDeliveryType = isset($_POST['calcDeliveryType']) ? clearData($_POST['calcDeliveryType']) : '';
+		$calcDeliveryCategory = isset($_POST['calcDeliveryCategory']) ? clearData($_POST['calcDeliveryCategory']) : '';
+		$calcDeliveryVolume = isset($_POST['calcDeliveryVolume']) ? clearData($_POST['calcDeliveryVolume']) : '';
+
 
 		$komoSubdomain = carbon_get_theme_option('dolphincargo_option_form_como_subdomen');
 		$komoToken = carbon_get_theme_option('dolphincargo_option_form_como_token');
@@ -485,8 +513,12 @@ define( 'THEME_PATH', get_template_directory_uri() );
 			mailTest($name, $email, $phone, $utmSource, $utmMedium, $utmCampaign, $utmTerm, $utmContent, $pageName, $pageUrl, $mailToList);
 		} */
 
+		if(!empty($calcDeliveryType)){
+			$name = $name.' Спосіб доставки - '.$calcDeliveryType;
+		}
+
 		if	(!empty($komoSubdomain) && !empty($komoToken) && !empty($komoFunnelId) && !empty($komoFullenStageId) && !empty($komoLidCreatorUserId)){
-			createKommoLead($name, $email, $phone, $price, $utmSource, $utmMedium, $utmCampaign, $utmTerm, $utmContent, $pageName, $pageUrl, $komoSubdomain, $komoToken, $komoFunnelId, $komoFullenStageId, $komoLidCreatorUserId);
+			createKommoLead($name, $email, $phone, $price, $utmSource, $utmMedium, $utmCampaign, $utmTerm, $utmContent, $pageName, $pageUrl, $komoSubdomain, $komoToken, $komoFunnelId, $komoFullenStageId, $komoLidCreatorUserId, $calcDeliveryVolume, $calcDeliveryCategory);
 		}
 		
 		
@@ -511,6 +543,8 @@ define( 'THEME_PATH', get_template_directory_uri() );
 		 * @param string $utmContent Мітка utm_Content
 		 * @param string $pageName Назва сторінки
 		 * @param string $pageUrl Адреса сторінки
+		 * @param string $calcDeliveryVolume Обʼєм вантажу
+		 * @param string$calcDeliveryCategory Категорія товару
 		 *
 		 * @return array Результат выполнения с ключами success, message и (опционально) response
 		 */

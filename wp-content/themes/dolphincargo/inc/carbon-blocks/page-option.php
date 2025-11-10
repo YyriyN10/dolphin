@@ -110,6 +110,10 @@
 			              ->set_attribute('type', 'number'),
 			         Field::make_text('dolphincargo_option_form_como_lead_url', 'ID поля для URL сторінки з якої надіслана заявка')
 			              ->set_attribute('type', 'number'),
+			         Field::make_text('dolphincargo_option_form_como_calc_volume', 'ID поля для значення обʼєму з калькулятора')
+			              ->set_attribute('type', 'number'),
+			         Field::make_text('dolphincargo_option_form_como_product_cat', 'ID поля для категорії товару з калькулятора')
+			              ->set_attribute('type', 'number'),
 
 
 

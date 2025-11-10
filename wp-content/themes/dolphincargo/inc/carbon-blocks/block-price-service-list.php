@@ -31,6 +31,7 @@
 				            	Field::make_text('price', 'Тариф')
 				            )),
 		              Field::make_text('delivery_time', 'Час доставки'),
+                  Field::make_text('delivery_hash', 'Хеш тег для навігації'),
 
 
 			          )),
@@ -53,13 +54,13 @@
 							     <div class="slider-wrapper col-12" >
 								     <ul class="slider-prev-nav" id="services-delivery-price-slider-nav">
 									     <?php foreach( $fields['dolphincargo_service_price_list'] as $navItem):?>
-												<li class="item"><?php echo $navItem['name'];?></li>
+												<li class="item" data-hesh="<?php echo $navItem['delivery_hash'];?>"><?php echo $navItem['name'];?></li>
 									     <?php endforeach;?>
 								     </ul>
 
 								     <div class="slider" id="services-delivery-price-slider">
 									     <?php foreach( $fields['dolphincargo_service_price_list'] as $item ):?>
-										     <div class="slide">
+										     <div class="slide" data-hesh="<?php echo $item['delivery_hash'];?>">
 											     <div class="pic-wrapper">
 												     <img
 													     src="<?php echo wp_get_attachment_image_src($item['image'], 'full')[0];?>"

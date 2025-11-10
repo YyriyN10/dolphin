@@ -755,6 +755,51 @@ jQuery(function($) {
 
   if ( $('.services-delivery-price-list').length ){
 
+
+    let anchor = window.location.hash;
+    let position = anchor.indexOf('?');
+
+    let anchorResult = anchor;
+
+    if (position > 0){
+      anchorResult = anchor.slice(0, position);
+    }
+
+    let urmAfterAnchor = anchor.slice((position + 1));
+    let utm_campaign = checkUtm('utm_campaign') ? checkUtm('utm_campaign') : "";
+
+
+    if(anchor == ''){
+      urmAfterAnchor = window.location.search.substring(1);
+      utm_campaign = checkUtm('utm_campaign') ? checkUtm('utm_campaign') : "";
+    }
+
+    function checkUtm(utmName) {
+      let utmArray = urmAfterAnchor.split('&');
+
+      for (let i = 0; i < utmArray.length; i++) {
+        let pair = utmArray[i].split('=');
+        if (decodeURIComponent(pair[0]) == utmName) {
+          return decodeURIComponent(pair[1]);
+        }
+      }
+    }
+
+
+    let anchorTarget = '';
+
+    if ( anchorResult == '#avia' || anchorResult == '#railway' || anchorResult == '#sea'){
+      anchorTarget = anchorResult;
+    }
+
+    if (utm_campaign == 'price'){
+      $('.sale-price').show(300);
+      $('.base-price').hide(300);
+    }
+
+    
+
+
     $('#services-delivery-price-slider').slick({
       autoplay: false,
       autoplaySpeed: 2000,
@@ -765,6 +810,7 @@ jQuery(function($) {
       adaptiveHeight: true,
       asNavFor: '#services-delivery-price-slider-nav'
     });
+
 
     $('#services-delivery-price-slider-nav').slick({
       slidesToShow: 4,
@@ -788,6 +834,25 @@ jQuery(function($) {
         }
       ]
     });
+
+    if (anchorTarget != ''){
+      $('#services-delivery-price-slider .slide').each(function () {
+        let thisSlide = $(this);
+
+        if (thisSlide.attr('data-hesh') == anchorTarget ){
+
+          let thisIndex = thisSlide.attr('data-slick-index');
+
+          $('#services-delivery-price-slider').slick('slickGoTo', thisIndex);
+          $('#services-delivery-price-slider-nav').slick('slickGoTo', thisIndex);
+
+        }
+      })
+
+      $('html, body').animate({
+        scrollTop: $('#servise-pices').offset().top
+      }, 1000);
+    }
 
     $('.services-delivery-price-list .prev').click(function(e){
       e.preventDefault();
@@ -930,7 +995,7 @@ jQuery(function($) {
   if ( $('.our-contacts .office .slider-wrapper').length ){
 
     $('.our-contacts .office .slider-wrapper').each(function () {
-      
+
       let thisSliderContainer = $(this);
 
       let thisSlider = thisSliderContainer.find('.office-slider');
@@ -961,6 +1026,14 @@ jQuery(function($) {
     });
 
   }
+
+  /**
+   * Calculator info text
+   */
+
+  $('#form-info-text').on('click', function(){
+    $(this).toggleClass('open');
+  })
 
 });
 

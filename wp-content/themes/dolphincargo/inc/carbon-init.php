@@ -98,6 +98,18 @@
 			'icon'  => 'admin-page'
 		);
 
+		$categories[] = array(
+			'slug'  => 'dolphincargo-calculator-page-category',
+			'title' => 'Dolphin Calculator Page',
+			'icon'  => 'calculator'
+		);
+
+		$categories[] = array(
+			'slug'  => 'dolphincargo-containers-page-category',
+			'title' => 'Dolphin Containers Page',
+			'icon'  => 'screenoptions'
+		);
+
 		return $categories;
 	} );
 
@@ -155,3 +167,11 @@ require ('carbon-blocks/block-taobao-difficulties-solutions.php');
 require ('carbon-blocks/block-taobao-how-order.php');
 require ('carbon-blocks/block-taobao-call-to-action.php');
 require ('carbon-blocks/block-taobao-price.php');
+
+require ('carbon-blocks/block-calculator-how-get-price.php');
+require ('carbon-blocks/block-calculator-main-sceen.php');
+require ('carbon-blocks/block-calculator-form.php');
+
+require ('carbon-blocks/block-container-main-screen.php');
+require ('carbon-blocks/block-container-call.php');
+require ('carbon-blocks/block-container-how-order.php');

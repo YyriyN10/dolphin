@@ -109,8 +109,6 @@
 			);
 
 
-
-
 			/**
 			 * Titles
 			 */
@@ -221,10 +219,6 @@
 			);
 
 
-
-
-
-
 			/**
 			 * Forms
 			 */
@@ -284,6 +278,84 @@
 				'Форми',
 				false
 			);
+
+			pll_register_string(
+				'dolphincargo_form_calc_delivery_title',
+				'Оберіть спосіб доставки',
+				'Форми',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_form_calc_delivery_category_title',
+				'Оберіть категорію товару',
+				'Форми',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_form_calc_delivery_category_placeholder',
+				'Електротовари,мобільні аксесуари',
+				'Форми',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_form_calc_volume_name',
+				'Вага і об’єм вантажу з упаковкою',
+				'Форми',
+				false
+			);
+
+
+
+			pll_register_string(
+				'dolphincargo_form_calc_volume_placeholder',
+				'Введіть масу, кг/об’єм, куб.м.',
+				'Форми',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_form_calc_name_title',
+				'Ім’я, Прізвище',
+				'Форми',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_form_calc_name_placeholder',
+				'Ваше ім’я',
+				'Форми',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_form_calc_phone_title',
+				'Телефон',
+				'Форми',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_form_calc_email_placeholder',
+				'Напишіть вам еmail',
+				'Форми',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_form_calc_send_btn',
+				'Дізнатись вартість',
+				'Форми',
+				false
+			);
+
+
+
+
+
+
 
 			/**
 			 * 404

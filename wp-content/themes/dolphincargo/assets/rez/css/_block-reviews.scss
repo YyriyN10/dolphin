@@ -47,10 +47,17 @@
           overflow: hidden;
           border-radius: 50%;
           margin-right: 16px;
-
-          img{
-            width: 100%;
-            height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(rgba(255,169,143,1) 0%, rgba(255,132,151,1) 100%);
+          
+          p{
+            color: $color-white;
+            text-transform: uppercase;
+            font-family: $f-bold;
+            font-size: 44px;
+            margin-bottom: 0;
           }
         }
 

@@ -726,6 +726,11 @@ jQuery(function($) {
     let utmTerm = thisForm.find('input[name = utm_term]').val();
     let utmContent = thisForm.find('input[name = utm_content]').val();
 
+    let calcDeliveryType = thisForm.find('input[name = calc-delivery-type]:checked').val();
+    let calcDeliveryCategory = thisForm.find('select[name = calc-delivery-category]').val();
+    let calcDeliveryVolume = thisForm.find('input[name = calc-form-volume]').val();
+
+
     const formData = {
       action: action,
       name: name,
@@ -738,6 +743,10 @@ jQuery(function($) {
       utmCampaign: utmCampaign,
       utmTerm: utmTerm,
       utmContent: utmContent,
+      calcDeliveryType: calcDeliveryType,
+      calcDeliveryCategory: calcDeliveryCategory,
+      calcDeliveryVolume: calcDeliveryVolume,
+
     }
 
     $.post( dolphincargo_ajax.url, formData, function(response) {
@@ -755,6 +764,49 @@ jQuery(function($) {
 
   if ( $('.services-delivery-price-list').length ){
 
+
+    let anchor = window.location.hash;
+    let position = anchor.indexOf('?');
+
+    let anchorResult = anchor;
+
+    if (position > 0){
+      anchorResult = anchor.slice(0, position);
+    }
+
+    let urmAfterAnchor = anchor.slice((position + 1));
+    let utm_campaign = checkUtm('utm_campaign') ? checkUtm('utm_campaign') : "";
+
+
+    if(anchor == ''){
+      urmAfterAnchor = window.location.search.substring(1);
+      utm_campaign = checkUtm('utm_campaign') ? checkUtm('utm_campaign') : "";
+    }
+
+    function checkUtm(utmName) {
+      let utmArray = urmAfterAnchor.split('&');
+
+      for (let i = 0; i < utmArray.length; i++) {
+        let pair = utmArray[i].split('=');
+        if (decodeURIComponent(pair[0]) == utmName) {
+          return decodeURIComponent(pair[1]);
+        }
+      }
+    }
+
+
+    let anchorTarget = '';
+
+    if ( anchorResult == '#avia' || anchorResult == '#railway' || anchorResult == '#sea'){
+      anchorTarget = anchorResult;
+    }
+
+    if (utm_campaign == 'price'){
+      $('.sale-price').show(300);
+      $('.base-price').hide(300);
+    }
+
+
     $('#services-delivery-price-slider').slick({
       autoplay: false,
       autoplaySpeed: 2000,
@@ -765,6 +817,7 @@ jQuery(function($) {
       adaptiveHeight: true,
       asNavFor: '#services-delivery-price-slider-nav'
     });
+
 
     $('#services-delivery-price-slider-nav').slick({
       slidesToShow: 4,
@@ -788,6 +841,25 @@ jQuery(function($) {
         }
       ]
     });
+
+    if (anchorTarget != ''){
+      $('#services-delivery-price-slider .slide').each(function () {
+        let thisSlide = $(this);
+
+        if (thisSlide.attr('data-hesh') == anchorTarget ){
+
+          let thisIndex = thisSlide.attr('data-slick-index');
+
+          $('#services-delivery-price-slider').slick('slickGoTo', thisIndex);
+          $('#services-delivery-price-slider-nav').slick('slickGoTo', thisIndex);
+
+        }
+      })
+
+      $('html, body').animate({
+        scrollTop: $('#servise-pices').offset().top
+      }, 1000);
+    }
 
     $('.services-delivery-price-list .prev').click(function(e){
       e.preventDefault();
@@ -814,6 +886,13 @@ jQuery(function($) {
   const calcType1Count = $('#calc-type1-count');
   let calcType1Metrics = $('#calculatorType1Modal .data-type-list input:checked').val();
 
+  const calcType2Width = $('#calc-type2-white');
+  const calcType2Height = $('#calc-type2-height');
+  const calcType2Length = $('#calc-type2-length');
+  const calcType2Count = $('#calc-type2-count');
+  let calcType2Metrics = $('#calculatorType2 .data-type-list input:checked').val();
+
+  let calcFormValue = $('#calc-form-volume');
 
   let calcWidthValue = 0;
   let calcHeightValue = 0;
@@ -822,12 +901,17 @@ jQuery(function($) {
 
   const calcResultWrapper = $('.calculator-result');
   /*const formCalcResult = $('#cargo-volume');*/
-  const calcBtnGo = $('.calculator-wrapper .button');
+  const calcBtnGo = $('.calculator-wrapper #calc-type-1');
   /*const calcFormContact = $('#calculatorModal form');*/
+  const calcBtnGo2 = $('.calculator-wrapper #calc-type-2');
 
   let currentWidthPlaceholder = calcType1Width.attr('placeholder');
   let currentHeightPlaceholder = calcType1Height.attr('placeholder');
   let currentLengthPlaceholder = calcType1Length.attr('placeholder');
+
+  let current2WidthPlaceholder = calcType2Width.attr('placeholder');
+  let current2HeightPlaceholder = calcType2Height.attr('placeholder');
+  let current2LengthPlaceholder = calcType2Length.attr('placeholder');
 
   function changeCalcPlaceholder(calcType1Metrics) {
 
@@ -850,13 +934,43 @@ jQuery(function($) {
     }
   }
 
+  function changeCalcPlaceholder2(calcType2Metrics) {
+
+    if ( calcType2Metrics == 'centimeters'){
+      calcType2Width.attr('placeholder', current2WidthPlaceholder + ' см');
+      calcType2Height.attr('placeholder', current2HeightPlaceholder + ' см');
+      calcType2Length.attr('placeholder', current2LengthPlaceholder + ' см');
+    }
+
+    if ( calcType2Metrics == 'millimeters'){
+      calcType2Width.attr('placeholder', current2WidthPlaceholder + ' мм');
+      calcType2Height.attr('placeholder', current2HeightPlaceholder + ' мм');
+      calcType2Length.attr('placeholder', current2LengthPlaceholder + ' мм');
+    }
+
+    if ( calcType2Metrics == 'meters'){
+      calcType2Width.attr('placeholder', current2WidthPlaceholder + ' м');
+      calcType2Height.attr('placeholder', current2HeightPlaceholder + ' м');
+      calcType2Length.attr('placeholder', current2LengthPlaceholder + ' м');
+    }
+  }
+
   changeCalcPlaceholder(calcType1Metrics);
+  changeCalcPlaceholder2(calcType2Metrics);
 
   $('#calculatorType1Modal .data-type-list input').on('change', function () {
 
     calcType1Metrics = $(this).val();
 
     changeCalcPlaceholder(calcType1Metrics);
+
+  })
+
+  $('#calculatorType2 .data-type-list input').on('change', function () {
+
+    calcType2Metrics = $(this).val();
+
+    changeCalcPlaceholder2(calcType2Metrics);
 
   })
 
@@ -870,10 +984,27 @@ jQuery(function($) {
 
     if(calcType1Count.val() > 0){
       calcCountValue = calcType1Count.val();
+
     }
 
 
     calcCargoValue(calcWidthValue, calcHeightValue, calcLengthValue, calcType1Metrics, calcCountValue);
+
+  });
+
+  calcBtnGo2.on('click', function (e) {
+    e.preventDefault();
+
+    calcWidthValue = calcType2Width.val();
+    calcHeightValue = calcType2Height.val();
+    calcLengthValue = calcType2Length.val();
+
+    if(calcType2Count.val() > 0){
+      calcCountValue = calcType2Count.val();
+    }
+
+
+    calcCargoValue(calcWidthValue, calcHeightValue, calcLengthValue, calcType2Metrics, calcCountValue);
 
   });
 
@@ -892,6 +1023,10 @@ jQuery(function($) {
 
       calcResultWrapper.find('span').text(calcResult.toFixed(3));
       calcResultWrapper.slideDown(300);
+
+      if(calcFormValue.length){
+        calcFormValue.val(calcResult.toFixed(3)+'м³');
+      }
 
     }
 
@@ -961,6 +1096,14 @@ jQuery(function($) {
     });
 
   }
+
+  /**
+   * Calculator info text
+   */
+
+  $('#form-info-text').on('click', function(){
+    $(this).toggleClass('open');
+  })
 
 });
 
