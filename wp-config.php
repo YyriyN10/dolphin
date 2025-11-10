@@ -26,7 +26,7 @@ define( 'DB_NAME', 'dolphin' );
 define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'password' );
+define( 'DB_PASSWORD', 'myDBpass100!' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
@@ -79,7 +79,7 @@ $table_prefix = 'yudoca_';
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
-define( 'WP_DEBUG', false);
+define( 'WP_DEBUG', true);
 
 /* Add any custom values between this line and the "stop editing" line. */
 

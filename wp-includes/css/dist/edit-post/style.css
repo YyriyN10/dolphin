@@ -175,12 +175,7 @@
   clear:both;
 }
 
-.has-metaboxes .interface-interface-skeleton__content:has(.edit-post-meta-boxes-main) .editor-visual-editor{
-  flex-basis:0%;
-  flex-shrink:1;
-}
-
-.has-metaboxes .editor-visual-editor.is-iframed{
+.has-metaboxes .editor-visual-editor{
   isolation:isolate;
 }
 

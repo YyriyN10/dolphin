@@ -218,6 +218,48 @@
 				false
 			);
 
+			pll_register_string(
+				'dolphincargo_cotainer_format',
+				'Формат',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_cotainer_length',
+				'Довжина',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_cotainer_width',
+				'Ширина',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_cotainer_volume_height',
+				'Об’єм/Висота',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_cotainer_empty_weight',
+				'Вага порожнього',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_cotainer_load_capacity',
+				'Вантажопідйомність',
+				'Заголовки',
+				false
+			);
+
 
 			/**
 			 * Forms
@@ -306,8 +348,6 @@
 				'Форми',
 				false
 			);
-
-
 
 			pll_register_string(
 				'dolphincargo_form_calc_volume_placeholder',

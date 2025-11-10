@@ -175,3 +175,5 @@ require ('carbon-blocks/block-calculator-form.php');
 require ('carbon-blocks/block-container-main-screen.php');
 require ('carbon-blocks/block-container-call.php');
 require ('carbon-blocks/block-container-how-order.php');
+require ('carbon-blocks/block-container-size.php');
+require ('carbon-blocks/block-container-types.php');
