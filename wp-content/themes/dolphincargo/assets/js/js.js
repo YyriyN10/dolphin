@@ -763,8 +763,7 @@ jQuery(function($) {
    */
 
   if ( $('.services-delivery-price-list').length ){
-
-
+    
     let anchor = window.location.hash;
     let position = anchor.indexOf('?');
 
@@ -794,7 +793,6 @@ jQuery(function($) {
       }
     }
 
-
     let anchorTarget = '';
 
     if ( anchorResult == '#avia' || anchorResult == '#railway' || anchorResult == '#sea'){
@@ -806,7 +804,6 @@ jQuery(function($) {
       $('.base-price').hide(300);
     }
 
-
     $('#services-delivery-price-slider').slick({
       autoplay: false,
       autoplaySpeed: 2000,
@@ -817,7 +814,6 @@ jQuery(function($) {
       adaptiveHeight: true,
       asNavFor: '#services-delivery-price-slider-nav'
     });
-
 
     $('#services-delivery-price-slider-nav').slick({
       slidesToShow: 4,
@@ -875,6 +871,48 @@ jQuery(function($) {
       $('#services-delivery-price-slider-nav').slick('slickNext');
     });
   }
+
+  /**
+   * Containers type
+   */
+
+  if ($('#container-types-slider-nav').length){
+    $('#container-types-slider').slick({
+      autoplay: false,
+      autoplaySpeed: 2000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      adaptiveHeight: true,
+      asNavFor: '#container-types-slider-nav'
+    });
+
+    $('#container-types-slider-nav').slick({
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      asNavFor: '#container-types-slider',
+      focusOnSelect: true,
+      variableWidth: true,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 575,
+          settings: {
+            slidesToShow: 2
+          }
+        }
+      ]
+    });
+  }
+
+
 
   /**
    * Calculator
