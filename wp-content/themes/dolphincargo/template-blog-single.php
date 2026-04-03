@@ -40,32 +40,10 @@
           <h1 class="block-title big-title col-12 text-center"><?php the_title();?></h1>
         </div>
       </div>
-      <div class="run-rows-wrapper">
-        <div class="run-row first-row">
-          Services of the transportation & logistics company DOLPHIN CARGO
-          Services of the transportation & logistics company DOLPHIN CARGO
-          Services of the transportation & logistics company DOLPHIN CARGO
-        </div>
-        <div class="run-row second-row">
-          Services of the transportation & logistics company DOLPHIN CARGO
-          Services of the transportation & logistics company DOLPHIN CARGO
-          Services of the transportation & logistics company DOLPHIN CARGO
-        </div>
-      </div>
       <div class="container-fluid">
         <div class="row">
           <div class="post-image col-12">
-            <img
-               class="lazy"
-               data-src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'full')[0];?>"
-               <?php
-                $altText = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE);
-                if ( !empty( $altText ) ):?>
-                    alt="<?php echo $altText;?>"
-                <?php else:?>
-                    alt="<?php the_title();?>"
-                <?php endif;?>
-            >
+            <?php echo get_the_post_thumbnail(get_the_ID());?>
           </div>
           <p class="excerpt col-12"><?php echo get_the_excerpt();?></p>
         </div>

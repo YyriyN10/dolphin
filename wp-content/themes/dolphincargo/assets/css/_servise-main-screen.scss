@@ -7,26 +7,27 @@
   padding-top: 250px;
   /*padding-bottom: 15vw;*/
   position: relative;
-  cursor: none;
+  /*cursor: none;*/
  /* height: 120vh;*/
   z-index: 1;
-  padding-bottom: 600px;
+  /*padding-bottom: 600px;*/
   height: 110vh;
   
   @media(max-width: 2000px){
     padding-top: 200px;
-    padding-bottom: 583px;
+    /*padding-bottom: 583px;*/
+    padding-bottom: 350px;
     background-size: cover;
     height: auto;
   }
 
-  @media(max-width: 1200px){
+  /*@media(max-width: 1200px){
     padding-bottom: 484px;
   }
 
   @media(max-width: 767px){
     padding-bottom: 384px;
-  }
+  }*/
 
   @media(max-width: 575px){
     padding-bottom: 284px;
@@ -35,10 +36,6 @@
   @media(max-width: 440px){
     padding-top: 180px;
   }
-
-  /*@media(max-width: 440px){
-    padding-top: 100px;
-  }*/
 
   &:before{
     content: '';
@@ -76,7 +73,7 @@
     }
   }
 
-  .cursor-container{
+  /*.cursor-container{
     position: absolute;
     z-index: 5;
     top: 100px;
@@ -89,7 +86,7 @@
     @media(max-width: 1024px){
       display: none;
     }
-  }
+  }*/
 
   /*&:before{
     content: '';
@@ -106,13 +103,9 @@
 
   .main-title{
     text-transform: uppercase;
-    /*font-family: $f-med;*/
     font-family: $f-BeauSP-Bbook;
-    /*margin-bottom: 0;*/
     margin-bottom: 17px;
     line-height: 1.2;
-    /*font-size: clamp(64px, 4.68vw, 90px);*/
-    /*font-size: clamp(64px, 5.68vw, 102px);*/
     font-size: 70px;
     width: 1080px;
 
@@ -143,19 +136,14 @@
   }
 
   .who-are{
-    /*font-size: clamp(24px, 1.56vw, 30px);*/
     font-size: 26px;
-    margin-bottom: 0;
-    /*max-width: clamp(450px, 28.15vw, 540px);*/
+    /*margin-bottom: 40px;*/
+    margin-bottom: 30px;
     width: 500px;
     
     @media(max-width: 2000px){
       font-size: 24px;
       max-width: 450px;
-    }
-
-    @media(max-width: 1024px){
-      margin-bottom: 40px;
     }
 
     @media(max-width: 575px){
@@ -169,16 +157,10 @@
   }
 
   .button{
-    display: none;
-
     margin-bottom: 50px;
-
-    @media(max-width: 1024px){
-      display: inline-block;
-    }
   }
 
-  .circle-button{
+  /*.circle-button{
     position: absolute;
     z-index: 10;
     width: 142px;
@@ -201,7 +183,7 @@
     @media(max-width: 1024px){
       display: none;
     }
-  }
+  }*/
 
   .advantages-list{
     display: flex;
@@ -303,11 +285,12 @@
 
     .button{
       display: inline-block;
-      margin-top: 40px;
+      /*margin-top: 40px;*/
       /*margin-bottom: clamp(68px, 11.45vw, 214px);*/
-      margin-bottom: 180px;
+      /*margin-bottom: 180px;*/
+      margin-bottom: 50px;
 
-      @media(max-width: 2000px){
+      /*@media(max-width: 2000px){
         margin-bottom: 153px;
       }
 
@@ -318,7 +301,7 @@
       @media(max-width: 1024px){
         margin-top: 0;
         margin-bottom: 50px;
-      }
+      }*/
     }
   }
 }

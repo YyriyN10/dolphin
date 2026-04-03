@@ -92,7 +92,7 @@
 		$blogArgs = array(
 			'posts_per_page' => $blogPostPerPage,
 			'orderby' 	 => 'date',
-			'post_type'  => 'blog',
+			'post_type'  => 'post',
 			'post_status'    => 'publish',
       /*'offset' => $currentPage * 2,*/
 			'paged' => $paged,

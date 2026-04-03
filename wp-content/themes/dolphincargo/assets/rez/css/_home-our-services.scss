@@ -2,6 +2,47 @@
   position: relative;
   z-index: 3;
 
+  &:before{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 1050px;
+    height: 770px;
+    border-radius: 1000px;
+    background: radial-gradient(
+            circle at 50% 50%,
+            rgba($color-dark-blue, 0.85) 0%,
+            rgba($color-dark-blue, 0.65) 30%,
+            rgba($color-dark-blue, 0.55) 55%,
+            rgba($color-dark-blue, 0) 80%
+    );
+    top: -150px;
+    right: 0;
+    transform: translateX(340px);
+    filter: blur(90px);
+  }
+
+  &:after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 1050px;
+    height: 770px;
+    border-radius: 1000px;
+    background: radial-gradient(
+            circle at 50% 50%,
+            rgba($color-dark-blue, 0.85) 0%,
+            rgba($color-dark-blue, 0.65) 30%,
+            rgba($color-dark-blue, 0.55) 55%,
+            rgba($color-dark-blue, 0) 80%
+    );
+
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    filter: blur(90px);
+  }
+
   .light{
     position: absolute;
     top: -150px;
@@ -198,13 +239,30 @@
   }
 
   .run-rows-wrapper{
-    margin-top: 58px;
+    margin-top: 110px;
     position: relative;
     z-index: 3;
+
+    @media(max-width: 1200px){
+      margin-top: 100px;
+    }
+
+    @media(max-width: 992px){
+      margin-top: 90px;
+    }
+
+    @media(max-width: 767px){
+      margin-top: 80px;
+    }
+
+    @media(max-width: 575px){
+      margin-top: 60px;
+    }
 
     .marque-row{
       overflow: hidden;
       padding: 16px 0;
+      transform-origin: center;
 
       @media(max-width: 992px){
         padding: 10px 0;
@@ -213,13 +271,13 @@
       &.first-row{
         background-color: $color-dark-blue;
         z-index: 1;
-        transform: rotate(3deg);
+        transform: rotate(3deg) translateY(50%);
       }
 
       &.second-row{
         background-color: $color-light-blue;
         z-index: 2;
-        transform: rotate(-3deg);
+        transform: rotate(-3deg) translateY(-50%);
       }
     }
 

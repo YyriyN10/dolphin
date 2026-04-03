@@ -31,12 +31,27 @@
 
 						) )
 
-
 		         ->add_tab( 'Опції сайту', array(
 		         	  Field::make_image('dolphincargo_option_logo', 'Логотип')
 									->set_type('image')
 									->set_value_type('url'),
 			         Field::make_association('policy_page', 'Сторінка політики конфіденційності')
+			              ->set_types( array(
+				              array(
+					              'type'      => 'post',
+					              'post_type' => 'page',
+				              )
+			              ) )
+			              ->set_max( 1 ),
+			         Field::make_association('blog_ua_page', 'Сторінка блогу для Української версії')
+			              ->set_types( array(
+				              array(
+					              'type'      => 'post',
+					              'post_type' => 'page',
+				              )
+			              ) )
+			              ->set_max( 1 ),
+			         Field::make_association('blog_ru_page', 'Сторінка блогу для російської версії')
 			              ->set_types( array(
 				              array(
 					              'type'      => 'post',
@@ -114,10 +129,40 @@
 			              ->set_attribute('type', 'number'),
 			         Field::make_text('dolphincargo_option_form_como_product_cat', 'ID поля для категорії товару з калькулятора')
 			              ->set_attribute('type', 'number'),
-
-
-
-
+			         Field::make_text('dolphincargo_option_form_como_massage', 'ID поля для коментаря')
+			              ->set_attribute('type', 'number'),
 
 		         ) );
+	}
+
+	/**
+	 * Trigger class to custom page styles
+	 */
+
+	add_action( 'carbon_fields_register_fields', 'dolphincargo_page_custom_triger_class' );
+
+	function dolphincargo_page_custom_triger_class() {
+		Container::make( 'post_meta', 'Кастомізація')
+		         ->where( function( $homeFields ) {
+			         $homeFields->where( 'post_type', '=', 'page' );
+		         } )
+							->set_context('side')
+
+		         ->add_fields(array(
+		         	  Field::make_text('custom_page_trigger_class', 'Кастомний клас сторінки')
+		         ));
+
+	}
+
+	add_action( 'carbon_fields_register_fields', 'dolphincargo_service_page_custom_trigger_class' );
+
+	function dolphincargo_service_page_custom_trigger_class() {
+		Container::make( 'post_meta', 'Кастомізація')
+		         ->where('post_type', '=', 'services')
+		         ->set_context('side')
+
+		         ->add_fields(array(
+			         Field::make_text('custom_page_trigger_class', 'Кастомний клас сторінки')
+		         ));
+
 	}

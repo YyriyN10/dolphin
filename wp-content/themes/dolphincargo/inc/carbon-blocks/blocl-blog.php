@@ -35,7 +35,7 @@
 			     $blogArgs = array(
 				     'posts_per_page' => 3,
 				     'orderby' 	 => 'date',
-				     'post_type'  => 'blog',
+				     'post_type'  => 'post',
 				     'post_status' => 'publish'
 			     );
 

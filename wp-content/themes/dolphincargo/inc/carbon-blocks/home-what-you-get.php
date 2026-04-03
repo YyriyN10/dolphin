@@ -34,7 +34,7 @@
                <p class="text-element">logistics</p>
 
                <div class="light">
-                 <!--<img src="<?php /*echo THEME_PATH;*/?>/assets/img/hom-what-light.png" alt="">-->
+                 <!--<img src="<?php /*echo THEME_PATH;*/?>/assets/img/hom-what-light.png" alt="<?php /*the_title();*/?>">-->
                </div>
 
                <div class="container-fluid">

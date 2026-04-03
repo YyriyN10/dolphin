@@ -109,11 +109,11 @@
                <?php endif;?>
 				     </div>
            <?php if( empty( $fields['dolphincargo_service_main-screen_advantages_list'] ) ):?>
-             <div class="cursor-container">
+             <!--<div class="cursor-container">
                <div class="circle-button" data-toggle="modal" data-target="#formModal">
-		             <?php echo esc_html( pll__( 'Отримати консультацію' ) ); ?>
+		             <?php /*echo esc_html( pll__( 'Отримати консультацію' ) ); */?>
                </div>
-             </div>
+             </div>-->
            <?php endif;?>
 
 			     </section>

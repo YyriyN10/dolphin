@@ -1,0 +1,21 @@
+<?php
+	if ( ! defined( 'ABSPATH' ) ) {
+		exit;
+	}
+
+	/**
+	 * Template part for displaying page content in page.php
+	 *
+	 * Template name: Шаблон сторінки "Типи контейнерів"
+	 *
+	 * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+	 *
+	 * @package dolphincargo
+	 *
+	 */
+
+	get_header();?>
+
+<?php the_content();?>
+
+<?php get_footer();

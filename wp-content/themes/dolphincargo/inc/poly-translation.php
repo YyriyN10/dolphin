@@ -108,6 +108,15 @@
 				false
 			);
 
+			pll_register_string(
+				'dolphincargo_btn_container_calc',
+				'ОТРИМАТИ РОЗРАХУНОК',
+				'Кнопки',
+				false
+			);
+
+
+
 
 			/**
 			 * Titles
@@ -218,6 +227,71 @@
 				false
 			);
 
+			pll_register_string(
+				'dolphincargo_cotainer_format',
+				'Формат',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_cotainer_length',
+				'Довжина',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_cotainer_width',
+				'Ширина',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_cotainer_height',
+				'Висота',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_cotainer_volume',
+				'Об’єм',
+				'Заголовки',
+				false
+			);
+
+
+			pll_register_string(
+				'dolphincargo_cotainer_empty_weight',
+				'Вага порожнього',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_cotainer_load_capacity',
+				'Вантажопідйомність',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_cotainer_label_1',
+				'Підходить для',
+				'Заголовки',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_cotainer_label_2',
+				'Перевага',
+				'Заголовки',
+				false
+			);
+
+
 
 			/**
 			 * Forms
@@ -307,8 +381,6 @@
 				false
 			);
 
-
-
 			pll_register_string(
 				'dolphincargo_form_calc_volume_placeholder',
 				'Введіть масу, кг/об’єм, куб.м.',
@@ -347,6 +419,13 @@
 			pll_register_string(
 				'dolphincargo_form_calc_send_btn',
 				'Дізнатись вартість',
+				'Форми',
+				false
+			);
+
+			pll_register_string(
+				'dolphincargo_form_coment_placeholder',
+				'Ваш коментар',
 				'Форми',
 				false
 			);

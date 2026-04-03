@@ -79,6 +79,7 @@
                      <input type="hidden" name="page-url" value="<?php echo $actual_link;?>">
 
                      <input type="hidden" name="page-name" value="<?php the_title();?>">
+                     <input type="hidden" name="g-recaptcha-response" class="recaptchaResponse">
 								     <div class="inner">
 									     <?php if( !empty($fields['block_delivery_list']) ):?>
 										     <div class="delivery-wrapper">
@@ -124,6 +125,9 @@
 											     <input type="email" name="email" class="form-control" placeholder="<?php echo esc_html( pll__( 'Напишіть вам еmail' ) ); ?>" required>
 										     </div>
 									     </div>
+                       <div class="form-group textarea-group">
+                         <textarea name="message" class="form-control" placeholder="<?php echo esc_html( pll__( 'Ваш коментар' ) ); ?>"></textarea>
+                       </div>
 									     <button type="submit" class="button blue-btn"><?php echo esc_html( pll__( 'Дізнатись вартість' ) ); ?></button>
 								     </div>
 							     </form>

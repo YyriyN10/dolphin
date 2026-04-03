@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-size: 100% auto;
   position: relative;
-  cursor: none;
+  /*cursor: none;*/
   z-index: 4;
   padding-top: 250px;
   padding-bottom: 430px;
@@ -71,7 +71,7 @@
     }
   }
 
-  .cursor-container{
+  /*.cursor-container{
     position: absolute;
     z-index: 5;
     top: 100px;
@@ -84,7 +84,7 @@
     @media(max-width: 1024px){
       display: none;
     }
-  }
+  }*/
 
   .container-fluid{
     position: relative;
@@ -153,15 +153,9 @@
   }
 
   .who-are{
-    /*font-size: clamp(24px, 1.56vw, 30px);*/
-    /*margin-bottom: 110px;*/
-    margin-bottom: 77px;
     font-size: 24px;
-    /*max-width: clamp(450px, 28.15vw, 540px);*/
+    margin-bottom: 40px;
 
-    @media(max-width: 1024px){
-      margin-bottom: 40px;
-    }
 
     @media(max-width: 575px){
       font-size: 22px;
@@ -173,15 +167,10 @@
   }
 
   .button{
-    display: none;
-    margin-bottom: 80px;
-
-    @media(max-width: 1024px){
-      display: inline-block;
-    }
+    margin-bottom: 77px;
   }
 
-  .circle-button{
+  /*.circle-button{
     position: absolute;
     z-index: 10;
     width: 142px;
@@ -203,7 +192,7 @@
     @media(max-width: 1024px){
       display: none;
     }
-  }
+  }*/
 
   .advantages-list{
     display: flex;

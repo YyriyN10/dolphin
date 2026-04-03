@@ -257,7 +257,7 @@ define( 'THEME_PATH', get_template_directory_uri() );
 
 		$mailToList = carbon_get_theme_option('dolphincargo_option_form_mail_to_list');
 
-			function mailTest($name, $email, $phone, $utmSource, $utmMedium, $utmCampaign, $utmTerm, $utmContent, $pageName, $pageUrl, $mailToList, $calcDeliveryVolume, $calcDeliveryCategory){
+			function mailTest($name, $email, $phone, $utmSource, $utmMedium, $utmCampaign, $utmTerm, $utmContent, $pageName, $pageUrl, $mailToList, $calcDeliveryVolume, $calcDeliveryCategory, $comment){
 
 				if (!empty($mailToList)){
 					$sendMail = '';
@@ -273,12 +273,10 @@ define( 'THEME_PATH', get_template_directory_uri() );
 				$to = $sendMail;
 				$headers = "Content-type: text/plain; charset = UTF-8";
 				$subject = "Заявка з сайту Dolphin Cargo з $pageName";
-				$message = "Ім'я: $name \n Телефон: $phone \n Пошта: $email \n Адреса сторінки: $pageUrl\n\n UTM мітки: \n utmSource: $utmSource \n utmMedium: $utmMedium \n utmCampaign: $utmCampaign \n utmTerm: $utmTerm \n utmContent: $utmContent \n Обʼєм вантажу: $calcDeliveryCategory \n Категорія товарів: $calcDeliveryVolume";
+				$message = "Ім'я: $name \n Телефон: $phone \n Пошта: $email \n Коментар: $comment \n Адреса сторінки: $pageUrl\n\n UTM мітки: \n utmSource: $utmSource \n utmMedium: $utmMedium \n utmCampaign: $utmCampaign \n utmTerm: $utmTerm \n utmContent: $utmContent \n Обʼєм вантажу: $calcDeliveryCategory \n Категорія товарів: $calcDeliveryVolume";
 
 				$send = mail ($to, $subject, $message, $headers);
 			}
-
-
 
 
 		/**
@@ -295,6 +293,7 @@ define( 'THEME_PATH', get_template_directory_uri() );
 		 * @param string $utmContent Мітка utm_Content
 		 * @param string $pageName Назва сторінки
 		 * @param string $pageUrl Адреса сторінки
+		 * @param string $comment Коментар
 		 * 
 		 * @param string $komoSubdomne Субдомен CRM
 		 * @param string $komoToken Токен авторізації
@@ -309,7 +308,7 @@ define( 'THEME_PATH', get_template_directory_uri() );
 		 */
 
 
-		function createKommoLead($name, $email, $phone, $price, $utmSource, $utmMedium, $utmCampaign, $utmTerm, $utmContent, $pageName, $pageUrl, $komoSubdomne, $komoToken, $komoFunnelId, $komoFullenStageId, $komoLidCreatorUserId, $calcDeliveryVolume, $calcDeliveryCategory ) {
+		function createKommoLead($name, $email, $phone, $price, $utmSource, $utmMedium, $utmCampaign, $utmTerm, $utmContent, $pageName, $pageUrl, $komoSubdomne, $komoToken, $komoFunnelId, $komoFullenStageId, $komoLidCreatorUserId, $calcDeliveryVolume, $calcDeliveryCategory, $comment ) {
 			
 			// ==== Настройки Kommo ====
 			$subdomain = $komoSubdomne;    // Замените на ваш субдомен в Kommo
@@ -352,6 +351,9 @@ define( 'THEME_PATH', get_template_directory_uri() );
 			}
 			if (!empty(carbon_get_theme_option('dolphincargo_option_form_como_product_cat'))){
 				$fieldIdProductCat = carbon_get_theme_option('dolphincargo_option_form_como_product_cat');
+			}
+			if (!empty(carbon_get_theme_option('dolphincargo_option_form_como_massage'))){
+				$fieldIdМassage = carbon_get_theme_option('dolphincargo_option_form_como_massage');
 			}
 
 
@@ -428,6 +430,12 @@ define( 'THEME_PATH', get_template_directory_uri() );
 										'values'   => [
 											['value' => $calcDeliveryCategory]
 										]
+									],
+									[
+										'field_id' => intval($fieldIdМassage), // comment
+										'values'   => [
+											['value' => $comment]
+										]
 									]
 
 								]
@@ -489,6 +497,7 @@ define( 'THEME_PATH', get_template_directory_uri() );
 		$price = isset($_POST['price']) ? floatval($_POST['price']) : 0;
 		$pageName = isset($_POST['pageName']) ? clearData($_POST['pageName']) : '';
 		$pageUrl = clearData($_POST['pageUrl']);
+		$comment = isset($_POST['message']) ? clearData($_POST['message']) : '';
 
 		$utmSource = isset($_POST['utmSource']) ? clearData($_POST['utmSource']) : '';
 		$utmMedium = isset($_POST['utmMedium']) ? clearData($_POST['utmMedium']) : '';
@@ -517,9 +526,22 @@ define( 'THEME_PATH', get_template_directory_uri() );
 			$name = $name.' Спосіб доставки - '.$calcDeliveryType;
 		}
 
-		if	(!empty($komoSubdomain) && !empty($komoToken) && !empty($komoFunnelId) && !empty($komoFullenStageId) && !empty($komoLidCreatorUserId)){
-			createKommoLead($name, $email, $phone, $price, $utmSource, $utmMedium, $utmCampaign, $utmTerm, $utmContent, $pageName, $pageUrl, $komoSubdomain, $komoToken, $komoFunnelId, $komoFullenStageId, $komoLidCreatorUserId, $calcDeliveryVolume, $calcDeliveryCategory);
+		if (isset($_POST['g-recaptcha-response'])) {
+			$captcha_response = $_POST['captchaResponse'];
+			$secret_key = '6LeJTiYsAAAAAAXRW-4HXRX5cpchxwDid4O9Lrc3';
+
+			$verify_url = "https://www.google.com/recaptcha/api/siteverify";
+			$response = file_get_contents($verify_url . "?secret=" . $secret_key . "&response=" . $captcha_response);
+			$result = json_decode($response, true);
+
+			if ($result['success'] == true && $result['score'] >= 0.4) {
+				if	(!empty($komoSubdomain) && !empty($komoToken) && !empty($komoFunnelId) && !empty($komoFullenStageId) && !empty($komoLidCreatorUserId)){
+					createKommoLead($name, $email, $phone, $price, $utmSource, $utmMedium, $utmCampaign, $utmTerm, $utmContent, $pageName, $pageUrl, $komoSubdomain, $komoToken, $komoFunnelId, $komoFullenStageId, $komoLidCreatorUserId, $calcDeliveryVolume, $calcDeliveryCategory, $comment);
+				}
+			}
 		}
+
+
 		
 		
 

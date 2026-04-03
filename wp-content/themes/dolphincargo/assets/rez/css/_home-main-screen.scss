@@ -6,7 +6,7 @@
   padding-top: 200px;
   padding-bottom: 355px;
   position: relative;
-  cursor: none;
+  /*cursor: none;*/
   /*height: 110vh;*/
   min-height: 110vh;
 
@@ -60,7 +60,7 @@
     }
   }
 
-  .cursor-container{
+  /*.cursor-container{
     position: absolute;
     z-index: 5;
     top: 100px;
@@ -74,7 +74,7 @@
       display: none;
       z-index: 0;
     }
-  }
+  }*/
 
   .container-fluid{
     position: relative;
@@ -82,19 +82,14 @@
   }
 
   .main-title{
-    /*text-transform: uppercase;
-    font-family: $f-med;*/
-    /*margin-bottom: 32px;*/
-    /*margin-bottom: 0;*/
-    /*line-height: 1.1;*/
-    /*font-size: clamp(186px, 11.6vw, 222px);*/
-    line-height: 1.2;
+    /*line-height: 1.2;*/
+    line-height: 0.95;
     font-family: $f-BeauSP-l;
-    margin-bottom: 32px;
+    /*margin-bottom: 32px;*/
     /*font-size: 204px;*/
+    margin-bottom: 25px;
     font-size: 127px;
     max-width: 850px;
-
 
     span{
       display: block;
@@ -153,11 +148,12 @@
     font-family: $f-flex;
     line-height: 1.4;
     font-size: 24px;
-    margin-bottom: 77px;
+    /*margin-bottom: 77px;*/
+    margin-bottom: 30px;
 
-    @media(max-width: 1024px){
+    /*@media(max-width: 1024px){
       margin-bottom: 40px;
-    }
+    }*/
 
     @media(max-width: 575px){
       font-size: 22px;
@@ -170,16 +166,11 @@
   }
 
   .button{
-    display: none;
-
-    margin-bottom: 50px;
-
-    @media(max-width: 1024px){
-      display: inline-block;
-    }
+    /*margin-bottom: 50px;*/
+    margin-bottom: 30px;
   }
 
-  .circle-button{
+  /*.circle-button{
     position: absolute;
     z-index: 10;
     width: 142px;
@@ -202,7 +193,7 @@
     @media(max-width: 1024px){
       display: none;
     }
-  }
+  }*/
 
   .numbers-list{
     display: flex;

@@ -72,8 +72,13 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php
+	$pageCustomClass = carbon_get_post_meta(get_the_ID(),'custom_page_trigger_class');
+?>
+
+<body <?php body_class($pageCustomClass); ?>>
 <?php wp_body_open(); ?>
+
 <div class="wrapper">
   <!--<div class="calculator-btn" id="calculator-btn" data-toggle="modal" data-target="#calculatorModal">
     <?php /*echo esc_html( pll__( 'Калькулятор' ) ); */?>

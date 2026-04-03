@@ -78,11 +78,11 @@
 
                </style>
 
-             <div class="cursor-container" data-toggle="modal" data-target="#formModal">
+             <!--<div class="cursor-container" data-toggle="modal" data-target="#formModal">
                <div class="circle-button">
-		             <?php echo esc_html( pll__( 'Отримати консультацію' ) ); ?>
+		             <?php /*echo esc_html( pll__( 'Отримати консультацію' ) ); */?>
                </div>
-             </div>
+             </div>-->
 
              <div class="container-fluid">
                <div class="row">

@@ -28,7 +28,7 @@
 	 	$blogArgs = array(
 	 		'posts_per_page' => $blogPostPerPage,
 	 		'orderby' 	 => 'date',
-	 		'post_type'  => 'blog',
+	 		'post_type'  => 'post',
 	 		'post_status' => 'publish'
 	 	);
 
@@ -80,14 +80,15 @@
                       <img src="<?php echo $marqueImage;?>" alt="<?php echo get_bloginfo('name');?>">
 								    <?php endfor;?>
                 </div>
+              </div>
 				    </div>
 				    <div class="container-fluid">
 					    <div class="row blog-list" id="blog-list">
 						    <?php while ( $blogList->have_posts() ) : $blogList->the_post(); ?>
 
-							    <a href="<?php the_permalink();?>" class="blog-post col-lg-4 col-sm-6">
-										     <span class="inner">
-											     <span class="blog-post__image">
+							    <div class="blog-post col-lg-4 col-sm-6">
+										     <div class="inner">
+											     <a href="<?php the_permalink();?>" class="blog-post__image">
 												     <img
 													     src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'full')[0];?>"
 													     <?php
@@ -99,18 +100,21 @@
 															     alt="<?php the_title();?>"
 														     <?php endif;?>
 												     >
-											     </span>
-											     <span class="blog-post__title"><?php the_title();?></span>
-											     <span class="description">
+											     </a>
+											     <h3 class="blog-post__title">
+                             <a href="<?php the_permalink();?>"><?php the_title();?></a>
+                           </h3>
+											     <a href="<?php the_permalink();?>" class="blog-post__description">
                              <?php
 	                             $excerpt = mb_substr( get_the_excerpt(), 0, 150) . '...';
-	                             echo wpautop( $excerpt );
+	                             echo $excerpt;
                              ?>
-												    <!-- --><?php /*echo get_the_excerpt();*/?>
-											     </span>
-                           <span class="button text-btn-blue"><?php echo esc_html( pll__( 'Читати далі' ) ); ?></span>
-										     </span>
-							    </a>
+											     </a>
+                           <a href="<?php the_permalink();?>" class="button text-btn-blue">
+                             <?php echo esc_html( pll__( 'Читати далі' ) ); ?>
+                           </a>
+										     </div>
+							    </div>
 
 						    <?php endwhile;?>
 

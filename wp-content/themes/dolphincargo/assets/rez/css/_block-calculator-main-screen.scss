@@ -261,6 +261,7 @@
       cursor: pointer;
       transition: all 0.3s;
       white-space: nowrap;
+      font-family: $f-light;
 
       @media(max-width: 440px){
         height: 20px;

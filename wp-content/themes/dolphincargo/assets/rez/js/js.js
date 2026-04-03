@@ -232,8 +232,6 @@ jQuery(function($) {
     });
   }
 
-
-
   /**
    * Fixed Menu
    */
@@ -253,6 +251,14 @@ jQuery(function($) {
   const calculatorBtn = $('#calculator-btn');
   const calculatorType1Btn = $('#calculator-type-1');
 
+  let captchaIcon = '';
+
+  setTimeout(function(){
+      captchaIcon = $('.grecaptcha-badge');
+  }, 1000);
+
+
+
   $(window).scroll(function() {
 
     let scroll = $(window).scrollTop();
@@ -260,9 +266,11 @@ jQuery(function($) {
     if(scroll > windHeight){
       calculatorBtn.addClass('visible');
       calculatorType1Btn.addClass('visible');
+      captchaIcon.addClass('visible');
     }else{
       calculatorBtn.removeClass('visible');
       calculatorType1Btn.removeClass('visible');
+      captchaIcon.removeClass('visible');
     }
 
     if( scroll > positionScrollHeader ) {
@@ -274,7 +282,6 @@ jQuery(function($) {
       }else{
         $('.site-header').removeClass('fixed-header-visible');
       }
-
 
     } else {
       $('.site-header').addClass('fixed-header-visible');
@@ -292,12 +299,37 @@ jQuery(function($) {
   $('#menu-btn').on('click', function (e) {
     e.preventDefault();
 
-    $(this).toggleClass('active');
-    $('.site-header').toggleClass('active-menu');
-    $('#header-navigation').toggleClass('open-menu');
-    $('html').toggleClass("fixedPosition");
+    const menuBody = $('#header-navigation');
+    const menuBtn = $(this);
+    const siteHeader = $('.site-header');
+    const htmlDocument = $('html');
+
+    menuBtn.toggleClass('active');
+    siteHeader.toggleClass('active-menu');
+    menuBody.toggleClass('open-menu');
+    htmlDocument.toggleClass("fixedPosition");
+
+    $(document).on('click', function(e){
+
+      if (menuBtn.is(e.target) || menuBtn.has(e.target).length){
+        return;
+      }
+
+      if (menuBody.is(e.target) || menuBody.has(e.target).length){
+        console.log(100);
+        return;
+      } else{
+
+        menuBtn.removeClass('active');
+        siteHeader.removeClass('active-menu');
+        menuBody.removeClass('open-menu');
+        htmlDocument.removeClass("fixedPosition");
+      }
+
+    });
 
   });
+
 
   /**
    * Viewport Animation
@@ -455,6 +487,24 @@ jQuery(function($) {
       }
     });
 
+  }
+
+  /**
+   * Container How animate
+   */
+
+  if ( $('.container-how-order').length ) {
+
+    const topStepsTracking = $('.container-how-order .list-ingredients .item');
+
+    topStepsTracking.viewportChecker({
+
+      offset: 300,
+
+      callbackFunction: function (elem, action) {
+
+      }
+    });
   }
 
 
@@ -726,6 +776,14 @@ jQuery(function($) {
     let utmTerm = thisForm.find('input[name = utm_term]').val();
     let utmContent = thisForm.find('input[name = utm_content]').val();
 
+    let calcDeliveryType = thisForm.find('input[name = calc-delivery-type]:checked').val();
+    let calcDeliveryCategory = thisForm.find('select[name = calc-delivery-category]').val();
+    let calcDeliveryVolume = thisForm.find('input[name = calc-form-volume]').val();
+
+    let formComment = thisForm.find('textarea[name = message]').val();
+    let captchaResponse = thisForm.find('input[name = g-recaptcha-response]').val();
+
+
     const formData = {
       action: action,
       name: name,
@@ -738,6 +796,12 @@ jQuery(function($) {
       utmCampaign: utmCampaign,
       utmTerm: utmTerm,
       utmContent: utmContent,
+      calcDeliveryType: calcDeliveryType,
+      calcDeliveryCategory: calcDeliveryCategory,
+      calcDeliveryVolume: calcDeliveryVolume,
+      message: formComment,
+      captchaResponse: captchaResponse,
+
     }
 
     $.post( dolphincargo_ajax.url, formData, function(response) {
@@ -754,8 +818,7 @@ jQuery(function($) {
    */
 
   if ( $('.services-delivery-price-list').length ){
-
-
+    
     let anchor = window.location.hash;
     let position = anchor.indexOf('?');
 
@@ -785,7 +848,6 @@ jQuery(function($) {
       }
     }
 
-
     let anchorTarget = '';
 
     if ( anchorResult == '#avia' || anchorResult == '#railway' || anchorResult == '#sea'){
@@ -797,9 +859,6 @@ jQuery(function($) {
       $('.base-price').hide(300);
     }
 
-    
-
-
     $('#services-delivery-price-slider').slick({
       autoplay: false,
       autoplaySpeed: 2000,
@@ -810,7 +869,6 @@ jQuery(function($) {
       adaptiveHeight: true,
       asNavFor: '#services-delivery-price-slider-nav'
     });
-
 
     $('#services-delivery-price-slider-nav').slick({
       slidesToShow: 4,
@@ -870,6 +928,88 @@ jQuery(function($) {
   }
 
   /**
+   * Containers type
+   */
+
+  if ($('#container-types-slider').length){
+
+    const containerTypeSlider = $('#container-types-slider');
+
+    containerTypeSlider.slick({
+      autoplay: false,
+      autoplaySpeed: 2000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      /*adaptiveHeight: true,*/
+
+    });
+
+    let sliderNavList = $('#container-types-slider-nav .item');
+
+    function sliderTabNavigation(slideNumber){
+
+      sliderNavList.each(function (){
+        let thisItem = $(this);
+
+        let thisIndex = Number(thisItem.attr('data-index'));
+
+        if (thisIndex === slideNumber ){
+          thisItem.addClass('current');
+        }
+
+      });
+    }
+
+    sliderTabNavigation(0);
+
+    $('#container-types-slider-nav .item').on('click', function(){
+
+      let thisInden = Number($(this).attr('data-index'));
+
+      $('#container-types-slider-nav .item').removeClass('current');
+
+      $(this).addClass('current');
+
+      containerTypeSlider.slick('slickGoTo', thisInden,  true);
+
+    })
+
+    /*containerTypeSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
+
+      $('#container-types-slider-nav .item').removeClass('current');
+
+      sliderTabNavigation(currentSlide);
+
+      console.log('After: '+currentSlide);
+
+    });*/
+
+    containerTypeSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+
+      $('#container-types-slider-nav .item').removeClass('current');
+
+      sliderTabNavigation(nextSlide);
+      console.log('Before: '+nextSlide);
+
+    });
+
+    $('.container-types .prev').click(function(e){
+      e.preventDefault();
+
+      containerTypeSlider.slick('slickPrev');
+    });
+
+    $('.container-types .next').click(function(e){
+      e.preventDefault();
+
+      containerTypeSlider.slick('slickNext');
+    });
+  }
+
+
+  /**
    * Calculator
    */
 
@@ -879,6 +1019,13 @@ jQuery(function($) {
   const calcType1Count = $('#calc-type1-count');
   let calcType1Metrics = $('#calculatorType1Modal .data-type-list input:checked').val();
 
+  const calcType2Width = $('#calc-type2-white');
+  const calcType2Height = $('#calc-type2-height');
+  const calcType2Length = $('#calc-type2-length');
+  const calcType2Count = $('#calc-type2-count');
+  let calcType2Metrics = $('#calculatorType2 .data-type-list input:checked').val();
+
+  let calcFormValue = $('#calc-form-volume');
 
   let calcWidthValue = 0;
   let calcHeightValue = 0;
@@ -887,12 +1034,17 @@ jQuery(function($) {
 
   const calcResultWrapper = $('.calculator-result');
   /*const formCalcResult = $('#cargo-volume');*/
-  const calcBtnGo = $('.calculator-wrapper .button');
+  const calcBtnGo = $('.calculator-wrapper #calc-type-1');
   /*const calcFormContact = $('#calculatorModal form');*/
+  const calcBtnGo2 = $('.calculator-wrapper #calc-type-2');
 
   let currentWidthPlaceholder = calcType1Width.attr('placeholder');
   let currentHeightPlaceholder = calcType1Height.attr('placeholder');
   let currentLengthPlaceholder = calcType1Length.attr('placeholder');
+
+  let current2WidthPlaceholder = calcType2Width.attr('placeholder');
+  let current2HeightPlaceholder = calcType2Height.attr('placeholder');
+  let current2LengthPlaceholder = calcType2Length.attr('placeholder');
 
   function changeCalcPlaceholder(calcType1Metrics) {
 
@@ -915,13 +1067,43 @@ jQuery(function($) {
     }
   }
 
+  function changeCalcPlaceholder2(calcType2Metrics) {
+
+    if ( calcType2Metrics == 'centimeters'){
+      calcType2Width.attr('placeholder', current2WidthPlaceholder + ' см');
+      calcType2Height.attr('placeholder', current2HeightPlaceholder + ' см');
+      calcType2Length.attr('placeholder', current2LengthPlaceholder + ' см');
+    }
+
+    if ( calcType2Metrics == 'millimeters'){
+      calcType2Width.attr('placeholder', current2WidthPlaceholder + ' мм');
+      calcType2Height.attr('placeholder', current2HeightPlaceholder + ' мм');
+      calcType2Length.attr('placeholder', current2LengthPlaceholder + ' мм');
+    }
+
+    if ( calcType2Metrics == 'meters'){
+      calcType2Width.attr('placeholder', current2WidthPlaceholder + ' м');
+      calcType2Height.attr('placeholder', current2HeightPlaceholder + ' м');
+      calcType2Length.attr('placeholder', current2LengthPlaceholder + ' м');
+    }
+  }
+
   changeCalcPlaceholder(calcType1Metrics);
+  changeCalcPlaceholder2(calcType2Metrics);
 
   $('#calculatorType1Modal .data-type-list input').on('change', function () {
 
     calcType1Metrics = $(this).val();
 
     changeCalcPlaceholder(calcType1Metrics);
+
+  })
+
+  $('#calculatorType2 .data-type-list input').on('change', function () {
+
+    calcType2Metrics = $(this).val();
+
+    changeCalcPlaceholder2(calcType2Metrics);
 
   })
 
@@ -935,10 +1117,27 @@ jQuery(function($) {
 
     if(calcType1Count.val() > 0){
       calcCountValue = calcType1Count.val();
+
     }
 
 
     calcCargoValue(calcWidthValue, calcHeightValue, calcLengthValue, calcType1Metrics, calcCountValue);
+
+  });
+
+  calcBtnGo2.on('click', function (e) {
+    e.preventDefault();
+
+    calcWidthValue = calcType2Width.val();
+    calcHeightValue = calcType2Height.val();
+    calcLengthValue = calcType2Length.val();
+
+    if(calcType2Count.val() > 0){
+      calcCountValue = calcType2Count.val();
+    }
+
+
+    calcCargoValue(calcWidthValue, calcHeightValue, calcLengthValue, calcType2Metrics, calcCountValue);
 
   });
 
@@ -957,6 +1156,10 @@ jQuery(function($) {
 
       calcResultWrapper.find('span').text(calcResult.toFixed(3));
       calcResultWrapper.slideDown(300);
+
+      if(calcFormValue.length){
+        calcFormValue.val(calcResult.toFixed(3)+'м³');
+      }
 
     }
 

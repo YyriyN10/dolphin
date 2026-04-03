@@ -20,31 +20,24 @@
     }
   }
 
-  .light{
+  &:before{
+    content: '';
     position: absolute;
-    width: 1610px;
-    z-index: 2;
-
-    @media(max-width: 2000px){
-      width: 80vw;
-    }
-
-    img{
-      width: 100%;
-      height: auto;
-    }
-
-    &.light-top{
-      top: 0;
-      left: 50%;
-      margin-left: -50vw;
-    }
-
-    &.light-left{
-      top: 50%;
-      left: 0;
-      transform: translateY(-30%) translateX(0);
-    }
+    z-index: 1;
+    width: 90vw;
+    height: 100vh;
+    border-radius: 1000px;
+    background: radial-gradient(
+            circle at 50% 50%,
+            rgba($color-dark-blue, 0.85) 0%,
+            rgba($color-dark-blue, 0.65) 30%,
+            rgba($color-dark-blue, 0.55) 55%,
+            rgba($color-dark-blue, 0) 80%
+    );
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(90px);
   }
 
   .container-fluid{
@@ -72,7 +65,7 @@
       height: auto;
       padding: 16px 0;
       position: relative;
-      transform-origin: left;
+      /*transform-origin: left;*/
       width: calc(100% + 20px);
       overflow: hidden;
       text-align: center;
@@ -148,12 +141,32 @@
 .block-post-content{
   position: relative;
 
+  &:before{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 1050px;
+    height: 770px;
+    border-radius: 1000px;
+    background: radial-gradient(
+            circle at 50% 50%,
+            rgba($color-dark-blue, 0.85) 0%,
+            rgba($color-dark-blue, 0.65) 30%,
+            rgba($color-dark-blue, 0.55) 55%,
+            rgba($color-dark-blue, 0) 80%
+    );
+    top: 0;
+    left: 0;
+    transform: translateY(-50%) translateX(-30%);
+    filter: blur(90px);
+  }
+
   .container-fluid{
     position: relative;
     z-index: 3;
   }
 
-  h2{
+  h3{
     text-transform: uppercase;
     font-size: 32px;
     font-family: $f-med;
@@ -176,6 +189,10 @@
     @media(max-width: 440px){
       font-size: 24px;
     }
+  }
+
+  .wp-block-image{
+    margin: 16px;
   }
 
   .post-text-part,

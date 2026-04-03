@@ -47,7 +47,7 @@
 							     </div>
 						     </div>
 						     <?php if( !empty($fields['dolphincargo_top_list']) ):?>
-							     <div class="row">
+							     <div class="row second-up">
 								     <ul class="we-do-list col-12">
 									     <?php foreach( $fields['dolphincargo_top_list'] as $doItem):?>
 										     <li class="item">
@@ -61,9 +61,9 @@
 							     </div>
 						     <?php endif;?>
 					     </div>
-					     <?php if( !empty($fields['dolphincargo_big_image']) && !empty($fields['dolphincargo_small_image']) ):?>
-						     <div class="image-animation-wrapper">
-							     <div class="big-image">
+					     <?php if( !empty($fields['dolphincargo_big_image']) ):?>
+						     <div class="full-image-wrapper">
+							     <div class="image">
 								     <img
 									     class="lazy"
 									     data-src="<?php echo wp_get_attachment_image_src($fields['dolphincargo_big_image'], 'full')[0];?>"
@@ -77,25 +77,11 @@
 
 								     >
 							     </div>
-							     <div class="small-image">
-								     <img
-									     class="lazy"
-									     data-src="<?php echo wp_get_attachment_image_src($fields['dolphincargo_small_image'], 'full')[0];?>"
-									     <?php
-										     $altText = get_post_meta($fields['dolphincargo_small_image'], '_wp_attachment_image_alt', TRUE);
-										     if ( !empty( $altText ) ):?>
-											     alt="<?php echo $altText;?>"
-										     <?php else:?>
-											     alt="<?php echo wp_strip_all_tags($fields['dolphincargo_title']);?>"
-										     <?php endif;?>
-
-								     >
-							     </div>
 						     </div>
 					     <?php endif;?>
 					     <div class="container-fluid">
 						     <div class="row">
-							     <ol class="list-ingredients second-up col-12">
+							     <ol class="list-ingredients col-12">
 								     <?php foreach( $fields['dolphincargo_list'] as $index=>$item ):?>
 									     <li class="item">
 										     <p class="index"><?php echo $index + 1;?></p>

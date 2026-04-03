@@ -60,6 +60,7 @@
           <input type="hidden" name="thx-target" value="<?php echo base64_encode($thxPageUrl);;?>">
           <input type="hidden" name="page-url" value="<?php the_permalink();?>">
           <input type="hidden" name="page-name" value="<?php the_title();?>">
+          <input type="hidden" name="g-recaptcha-response" class="recaptchaResponse">
           <div class="form-group">
             <input type="text" name="name" class="form-control" placeholder="<?php echo esc_html( pll__( 'Ім’я' ) ); ?>" required>
           </div>
@@ -68,6 +69,9 @@
           </div>
           <div class="form-group">
             <input type="email" name="email" class="form-control" placeholder="Email" required>
+          </div>
+          <div class="form-group textarea-group">
+            <textarea name="message" class="form-control" placeholder="<?php echo esc_html( pll__( 'Ваш коментар' ) ); ?>"></textarea>
           </div>
 
           <button type="submit" class="button blue-btn"><?php echo esc_html( pll__( 'Надіслати заявку' ) ); ?></button>
@@ -203,6 +207,7 @@
             <input type="hidden" name="page-url" value="<?php the_permalink();?>">
             <input type="hidden" name="page-name" value="<?php the_title();?>">
             <input type="hidden" name="cargo-volume" id="cargo-volume" value="">
+            <input type="hidden" name="g-recaptcha-response" class="recaptchaResponse">
             <div class="form-group">
               <input type="text" name="name" class="form-control" placeholder="<?php echo esc_html( pll__( 'Ім’я' ) ); ?>" required>
             </div>
@@ -211,6 +216,9 @@
             </div>
             <div class="form-group">
               <input type="email" name="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="form-group textarea-group">
+              <textarea name="message" class="form-control" placeholder="<?php echo esc_html( pll__( 'Ваш коментар' ) ); ?>"></textarea>
             </div>
 
             <button type="submit" class="button blue-btn"><?php echo esc_html( pll__( 'Надіслати заявку' ) ); ?></button>

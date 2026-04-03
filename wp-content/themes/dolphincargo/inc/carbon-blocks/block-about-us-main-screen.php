@@ -72,11 +72,11 @@
 
               </style>
 
-            <div class="cursor-container">
+            <!--<div class="cursor-container">
               <div class="circle-button" data-toggle="modal" data-target="#formModal">
-						    <?php echo esc_html( pll__( 'Отримати консультацію' ) ); ?>
+						    <?php /*echo esc_html( pll__( 'Отримати консультацію' ) ); */?>
               </div>
-            </div>
+            </div>-->
 			     <?php get_template_part('template-parts/decor-lines');?>
 			     <div class="container-fluid">
 				     <div class="row">

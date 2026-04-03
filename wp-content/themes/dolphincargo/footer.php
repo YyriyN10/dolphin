@@ -58,6 +58,7 @@
               <input type="hidden" name="page-url" value="<?php echo $actual_link;?>">
 
               <input type="hidden" name="page-name" value="<?php the_title();?>">
+              <input type="hidden" name="g-recaptcha-response" class="recaptchaResponse">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" placeholder="<?php echo esc_html( pll__( 'Ім’я' ) ); ?>" required>
               </div>
@@ -66,6 +67,9 @@
               </div>
               <div class="form-group">
                 <input type="email" name="email" class="form-control" placeholder="Email" required>
+              </div>
+              <div class="form-group textarea-group">
+                <textarea name="message" class="form-control" placeholder="<?php echo esc_html( pll__( 'Ваш коментар' ) ); ?>"></textarea>
               </div>
 
               <button type="submit" class="button blue-btn"><?php echo esc_html( pll__( 'Надіслати заявку' ) ); ?></button>
@@ -129,6 +133,20 @@
 </div>
 
 <?php wp_footer(); ?>
+<script src="https://www.google.com/recaptcha/api.js?render=6LeJTiYsAAAAAOwtVqoNv2ARZgNA4MOjSXXyMF6v"></script>
+<script>
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6LeJTiYsAAAAAOwtVqoNv2ARZgNA4MOjSXXyMF6v', {action: 'contact_form'})
+      .then(function(token) {
+
+        const recaptchaElementsList = document.getElementsByClassName('recaptchaResponse');
+
+        for (let i = 0; i < recaptchaElementsList.length; i++) {
+          recaptchaElementsList[i].value = token;
+        }
+      });
+  });
+</script>
 
 </body>
 </html>
