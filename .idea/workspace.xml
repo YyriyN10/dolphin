@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e482e552-bf4c-4849-a83d-92759f1c3707" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/dolphincargo/assets/css/_block-container-types.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/dolphincargo/assets/css/_block-container-types.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/dolphincargo/assets/js/js.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/dolphincargo/assets/js/js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/dolphincargo/assets/js/main.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/dolphincargo/assets/js/main.min.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2q9h97dGppyMYzri75lQPfOysug" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e482e552-bf4c-4849-a83d-92759f1c3707" name="Default Changelist" comment="" />
+      <created>1734080543171</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734080543171</updated>
+      <workItem from="1734080547243" duration="550000" />
+      <workItem from="1734081107411" duration="283000" />
+      <workItem from="1734083977251" duration="3900000" />
+      <workItem from="1734091002637" duration="9808000" />
+      <workItem from="1734332377788" duration="7295000" />
+      <workItem from="1734457615850" duration="194000" />
+      <workItem from="1735293369480" duration="9640000" />
+      <workItem from="1735328164859" duration="599000" />
+      <workItem from="1735993206676" duration="63000" />
+      <workItem from="1735993286814" duration="66000" />
+      <workItem from="1735993558703" duration="57000" />
+      <workItem from="1735993631010" duration="46000" />
+      <workItem from="1762718346095" duration="84000" />
+      <workItem from="1762718454097" duration="480000" />
+      <workItem from="1762719276064" duration="675000" />
+      <workItem from="1762721267966" duration="6000" />
+      <workItem from="1762759389905" duration="1462000" />
+      <workItem from="1762761932160" duration="1013000" />
+      <workItem from="1762763048429" duration="1081000" />
+      <workItem from="1762844076386" duration="709000" />
+      <workItem from="1762852563526" duration="628000" />
+      <workItem from="1762966858805" duration="85000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/old" />
+    </ignored-roots>
+  </component>
+</project>
