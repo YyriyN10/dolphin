@@ -35,7 +35,7 @@ wp-config.php
 
 # Log files
 *.log
-
+.idea/
 # htaccess
 /.htaccess
 
