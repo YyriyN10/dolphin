@@ -70,7 +70,7 @@
   RewriteCond %{HTTP_ACCEPT} image/webp
   RewriteCond %{REQUEST_FILENAME} -f
   RewriteCond %{REQUEST_FILENAME} (?i)(.*)(\.jpe?g|\.png)$
-  RewriteRule (?i).*$ /wp-content/plugins/webp-express/wod/webp-on-demand.php [E=WE_WP_CONTENT_REL_TO_WE_PLUGIN_DIR:../../,E=WE_SOURCE_REL_HTACCESS:$0,E=WE_HTACCESS_ID:themes,NC,L]
+  RewriteRule (?i).*$ /wp-content/plugins/webp-express/wod/webp-on-demand.php [E=WE_WP_CONTENT_REL_TO_WE_PLUGIN_DIR:../../,E=WE_SOURCE_REL_HTACCESS:$0,E=WE_HTACCESS_ID:themes,E=HASH:ab509d449fb7392c9b7d8ba42c05d17f,NC,L]
 
   # Make sure that browsers which does not support webp also gets the Vary:Accept header
   # when requesting images that would be redirected to webp on browsers that does.

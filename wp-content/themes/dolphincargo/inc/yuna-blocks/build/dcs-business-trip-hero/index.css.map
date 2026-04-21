@@ -1,0 +1,1 @@
+{"version":3,"file":"dcs-business-trip-hero/index.css","mappings":";;;AACC;EACC;AAAF,C","sources":["webpack://yuna-gb/./src/dcs-business-trip-hero/editor.scss"],"sourcesContent":[".wp-block-dcs-business-trip-hero{\n\t&:before{\n\t\tdisplay: none;\n\t}\n}\n\n\n"],"names":[],"sourceRoot":""}

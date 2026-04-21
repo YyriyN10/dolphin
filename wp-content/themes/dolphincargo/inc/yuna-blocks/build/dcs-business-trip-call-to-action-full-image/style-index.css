@@ -1,0 +1,318 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/dcs-business-trip-call-to-action-full-image/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-dcs-business-trip-call-to-action-full-image {
+  position: relative;
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.on-bg {
+  background-color: #03040E;
+  /*&:before{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 1066px;
+    height: 892px;
+    border-radius: 1000px;
+    background: radial-gradient(
+            circle at 50% 50%,
+            rgba(2, 23, 169, 0.85) 0%,
+            rgba(2, 23, 169, 0.65) 30%,
+            rgba(2, 23, 169, 0.55) 55%,
+            rgba(2, 23, 169, 0) 80%
+    );
+    filter: blur(300px);
+    top: 0;
+    right: -87px;
+  }*/
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.on-bg .container-fluid {
+  position: relative;
+  z-index: 2;
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.on-bg .content {
+  position: relative;
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.on-bg .content .inner {
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 143px;
+  padding-bottom: 72px;
+  padding-left: 44px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.on-bg .content .inner {
+    padding: 50vw 16px 56px;
+    text-align: center;
+    background-position: top right 15%;
+  }
+}
+@media (max-width: 340px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.on-bg .content .inner {
+    padding-top: 46vw;
+  }
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.on-bg .content .inner:before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 827px;
+  top: 12%;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(2, 4, 39, 0.8) 0%, rgba(2, 4, 39, 0) 100%);
+}
+@media (max-width: 992px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.on-bg .content .inner:before {
+    top: 0;
+  }
+}
+@media (max-width: 767px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.on-bg .content .inner:before {
+    width: 100%;
+    top: auto;
+    right: 0;
+    height: 75.5%;
+    background: linear-gradient(360deg, rgba(2, 4, 39, 0.8) 0%, rgba(2, 4, 39, 0) 100%);
+  }
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.on-bg .content .text-content {
+  position: relative;
+  z-index: 4;
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.on-bg .content .text-content .block-title-new {
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+@media (max-width: 767px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.on-bg .content .text-content .block-title-new {
+    text-align: center;
+  }
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.on-bg .content .text-content .text {
+  width: 481px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-family: var(--font-roboto-flex);
+  color: #FBFBFB;
+  font-weight: 400;
+}
+@media (max-width: 767px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.on-bg .content .text-content .text {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 575px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.on-bg .content .text-content .text {
+    font-size: 16px;
+  }
+}
+@media (max-width: 575px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.on-bg .content .text-content .button {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.off-bg {
+  background-color: unset;
+  position: relative;
+  /*.container-fluid{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }*/
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.off-bg:before {
+  display: none;
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .inner {
+  border-radius: 20px;
+  background: var(--bg-light-gradient);
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0;
+  align-items: flex-end;
+  position: relative;
+}
+@media (max-width: 992px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .text-content {
+  width: 534px;
+  padding-top: 58px;
+  padding-bottom: 58px;
+  margin-left: 159px;
+  color: var(--color-new-prime-blue);
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 1400px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .text-content {
+    margin-left: 60px;
+    width: 450px;
+  }
+}
+@media (max-width: 992px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .text-content {
+    width: 100%;
+    text-align: center;
+    padding-left: 27px;
+    padding-right: 27px;
+    margin-left: 0;
+    padding-bottom: 24px;
+  }
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .marker-text-wrapper {
+  padding: 6px 20px;
+  border-radius: 7px;
+  background-color: var(--color-new-prime-blue);
+  margin-bottom: 8px;
+  display: inline-block;
+}
+@media (max-width: 767px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .marker-text-wrapper {
+    padding: 5px 16px;
+  }
+}
+@media (max-width: 440px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .marker-text-wrapper {
+    padding: 4px 11px;
+  }
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .marker-text {
+  text-transform: uppercase;
+  font-family: var(--font-ukraine-medium);
+  line-height: 1.2;
+  font-size: 24px;
+  letter-spacing: -0.07em;
+  background: var(--bg-light-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #EBF8FF;
+  margin-bottom: 0;
+}
+@media (max-width: 1400px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .marker-text {
+    font-size: 22px;
+  }
+}
+@media (max-width: 1200px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .marker-text {
+    font-size: 20px;
+  }
+}
+@media (max-width: 992px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .marker-text {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .marker-text {
+    font-size: 16px;
+  }
+}
+@media (max-width: 575px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .marker-text {
+    font-size: 14px;
+  }
+}
+@media (max-width: 440px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .marker-text {
+    font-size: 12px;
+  }
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .block-title-new {
+  color: var(--color-new-prime-blue);
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+@media (max-width: 1400px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .block-title-new {
+    font-size: 34px;
+  }
+}
+@media (max-width: 1200px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .block-title-new {
+    font-size: 32px;
+  }
+}
+@media (max-width: 992px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .block-title-new {
+    font-size: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .block-title-new {
+    font-size: 28px;
+  }
+}
+@media (max-width: 575px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .block-title-new {
+    font-size: 26px;
+  }
+}
+@media (max-width: 440px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .block-title-new {
+    font-size: 24px;
+  }
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .text {
+  color: var(--color-new-prime-blue);
+  margin-bottom: 32px;
+  font-size: 18px;
+  font-family: var(--font-roboto-flex);
+  line-height: 1.4;
+  width: 100%;
+  font-weight: 400;
+}
+@media (max-width: 575px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .content .text {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.off-bg .block-image-wrapper {
+  width: 745px;
+  position: relative;
+  margin-left: -117px;
+  z-index: 1;
+}
+@media (max-width: 1400px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .block-image-wrapper {
+    width: calc(100% - 520px);
+    margin-left: 0;
+  }
+}
+@media (max-width: 992px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .block-image-wrapper {
+    width: 60%;
+  }
+}
+@media (max-width: 767px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .block-image-wrapper {
+    width: 80%;
+  }
+}
+@media (max-width: 575px) {
+  .wp-block-dcs-business-trip-call-to-action-full-image.off-bg .block-image-wrapper {
+    width: 100%;
+  }
+}
+.wp-block-dcs-business-trip-call-to-action-full-image.off-bg .block-image-wrapper:before {
+  display: none;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

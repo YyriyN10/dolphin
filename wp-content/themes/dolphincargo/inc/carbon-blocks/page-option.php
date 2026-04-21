@@ -64,8 +64,24 @@
 			         Field::make_image('dolphincargo_option_marque_image', 'Логотип у бігучий рядок')
 			              ->set_type('image')
 			              ->set_value_type('url'),
-
-
+			         Field::make_association('privacy_ua_page', 'Сторінка політики приватності Української версії')
+			              ->set_types( array(
+				              array(
+					              'type'      => 'post',
+					              'post_type' => 'page',
+				              )
+			              ) )
+			              ->set_max( 1 ),
+			         Field::make_association('privacy_ru_page', 'Сторінка політики приватності російської версії')
+			              ->set_types( array(
+				              array(
+					              'type'      => 'post',
+					              'post_type' => 'page',
+				              )
+			              ) )
+			              ->set_max( 1 ),
+			         Field::make_image('new_footer_image', 'Зображення для футеру')
+			          ->set_width(30)
 		         ) )
 
 		         ->add_tab( 'Опції форми', array(
@@ -163,6 +179,37 @@
 
 		         ->add_fields(array(
 			         Field::make_text('custom_page_trigger_class', 'Кастомний клас сторінки')
+		         ));
+
+	}
+
+	/**
+	 * Anchor Menu
+	 */
+
+	add_action( 'carbon_fields_register_fields', 'dolphincargo_page_anchor_menu_trigger' );
+
+	function dolphincargo_page_anchor_menu_trigger() {
+		Container::make( 'post_meta', 'Якірне меню')
+		         ->where( function( $homeFields ) {
+			         $homeFields->where( 'post_type', '=', 'page' );
+		         } )
+		         ->set_context('side')
+
+		         ->add_fields(array(
+			         Field::make_checkbox('anchor_menu_trigger', 'Вивести якірне меню?')
+				         ->set_option_value( 'yes' ),
+			         Field::make_complex('anchor_menu', 'Меню')
+				         ->set_conditional_logic( array(
+					         array(
+						         'field' => 'anchor_menu_trigger',
+						         'value' => true,
+					         )
+				         ) )
+			            ->add_fields(array(
+			            	Field::make_text('name', 'Назва пункту'),
+				            Field::make_text('anchor', 'Якір')
+			            ))
 		         ));
 
 	}

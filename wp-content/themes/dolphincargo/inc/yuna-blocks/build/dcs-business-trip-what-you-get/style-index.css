@@ -1,0 +1,162 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/dcs-business-trip-what-you-get/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-dcs-business-trip-what-you-get {
+  position: relative;
+}
+.wp-block-dcs-business-trip-what-you-get .container-fluid {
+  position: relative;
+  z-index: 2;
+}
+.wp-block-dcs-business-trip-what-you-get .inner {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+}
+@media (max-width: 1400px) {
+  .wp-block-dcs-business-trip-what-you-get .inner {
+    width: 100%;
+  }
+}
+@media (max-width: 920px) {
+  .wp-block-dcs-business-trip-what-you-get .inner {
+    flex-wrap: wrap;
+  }
+}
+.wp-block-dcs-business-trip-what-you-get .text-wrapper {
+  width: 468px;
+}
+@media (max-width: 1400px) {
+  .wp-block-dcs-business-trip-what-you-get .text-wrapper {
+    width: 39%;
+  }
+}
+@media (max-width: 1200px) {
+  .wp-block-dcs-business-trip-what-you-get .text-wrapper {
+    width: 50%;
+  }
+}
+@media (max-width: 920px) {
+  .wp-block-dcs-business-trip-what-you-get .text-wrapper {
+    width: 100%;
+    order: 2;
+  }
+}
+.wp-block-dcs-business-trip-what-you-get .gallery-wrapper {
+  width: 685px;
+}
+@media (max-width: 1400px) {
+  .wp-block-dcs-business-trip-what-you-get .gallery-wrapper {
+    width: 57%;
+  }
+}
+@media (max-width: 1200px) {
+  .wp-block-dcs-business-trip-what-you-get .gallery-wrapper {
+    width: 45%;
+  }
+}
+@media (max-width: 920px) {
+  .wp-block-dcs-business-trip-what-you-get .gallery-wrapper {
+    width: 100%;
+    order: 1;
+    margin-bottom: 32px;
+  }
+}
+@media (max-width: 575px) {
+  .wp-block-dcs-business-trip-what-you-get .gallery-wrapper {
+    margin-bottom: 20px;
+  }
+}
+.wp-block-dcs-business-trip-what-you-get .gallery-wrapper .slide {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.wp-block-dcs-business-trip-what-you-get .gallery-wrapper .slide .image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 73%;
+  z-index: 1;
+}
+.wp-block-dcs-business-trip-what-you-get .gallery-wrapper .slide .image-wrapper img {
+  position: absolute;
+  inset: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.wp-block-dcs-business-trip-what-you-get .gallery-wrapper .slide:before {
+  content: "";
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+  height: 207px;
+}
+.wp-block-dcs-business-trip-what-you-get .gallery-wrapper .slick-dots {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+  height: 16px;
+  bottom: 16px;
+}
+.wp-block-dcs-business-trip-what-you-get .gallery-wrapper .slick-dots li {
+  border-radius: 50%;
+  transition: all 0.3s;
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  margin: 0;
+}
+.wp-block-dcs-business-trip-what-you-get .gallery-wrapper .slick-dots li.slick-active {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(45deg, #FF7A1B 0%, #FB4F05 100%);
+}
+.wp-block-dcs-business-trip-what-you-get .gallery-wrapper .slick-dots li button {
+  display: none;
+}
+.wp-block-dcs-business-trip-what-you-get .block-title-new {
+  color: #ffffff;
+  margin-bottom: 36px;
+}
+@media (max-width: 920px) {
+  .wp-block-dcs-business-trip-what-you-get .block-title-new {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 575px) {
+  .wp-block-dcs-business-trip-what-you-get .block-title-new {
+    margin-bottom: 20px;
+  }
+}
+.wp-block-dcs-business-trip-what-you-get .get-list {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  gap: 14px;
+}
+.wp-block-dcs-business-trip-what-you-get .get-list li {
+  list-style: none;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzIxMjJfMTc1NykiPgo8cGF0aCBkPSJNMTUuNjI4MiAyLjYxNTMxQzE1LjEzMzIgMi4xMTk2MSAxNC4zMjkzIDIuMTE5OTIgMTMuODMzNiAyLjYxNTMxTDUuNzU2NTkgMTAuNjkyNkwyLjE2NjcgNy4xMDI3OUMxLjY3MSA2LjYwNzA4IDAuODY3NDc5IDYuNjA3MDggMC4zNzE3NzcgNy4xMDI3OUMtMC4xMjM5MjYgNy41OTg0OSAtMC4xMjM5MjYgOC40MDIwMSAwLjM3MTc3NyA4Ljg5NzcxTDQuODU4OTQgMTMuMzg0OUM1LjEwNjY0IDEzLjYzMjYgNS40MzE0MyAxMy43NTY3IDUuNzU2MjUgMTMuNzU2N0M2LjA4MTA3IDEzLjc1NjcgNi40MDYxNyAxMy42MzI5IDYuNjUzODcgMTMuMzg0OUwxNS42MjgyIDQuNDEwMjFDMTYuMTIzOSAzLjkxNDg1IDE2LjEyMzkgMy4xMTA5OCAxNS42MjgyIDIuNjE1MzFaIiBmaWxsPSIjRkY3QTFCIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfMjEyMl8xNzU3Ij4KPHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=);
+  background-repeat: no-repeat;
+  background-size: 16px auto;
+  padding-left: 27px;
+  background-position: left center;
+  font-size: 16px;
+  line-height: 1.4;
+  font-family: var(--font-roboto-flex);
+  color: #ffffff;
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

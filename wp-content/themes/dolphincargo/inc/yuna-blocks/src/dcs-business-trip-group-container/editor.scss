@@ -1,0 +1,17 @@
+
+.card-list .block-editor-block-list__layout{
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.wp-block-dcs-business-trip-advantages-inner{
+  width: calc(50% - 12px);
+
+  img{
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px;
+  }
+}
+

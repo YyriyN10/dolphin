@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "dcs/business-trip-problem-inner",
+  "version": "0.1.0",
+  "title": "Внутрішня картка",
+  "category": "yuna-inner-block-category",
+  "icon": "dashicons-block-default",
+  "description": "Внутрішня картка",
+  "example": {},
+  "attributes": {
+    "itemName": {
+      "type": "string",
+      "default": ""
+    },
+    "innerList": {
+      "type": "string",
+      "default": ""
+    },
+    "blockIndex": {
+      "type": "number",
+      "default": 0
+    }
+  },
+
+  "supports": {
+    "color": {
+      "background": true,
+      "text": true
+    },
+
+    "html": false
+
+  },
+  "parent": ["dcs/business-trip-problem"],
+  "textdomain": "dcs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php"
+}
+
+

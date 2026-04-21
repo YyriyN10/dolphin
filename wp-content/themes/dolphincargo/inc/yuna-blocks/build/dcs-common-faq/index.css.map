@@ -1,0 +1,1 @@
+{"version":3,"file":"dcs-common-faq/index.css","mappings":";;;AAAA;EACC;AACD;AACC;EAEC;AAAF,C","sources":["webpack://yuna-gb/./src/dcs-common-faq/editor.scss"],"sourcesContent":[".wp-block-dcs-common-faq{\n\tbackground-color: #ffffff;\n\n\t&:before,\n\t&:after{\n\t\tdisplay: none;\n\t}\n}\n\n\n"],"names":[],"sourceRoot":""}

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "dcs/business-trip-our-support",
+  "version": "0.1.0",
+  "title": "Cупровід буде корисний, якщо",
+  "category": "dcs-business_trip_block-category",
+  "icon": "list-view",
+  "description": "Cупровід буде корисний, якщо",
+  "example": {},
+  "attributes": {
+    "anchorId": {
+      "type": "string"
+    },
+    "bloсkZindex": {
+      "type": "string",
+      "default": ""
+    },
+    "topRadius": {
+      "enum": ["Yes", "No"],
+      "default": "No",
+      "type": "string"
+    },
+    "backgroundType": {
+      "enum": ["light-bg", "dark-bg"],
+      "default": "dark-bg",
+      "type": "string"
+    },
+    "topIndent": {
+      "enum": ["indent-top-80", "indent-top-40", "indent-top-0"],
+      "default": "indent-top-80",
+      "type": "string"
+    },
+    "bottomIndent": {
+      "enum": ["indent-bottom-80", "indent-bottom-40", "indent-bottom-0"],
+      "default": "indent-bottom-80",
+      "type": "string"
+    },
+    "blockTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "bgImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "bgImageId": {
+      "type": "number",
+      "default": 0
+    },
+    "mobImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "mobImageId": {
+      "type": "number",
+      "default": 0
+    },
+    "staticBottomImageId": {
+      "type": "number",
+      "default": 0
+    },
+    "staticBottomImageUrl": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "color": {
+      "background": true,
+      "text": true,
+      "heading": true,
+      "gradients": true
+    },
+    "html": false
+
+  },
+  "textdomain": "dcs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}
+
+

@@ -192,46 +192,46 @@ add_action( 'wp_enqueue_scripts', 'dolphincargo_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+include_once get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+include_once get_template_directory() . '/inc/template-tags.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
-require get_template_directory() . '/inc/template-functions.php';
+include_once get_template_directory() . '/inc/template-functions.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+include_once get_template_directory() . '/inc/customizer.php';
 
 /**
  * Poly translations
  */
 
-require get_template_directory() . '/inc/poly-translation.php';
+include_once get_template_directory() . '/inc/poly-translation.php';
 
 /**
  * Custom post types
  */
 
-require get_template_directory() . '/inc/custom-post-types.php';
+include_once get_template_directory() . '/inc/custom-post-types.php';
 
 /**
  * Carbon init
  */
 
-require get_template_directory() . '/inc/carbon-init.php';
+include_once get_template_directory() . '/inc/carbon-init.php';
 
 /**
  * Carbon init
  */
 
-require get_template_directory() . '/inc/ajax-functions.php';
+include_once get_template_directory() . '/inc/ajax-functions.php';
 
 /**
  * Constants
@@ -248,7 +248,7 @@ define( 'THEME_PATH', get_template_directory_uri() );
 	add_action('wp_ajax_contact_form', 'contact_form_callback');
 	add_action('wp_ajax_nopriv_contact_form', 'contact_form_callback');
 
-	require_once 'vendor/autoload.php';
+	include_once 'vendor/autoload.php';
 
 	use GuzzleHttp\Client;
 	use GuzzleHttp\Exception\RequestException;
@@ -704,6 +704,11 @@ define( 'THEME_PATH', get_template_directory_uri() );
 
 
 	}
+
+	/**
+	 * Yuna blocks
+	 */
+	include_once get_template_directory() . '/inc/yuna-blocks/yuna-blocks-init.php';
 
 
 

@@ -1,0 +1,73 @@
+.wp-block-dcs-business-trip-tour {
+  position: relative;
+  background-color: #03040E;
+
+  .container-fluid{
+    position: relative;
+    z-index: 2;
+  }
+
+  .image-wrapper{
+    width: 224px;
+    margin: 0 auto 32px;
+
+    @media(max-width: 1200px){
+      width: 200px;
+    }
+
+    @media(max-width: 992px){
+      width: 180px;
+    }
+
+    @media(max-width: 767px){
+      width: 160px;
+    }
+
+    @media(max-width: 575px){
+      width: 140px;
+    }
+
+    @media(max-width: 440px){
+      width: 120px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .block-title-new{
+    margin-bottom: 32px;
+
+    @media(max-width: 440px){
+      margin-bottom: 20px;
+    }
+
+    .has-inline-color{
+      padding: 0;
+    }
+  }
+
+  .text{
+    width: 762px;
+    margin: 0 auto;
+
+    @media(max-width: 992px){
+      width: 100%;
+    }
+
+    p{
+      font-size: 18px;
+      line-height: 1.4;
+      color: #ffffff;
+      margin-bottom: 16px;
+      font-family: var(--font-roboto);
+      font-weight: 400;
+
+      @media(max-width: 440px){
+        font-size: 16px;
+      }
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}

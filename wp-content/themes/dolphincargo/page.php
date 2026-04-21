@@ -12,10 +12,20 @@
  * @package dolphincargo
  */
 
-get_header();
+$anchorMenuTrigger = carbon_get_post_meta(get_the_ID(), 'anchor_menu_trigger');
+$anchorMenuList = carbon_get_post_meta(get_the_ID(), 'anchor_menu');
+
+
+
+if ( $anchorMenuTrigger && !empty($anchorMenuList)){
+	get_header('anchor', $anchorMenuList);
+}else{
+	get_header();
+}
+
 ?>
 
 	<?php the_content();?>
 
 <?php
-get_footer();
+get_footer('new');

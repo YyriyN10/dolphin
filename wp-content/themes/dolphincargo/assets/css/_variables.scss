@@ -24,6 +24,30 @@ $color-gray: #BDBDBD;
 $bg-blue-gradient: radial-gradient(ellipse at center, rgba(2,23,169,0.4) 0%,rgba(2,23,169,0.1) 100%);
 $bg-soft-blue-gradient: radial-gradient(ellipse at center, rgba(6, 127, 239,0.4) 0%,rgba(6, 127, 239,0.1) 100%);
 
+:root{
+  --bd-orange-gradient: radial-gradient(circle farthest-side at left top, #FF7A1B 0%, #FB4F05 100%);
+  --bd-orange-gradient-hover: radial-gradient(circle farthest-side at left top, #FB4F05 0%, #FF7A1B 100%);
+  --bg-blue-gradient: radial-gradient(circle farthest-side at left top, rgba(2,23,169,0.4) 0%,rgba(2,23,169,0.1) 100%);
+  --bg-light-gradient: linear-gradient( #EBF8FF 0%, #B2D9F0 100%);
+  --border-gradient-blue: radial-gradient(circle farthest-side at left top, rgba(6, 127, 239, 0.6) 0%, rgba(6, 127, 239, 0.2) 100%);
+  --border-gradient-rose: radial-gradient(circle farthest-side at left top, rgba(239, 6, 6, 0.6) 0%, rgba(239, 6, 6, 0.2) 100%);
+  --text-orange-gradient: linear-gradient(45deg, #FF7A1B 0%, #FB4F05 100%);
+  --color-white-new: #F8F3E1;
+  --color-grey: #BDBDBD;
+  --color-white: #f6f6f6;
+  --color-new-prime-blue: #050733;
+  --font-ukraine-bold: "e-Ukraine-Bold";
+  --font-ukraine-medium: "e-Ukraine-Medium";
+  --font-durk-cur-medium: "DrukCyr-Medium";
+  --font-roboto-flex: "Roboto Flex";
+  --font-roboto-light: "RobotoLight";
+  --font-roboto-bold: "RobotoBold";
+  --font-roboto: "Roboto";
+}
+
+
+
+
 /*--- Grid ---*/
 
 
@@ -64,8 +88,6 @@ $bg-soft-blue-gradient: radial-gradient(ellipse at center, rgba(6, 127, 239,0.4)
     padding-left: 157px;
     padding-right: 157px;
   }
-
-
 
   @media(max-width: 1200px){
     padding-left: 75px;
@@ -112,4 +134,23 @@ $bg-soft-blue-gradient: radial-gradient(ellipse at center, rgba(6, 127, 239,0.4)
   width: 100%;
   padding-right: 16px;
   padding-left: 16px;
+}
+
+.custom-container{
+  width: 1352px;
+  padding-left: 0;
+  padding-right: 0;
+
+  @media(max-width: 1400px){
+    width: calc(100% - 88px);
+  }
+
+  @media(max-width: 767px){
+    width: calc(100% - 44px);
+  }
+
+  @media(max-width: 440px){
+    width: calc(100% - 30px);
+
+  }
 }

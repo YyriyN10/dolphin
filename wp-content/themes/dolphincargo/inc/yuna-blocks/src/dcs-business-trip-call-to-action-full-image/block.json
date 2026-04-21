@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "dcs/business-trip-call-to-action-full-image",
+  "version": "0.1.0",
+  "title": "Блок заклику з великим зображенням на фоні>",
+  "category": "dcs-business_trip_block-category",
+  "icon": "megaphone",
+  "description": "Блок заклику з великим зображенням на фоні",
+  "example": {},
+  "attributes": {
+    "anchorId": {
+      "type": "string"
+    },
+    "bloсkZindex": {
+      "type": "string",
+      "default": ""
+    },
+    "topRadius": {
+      "enum": ["Yes", "No"],
+      "default": "No",
+      "type": "string"
+    },
+    "backgroundType": {
+      "enum": ["light-bg", "dark-bg"],
+      "default": "dark-bg",
+      "type": "string"
+    },
+    "topIndent": {
+      "enum": ["indent-top-80", "indent-top-40", "indent-top-0"],
+      "default": "indent-top-80",
+      "type": "string"
+    },
+    "bottomIndent": {
+      "enum": ["indent-bottom-80", "indent-bottom-40", "indent-bottom-0"],
+      "default": "indent-bottom-80",
+      "type": "string"
+    },
+    "blockTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "blockText": {
+      "type": "string",
+      "default": ""
+    },
+    "btnText": {
+      "type": "string",
+      "default": ""
+    },
+    "bgImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "bgImageId": {
+      "type": "number",
+      "default": 0
+    },
+    "separatorCTA": {
+      "type": "boolean",
+      "default": false
+    },
+    "markerTitle": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "color": {
+      "background": true,
+      "text": true,
+      "heading": true,
+      "gradients": true
+    },
+    "html": false
+
+  },
+  "textdomain": "dcs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}
+
+

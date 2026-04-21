@@ -1,0 +1,1 @@
+{"version":3,"file":"dcs-business-trip-numbers/index.css","mappings":";;;AAAA;EACE;AACF;AACE;EAEE;AAAJ,C","sources":["webpack://yuna-gb/./src/dcs-business-trip-numbers/editor.scss"],"sourcesContent":[".wp-block-dcs-business-trip-numbers{\n  background-color: #ffffff;\n\n  &:before,\n  &:after{\n    display: none;\n  }\n}"],"names":[],"sourceRoot":""}

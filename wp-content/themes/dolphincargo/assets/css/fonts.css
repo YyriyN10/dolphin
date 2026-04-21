@@ -45,14 +45,14 @@
 }
 
 
-@font-face {
+/*@font-face {
   font-display: swap;
   font-family: 'Roboto Flex';
   font-style: normal;
-  font-weight: 400;
+  font-weight: normal;
   src: url('../fonts/Roboto-flex/roboto-flex-v26-cyrillic_cyrillic-ext_greek_latin_latin-ext-regular.woff2') format('woff2'),
   url('../fonts/Roboto-flex/roboto-flex-v26-cyrillic_cyrillic-ext_greek_latin_latin-ext-regular.ttf') format('truetype');
-}
+}*/
 
 @font-face {
   font-display: swap;
@@ -80,5 +80,44 @@
   src: url('../fonts/PFBeauSansPro-Bbook/PFBeauSansPro-Bbook.woff2') format('woff2'),
   url('../fonts/PFBeauSansPro-Bbook/PFBeauSansPro-Bbook.ttf') format('truetype');
 }
+
+@font-face {
+  font-display: swap;
+  font-family: 'e-Ukraine-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/e-Ukraine-Bold/e-Ukraine-Bold.woff2') format('woff2'),
+  url('../fonts/e-Ukraine-Bold/e-Ukraine-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'e-Ukraine-Medium';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/e-Ukraine-Medium/e-Ukraine-Medium.woff2') format('woff2'),
+  url('../fonts/e-Ukraine-Medium/e-Ukraine-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'DrukCyr-Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/DrukCyr-Medium/DrukCyr-Medium.woff2') format('woff2'),
+  url('../fonts/DrukCyr-Medium/DrukCyr-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: "DMSansMedium";
+  src: url("../fonts/DMSansMedium/DMSansMedium.woff2") format("woff2");
+  src: url("../fonts/DMSansMedium/DMSansMedium.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');*/
+
 
 

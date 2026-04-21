@@ -36,7 +36,7 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule (?i).*(\.jpe?g|\.png)\.webp$ /wp-content/plugins/webp-express/wod/webp-realizer.php [E=WE_WP_CONTENT_REL_TO_WE_PLUGIN_DIR:../../,E=WE_DESTINATION_REL_HTACCESS:$0,E=WE_HTACCESS_ID:cache,NC,L]
+  RewriteRule (?i).*(\.jpe?g|\.png)\.webp$ /wp-content/plugins/webp-express/wod/webp-realizer.php [E=WE_WP_CONTENT_REL_TO_WE_PLUGIN_DIR:../../,E=WE_DESTINATION_REL_HTACCESS:$0,E=WE_HTACCESS_ID:cache,E=HASH:ab509d449fb7392c9b7d8ba42c05d17f,NC,L]
 </IfModule>
 
 # Set Vary:Accept header if we came here by way of our redirect, which set the ADDVARY environment variable

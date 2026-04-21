@@ -219,3 +219,75 @@
     }
   }
 }
+
+/*--- trip-page ---*/
+
+.trip-page,
+.page-template-template-trip{
+  .wrapper{
+    overflow: unset;
+
+    @media(max-width: 767px){
+      overflow: hidden;
+    }
+  }
+
+  .form-modal{
+    .modal-title{
+      font-family: var(--font-ukraine-medium);
+      line-height: 1.2;
+    }
+
+    form{
+      .form-group{
+        .form-control{
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.2);
+          border: 1px solid rgba(233, 233, 233, 0.3);
+          padding: 14px 20px;
+          border-radius: 12px;
+
+          &::-webkit-input-placeholder {
+            color: #ffffff;
+          }
+          &:-moz-placeholder {
+            color: #ffffff;
+          }
+          &::-moz-placeholder {
+            color: #ffffff;
+          }
+          &:-ms-input-placeholder {
+            color: #ffffff;
+          }
+        }
+
+        .intl-tel-input{
+          .form-control{
+            padding-left: 48px;
+          }
+        }
+      }
+
+      .button{
+        background-image: var(--bd-orange-gradient);
+        height: 52px;
+        width: 269px;
+        line-height: 52px;
+        border-radius: 6px;
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--color-white-new);
+        font-family: var(--font-roboto-flex);
+        font-weight: 500;
+        box-shadow: 6px 6px 40px 0 rgba(239, 6, 6, 0.50);
+        padding: 0 16px;
+
+        &:hover{
+          box-shadow: none;
+          background-image: var(--bd-orange-gradient-hover);
+        }
+      }
+    }
+  }
+}
+

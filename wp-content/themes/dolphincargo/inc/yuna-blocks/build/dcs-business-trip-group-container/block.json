@@ -1,0 +1,67 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "dcs/business-trip-group-container",
+  "version": "0.1.0",
+  "title": "Контейнер для групи блоків",
+  "icon": "grid-view",
+  "category": "dcs-business_trip_block-category",
+  "description": "Контейнер для групи блоків",
+  "example": {},
+  "attributes": {
+    "bloсkZindex": {
+      "type": "string",
+      "default": ""
+    },
+    "topRadius": {
+      "enum": [
+        "Yes",
+        "No"
+      ],
+      "default": "No",
+      "type": "string"
+    },
+    "backgroundType": {
+      "enum": [
+        "light-bg",
+        "dark-bg",
+        "white-bg"
+      ],
+      "default": "dark-bg",
+      "type": "string"
+    },
+    "topIndent": {
+      "enum": [
+        "indent-top-80",
+        "indent-top-40",
+        "indent-top-0"
+      ],
+      "default": "indent-top-0",
+      "type": "string"
+    },
+    "bottomIndent": {
+      "enum": [
+        "indent-bottom-80",
+        "indent-bottom-40",
+        "indent-bottom-0"
+      ],
+      "default": "indent-bottom-0",
+      "type": "string"
+    }
+  },
+  "supports": {
+    "color": {
+      "background": true,
+      "text": true,
+      "heading": true,
+      "gradients": true
+    },
+    "html": false
+  },
+  "textdomain": "dcs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

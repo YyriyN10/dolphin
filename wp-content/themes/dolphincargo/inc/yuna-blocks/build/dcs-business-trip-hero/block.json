@@ -1,0 +1,64 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "dcs/business-trip-hero",
+  "version": "0.1.0",
+  "title": "Головний екран",
+  "category": "dcs-business_trip_block-category",
+  "icon": "cover-image",
+  "description": "Головний екран",
+  "example": {},
+  "attributes": {
+    "starsCount": {
+      "type": "number",
+      "default": 5
+    },
+    "casesCount": {
+      "type": "string",
+      "default": ""
+    },
+    "blockTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "blockText": {
+      "type": "string",
+      "default": ""
+    },
+    "btnText": {
+      "type": "string",
+      "default": ""
+    },
+    "bigBackgroundImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "desktopBackgroundImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "mobileBackgroundImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "bloсkZindex": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "supports": {
+    "color": {
+      "background": true,
+      "text": true,
+      "heading": true,
+      "gradients": true
+    },
+    "html": false
+  },
+  "textdomain": "dcs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

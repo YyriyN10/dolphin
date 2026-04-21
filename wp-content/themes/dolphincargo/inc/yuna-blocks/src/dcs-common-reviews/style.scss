@@ -1,0 +1,77 @@
+.wp-block-dcs-common-reviews{
+  position: relative;
+  overflow: hidden;
+
+  .container-fluid{
+    position: relative;
+    z-index: 2;
+  }
+
+  .block-title-new{
+    color: #ffffff;
+    margin-bottom: 32px;
+  }
+
+  .reviews__slider-wrapper{
+    position: relative;
+
+    .reviews__slider{
+      position: relative;
+      z-index: 2;
+      width: 1272px;
+      margin: 0 auto;
+
+      .text {
+        font-family: var(--font-roboto);
+        font-weight: 400;
+      }
+    }
+
+    .control{
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &.prev{
+        left: -11px;
+      }
+
+      &.next{
+        right: -11px;
+      }
+    }
+
+    .slick-dots{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: center;
+      height: 16px;
+      bottom: -65px;
+
+
+      li{
+        border-radius: 50%;
+        transition: all 0.3s;
+        width: 8px;
+        height: 8px;
+        background-color: #ffffff;
+        margin: 0;
+
+        &.slick-active{
+          width: 16px;
+          height: 16px;
+          background: linear-gradient(45deg, #FF7A1B 0%, #FB4F05 100%);
+        }
+
+        button{
+          display: none;
+        }
+      }
+    }
+
+  }
+
+
+}

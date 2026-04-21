@@ -1,0 +1,53 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/dcs-business-trip-group-container/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-dcs-business-trip-group-container {
+  position: relative;
+}
+.wp-block-dcs-business-trip-group-container.white-bg {
+  background-color: #ffffff;
+  overflow: unset;
+}
+.wp-block-dcs-business-trip-group-container.dark-bg {
+  background: rgb(0, 5, 37);
+  overflow: hidden;
+}
+.wp-block-dcs-business-trip-group-container.dark-bg:before, .wp-block-dcs-business-trip-group-container.dark-bg:after {
+  content: "";
+  position: absolute;
+  border-radius: 1000px;
+  background: #0217A9;
+  filter: blur(350px);
+  z-index: 1;
+}
+.wp-block-dcs-business-trip-group-container.dark-bg:before {
+  width: 791px;
+  height: 622px;
+  top: -220px;
+  left: -212px;
+}
+.wp-block-dcs-business-trip-group-container.dark-bg:after {
+  width: 1066px;
+  height: 862px;
+  top: 1115px;
+  right: -87px;
+}
+.wp-block-dcs-business-trip-group-container.dark-bg.even-block:before {
+  left: auto;
+  right: -220px;
+}
+.wp-block-dcs-business-trip-group-container.dark-bg.even-block:after {
+  right: auto;
+  left: -87px;
+}
+.wp-block-dcs-business-trip-group-container.light-bg {
+  background-image: linear-gradient(#EBF8FF 0%, #B2D9F0 100%);
+  overflow: unset;
+}
+.wp-block-dcs-business-trip-group-container section {
+  background-image: unset !important;
+  background: rgba(0, 0, 0, 0) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

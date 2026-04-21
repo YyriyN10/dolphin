@@ -1,0 +1,66 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/dcs-common-reviews/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-dcs-common-reviews {
+  position: relative;
+  overflow: hidden;
+}
+.wp-block-dcs-common-reviews .container-fluid {
+  position: relative;
+  z-index: 2;
+}
+.wp-block-dcs-common-reviews .block-title-new {
+  color: #ffffff;
+  margin-bottom: 32px;
+}
+.wp-block-dcs-common-reviews .reviews__slider-wrapper {
+  position: relative;
+}
+.wp-block-dcs-common-reviews .reviews__slider-wrapper .reviews__slider {
+  position: relative;
+  z-index: 2;
+  width: 1272px;
+  margin: 0 auto;
+}
+.wp-block-dcs-common-reviews .reviews__slider-wrapper .reviews__slider .text {
+  font-family: var(--font-roboto);
+  font-weight: 400;
+}
+.wp-block-dcs-common-reviews .reviews__slider-wrapper .control {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.wp-block-dcs-common-reviews .reviews__slider-wrapper .control.prev {
+  left: -11px;
+}
+.wp-block-dcs-common-reviews .reviews__slider-wrapper .control.next {
+  right: -11px;
+}
+.wp-block-dcs-common-reviews .reviews__slider-wrapper .slick-dots {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+  height: 16px;
+  bottom: -65px;
+}
+.wp-block-dcs-common-reviews .reviews__slider-wrapper .slick-dots li {
+  border-radius: 50%;
+  transition: all 0.3s;
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  margin: 0;
+}
+.wp-block-dcs-common-reviews .reviews__slider-wrapper .slick-dots li.slick-active {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(45deg, #FF7A1B 0%, #FB4F05 100%);
+}
+.wp-block-dcs-common-reviews .reviews__slider-wrapper .slick-dots li button {
+  display: none;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

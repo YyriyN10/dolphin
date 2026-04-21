@@ -2,10 +2,10 @@
 Contributors: Chouby, manooweb, raaaahman, marianne38, sebastienserre, greglone, hugod
 Donate link: https://polylang.pro
 Tags: multilingual, translate, translation, language, localization
-Requires at least: 6.2
-Tested up to: 6.8
-Requires PHP: 7.2
-Stable tag: 3.7.4
+Requires at least: 6.5
+Tested up to: 6.9
+Requires PHP: 7.4
+Stable tag: 3.8.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -28,7 +28,7 @@ Polylang and [Polylang Pro](https://polylang.pro) share the same core providing 
 * The language is either set by the language code in URL, or you can use a different sub-domain or domain per language.
 * Automatic copy of categories, post tags and other metas when creating a new post or page translation.
 * Translating classic menus and classic widgets. Also accessible with [Site Editor Classic Features](https://wordpress.org/plugins/fse-classic/) in block themes.
-* Customizable language switcher available as a classic widget or a classic navigation menu item.
+* Customizable language switchers available as blocks, classic widget or classic navigation menu item.
 * Compatibility with Yoast SEO.
 
 ### Polylang Pro
@@ -36,7 +36,6 @@ Polylang and [Polylang Pro](https://polylang.pro) share the same core providing 
 Helps optimizing the time spent translating your site with some very useful extra features such as:
 
 * Better integration in the new Block Editor.
-* Language switcher available as a block.
 * Language options available in the widget block editor.
 * Template parts translatable in the site editor (FSE).
 * Duplicate and/or synchronize content across post translations.
@@ -73,17 +72,17 @@ Wherever third party code has been used, credit has been given in the code’s c
 
 == Installation ==
 
-1. Make sure you are using WordPress 6.2 or later and that your server is running PHP 7.2 or later (same requirement as WordPress itself).
+1. Make sure you are using WordPress 6.5 or later and that your server is running PHP 7.4 or later (same requirement as WordPress itself).
 1. If you tried other multilingual plugins, deactivate them before activating Polylang, otherwise, you may get unexpected results!
 1. Install and activate the plugin as usual from the 'Plugins' menu in WordPress.
-1. The [setup wizard](https://polylang.pro/doc/setup-wizard/) is automatically launched to help you get started more easily with Polylang by configuring the main features.
+1. The [setup wizard](https://polylang.pro/documentation/support/getting-started/setup-wizard/) is automatically launched to help you get started more easily with Polylang by configuring the main features.
 
 == Frequently Asked Questions ==
 
 = Where to find help ? =
 
-* First time users should read [Polylang - Getting started](https://polylang.pro/doc-category/getting-started/), which explains the basics and includes a lot of screenshots.
-* Read the [documentation](https://polylang.pro/doc/). It includes a [FAQ](https://polylang.pro/doc-category/faq/) and the [documentation for developers](https://polylang.pro/doc-category/developers/).
+* First time users should read [Polylang - Getting started](https://polylang.pro/documentation/support/getting-started/), which explains the basics and includes a lot of screenshots.
+* Read the [documentation](https://polylang.pro/documentation/support/). It includes a [FAQ](https://polylang.pro/documentation/support/faq/) and the [documentation for developers](https://polylang.pro/documentation/support/developers/).
 * Search the [community support forum](https://wordpress.org/search/). You will probably find your answers here.
 * Read the sticky posts in the [community support forum](http://wordpress.org/support/plugin/polylang).
 * If you still have a problem, open a new thread in the [community support forum](http://wordpress.org/support/plugin/polylang).
@@ -91,7 +90,7 @@ Wherever third party code has been used, credit has been given in the code’s c
 
 = Is Polylang compatible with WooCommerce? =
 
-* You need [Polylang for WooCommerce](https://polylang.pro/downloads/polylang-for-woocommerce/), premium addon described above, which will make both plugins work together.
+* You need [Polylang for WooCommerce](https://polylang.pro/pricing/polylang-for-woocommerce/), premium addon described above, which will make both plugins work together.
 
 = Where do I report security bugs found in this plugin? =
 
@@ -105,6 +104,85 @@ Wherever third party code has been used, credit has been given in the code’s c
 4. The Edit Post screen with the Languages metabox
 
 == Changelog ==
+
+= 3.8.1 (2026-03-19) =
+
+* Fix fatal error when the cache is suspended #1837 #1839
+
+= 3.8 (2026-03-17) =
+
+* Requires PHP 7.4 and WP 6.5 as minimum version
+* Pro: Use autonomous updater #2475
+* Pro: Add capabilities allowing to control permissions per language
+* Pro: Add capabilities to control access to languages and strings translations
+* Pro: Allow to manage languages and settings with WP CLI #2653
+* Pro: Add smart duplication in site editor #2559
+* Pro: Add support for DeepL glossaries #2687
+* Pro: Add locale fallback support to machine translation #2685
+* Pro: Add Support encoding for block attributes in wpml-config.xml #1683, #2660
+* Pro: Improve extensibility of the block editor languages panel #2553
+* Pro: Add support for new blocks introduced in WP 7.0 #2933 #2941
+* Pro: Hide language selector on inner blocks in Widget Block Editor #2900
+* Pro: Fix page template not copied when creating a new page translation in the block editor #2581
+* Pro: Fix SVG icons lost when using machine translation
+* Pro: Fix a performance issue with the translation of ACF labels #2670
+* Pro: Fix product status wrongly modified when updating a product with the REST API #2540
+* Pro: Fix inactive languages not displayed when they should in REST API #2791
+* Pro: Fix translation of ACF repeaters with pagination #2674
+* Pro: Fix ACF's layout fields instructions #2889
+* Pro: Fix ACF's taxonomy fields not synchronized #2948
+* Pro: Fix event dates of The Events Calendar not duplicated #2894
+* Add language switcher block and navigation language switcher block #1811
+* Add support for multiple encodings in wpml-config.xml #1679, #2655
+* Enforce transients in DB and in object cache are synchronized #1653, #2598
+* Enforce passing all translations when saving the translations of a post or term #1690
+* Hide the admin language filter when editing posts #1698
+* Improve performance by preventing DB queries to fetch the language terms #1650
+* Fix edge cases where the translation group could be corrupted #1690
+* Fix a fatal error on multisite when saving a post after having switched to a site without Polylang #1700
+* Fix a fatal error when translating a custom table #1730
+* Fix warning when requesting a non-existing language #1665
+* Fix strings translations import with WP Importer #1637
+* Fix edge cases leading to wrong languages order #1777
+* Fix a fatal error with the plugin Groups #1834
+
+= 3.7.8 (2026-02-23) =
+
+* Pro: Add 'pll_create_post_translation' filter #2890
+* Pro: Fix ACF's layout fields instructions #2889
+
+= 3.7.7 (2026-01-26) =
+
+* Pro: Add DeepL support for 70 new languages. #1793 #2871
+* Fix advanced menu properties not displayed in customizer. Props Viktor Szépe. #1722
+* Fix incorrect slug when changing the language of a term. #1790
+
+= 3.7.6 (2026-01-06) =
+
+* Pro: Add support for WP 6.9 new blocks #2790
+* Pro: Fix insertion of navigation language switcher block in WP 6.9 #2847
+* Pro: Fix current post URL in site editor for WP 6.8+ #2843
+* Pro: Fix a conflict with Sensei LMS #2845
+* Fix categories not filtered per post language in quick edit #1785
+
+= 3.7.5 (2025-11-10) =
+
+* Pro: Updated DeepL supported languages list
+* Pro: Fix a regression in cross domain login
+* Pro: Fix post object field not correctly translated
+* Pro: Fix a fatal error in EDD plugin updater when the request to the server fails
+* Pro: Fix locale fallback in WP 6.8+
+* Pro: Add `pll_enable_acf_labels_translation` filter allowing to disable the translation of ACF labels
+* Pro: Fix ACF image field not correctly translated when media translation is active
+* Pro: Fix ACF image field in repeater not copied
+* Pro: Fix ACF ajax request unexpectedly filtered by language when editing a field group
+* Pro: Fix ACF blocks not translated when included inside a non-ACF block
+* Pro: Add compatibility of the duplicate tool with Divi
+* Fix Undefined array key "terms" in canonical.php #1691
+* Fix some regressions in the WPML API used by YITH WooCommerce Wishlist #1684
+* Fix LinkedIn site title preview with Yoast SEO #1686
+* Fix HTML language attribute on login page #1601
+* Fix conflict with WP Job Manager Application #1749
 
 = 3.7.4 (2025-10-28) =
 

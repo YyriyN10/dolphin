@@ -1,0 +1,471 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/dcs-business-trip-why-choose-us/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-dcs-business-trip-why-choose-us {
+  position: relative;
+  overflow: unset !important;
+}
+@media (max-width: 1024px) {
+  .wp-block-dcs-business-trip-why-choose-us {
+    overflow: hidden;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .content {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 950px) {
+  .wp-block-dcs-business-trip-why-choose-us .content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .content .block-title-new-big {
+  margin-bottom: 0;
+  color: var(--color-new-prime-blue);
+}
+@media (max-width: 950px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .block-title-new-big {
+    width: 100%;
+    order: 1;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .content .company-old {
+  position: relative;
+  margin: 100px auto 0;
+  width: 670px;
+  z-index: 2;
+}
+@media (max-width: 1220px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .company-old {
+    width: 485px;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 1090px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .company-old {
+    width: 415px;
+    margin-top: 30px;
+    transform: translateX(50px);
+  }
+}
+@media (max-width: 950px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .company-old {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    transform: translateX(0);
+    margin-top: -15px;
+    order: 2;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .content .company-old .years {
+  font-family: var(--font-durk-cur-medium);
+  font-size: 550px;
+  line-height: 1;
+  background: linear-gradient(45deg, #FF7A1B 0%, #FB4F05 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #FB4F05;
+}
+@media (max-width: 1220px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .company-old .years {
+    font-size: 350px;
+  }
+}
+@media (max-width: 1090px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .company-old .years {
+    font-size: 250px;
+  }
+}
+@media (max-width: 950px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .company-old .years {
+    order: 1;
+    text-align: center;
+    width: 100%;
+  }
+}
+@media (max-width: 440px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .company-old .years {
+    font-size: 200px;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .content .company-old .years-description {
+  color: #050733;
+  font-family: var(--font-ukraine-medium);
+  line-height: 1.2;
+  font-size: 40px;
+  letter-spacing: -0.07em;
+  width: 360px;
+  margin-left: auto;
+  margin-bottom: -235px;
+  margin-right: -70px;
+}
+@media (max-width: 1220px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .company-old .years-description {
+    font-size: 34px;
+    width: 315px;
+    margin-bottom: -145px;
+  }
+}
+@media (max-width: 1090px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .company-old .years-description {
+    font-size: 30px;
+    margin-bottom: -105px;
+  }
+}
+@media (max-width: 950px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .company-old .years-description {
+    order: 2;
+    margin: -30px auto 0;
+    text-align: center;
+  }
+}
+@media (max-width: 440px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .company-old .years-description {
+    font-size: 24px;
+    width: 250px;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .content .text-parts {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 1120px;
+  margin: -300px auto -225px;
+  align-items: flex-start;
+  transform: translateX(-15px);
+}
+@media (max-width: 1220px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .text-parts {
+    width: 950px;
+    transform: translateX(-20px);
+    margin: -200px auto -10px;
+  }
+}
+@media (max-width: 1090px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .text-parts {
+    width: 860px;
+    transform: translateX(0);
+    margin: -145px auto -170px;
+  }
+}
+@media (max-width: 950px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .text-parts {
+    width: 100%;
+    order: 4;
+    margin: -130px auto 0;
+    border-radius: 20px;
+    padding: 150px 32px 32px 32px;
+    background: var(--border-gradient-blue);
+    position: relative;
+    display: block;
+  }
+}
+@media (max-width: 950px) and (max-width: 767px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .text-parts {
+    padding-top: 120px;
+    margin-top: -110px;
+  }
+}
+@media (max-width: 950px) and (max-width: 440px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .text-parts {
+    padding: 74px 16px 16px 16px;
+    margin-top: -60px;
+  }
+}
+@media (max-width: 950px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .text-parts:before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: #ffffff;
+    border-radius: 20px;
+    z-index: 1;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .content .text-parts .part {
+  border-radius: 20px;
+  position: relative;
+  padding: 32px;
+  background: var(--border-gradient-blue);
+}
+@media (max-width: 950px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .text-parts .part {
+    background: unset;
+    padding: 0;
+    border-radius: 0;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .content .text-parts .part:before {
+  position: absolute;
+  inset: 1px;
+  background: #ffffff;
+  content: "";
+  z-index: 1;
+  border-radius: 20px;
+}
+@media (max-width: 950px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .text-parts .part:before {
+    display: none;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .content .text-parts .part p {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 8px;
+  color: #050733;
+  font-size: 18px;
+  line-height: 1.2;
+  font-family: var(--font-roboto-flex);
+  font-weight: 400;
+}
+@media (max-width: 440px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .text-parts .part p {
+    font-size: 16px;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .content .text-parts .part p:last-child {
+  margin-bottom: 0;
+}
+.wp-block-dcs-business-trip-why-choose-us .content .text-parts .part.right-text {
+  text-align: right;
+  width: 316px;
+  padding-bottom: 48px;
+}
+@media (max-width: 950px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .text-parts .part.right-text {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .content .text-parts .part.left-text {
+  margin-top: 26px;
+  width: 309px;
+}
+@media (max-width: 950px) {
+  .wp-block-dcs-business-trip-why-choose-us .content .text-parts .part.left-text {
+    width: 100%;
+    margin: 0 0 8px 0;
+    text-align: center;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .block-image-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 1461px;
+  margin: 0 auto;
+  transform: translateX(-100px);
+}
+@media (max-width: 1400px) {
+  .wp-block-dcs-business-trip-why-choose-us .block-image-wrapper {
+    width: 100%;
+    transform: translateX(-50px);
+  }
+}
+@media (max-width: 1220px) {
+  .wp-block-dcs-business-trip-why-choose-us .block-image-wrapper {
+    transform: translateX(-30px);
+  }
+}
+@media (max-width: 1090px) {
+  .wp-block-dcs-business-trip-why-choose-us .block-image-wrapper {
+    transform: translateX(0);
+  }
+}
+@media (max-width: 950px) {
+  .wp-block-dcs-business-trip-why-choose-us .block-image-wrapper {
+    order: 3;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .block-image-wrapper img {
+  width: 100%;
+  height: auto;
+}
+.wp-block-dcs-business-trip-why-choose-us .list-content {
+  position: relative;
+  z-index: 3;
+}
+.wp-block-dcs-business-trip-why-choose-us .list-content .block-title-new {
+  text-align: center;
+  margin-bottom: -5px;
+  color: #050733;
+}
+@media (max-width: 950px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .block-title-new {
+    margin-top: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .block-title-new {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 440px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .block-title-new {
+    margin-top: 24px;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .list-content .block-title-new .has-inline-color {
+  padding: 0;
+}
+.wp-block-dcs-business-trip-why-choose-us .list-content .subtitle {
+  text-align: center;
+  font-family: var(--font-ukraine-medium);
+  font-size: 40px;
+  background: linear-gradient(45deg, #FF7A1B 0%, #FB4F05 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #FB4F05;
+  margin-bottom: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.07em;
+}
+@media (max-width: 992px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .subtitle {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .subtitle {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 575px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .subtitle {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 440px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .subtitle {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .list-content .list-container {
+  margin: 0 0 -100px 0;
+}
+@media (max-width: 1024px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .list-container {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
+    width: 95vw;
+  }
+  .wp-block-dcs-business-trip-why-choose-us .list-content .list-container::-webkit-scrollbar {
+    display: none; /* Older Safari and Chromium */
+  }
+}
+@media (max-width: 767px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .list-container {
+    margin-bottom: 48px;
+  }
+}
+@media (max-width: 575px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .list-container {
+    width: 97vw;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .list-content .list-container .scroll-container {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  border-radius: 20px;
+  background: var(--border-gradient-blue);
+}
+@media (max-width: 1400px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .list-container .scroll-container {
+    padding: 32px;
+  }
+}
+@media (max-width: 1200px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .list-container .scroll-container {
+    padding: 24px;
+  }
+}
+@media (max-width: 1024px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .list-container .scroll-container {
+    width: -moz-max-content;
+    width: max-content;
+  }
+}
+@media (max-width: 992px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .list-container .scroll-container {
+    padding: 16px;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .list-content .list-container .scroll-container:before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  z-index: 1;
+}
+.wp-block-dcs-business-trip-why-choose-us .list-content .list-container .list {
+  display: flex;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 1200px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .list-container .list {
+    gap: 14px;
+  }
+}
+@media (max-width: 1024px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .list-container .list {
+    width: 1100px;
+    padding-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+}
+.wp-block-dcs-business-trip-why-choose-us .list-content .list-container li {
+  position: relative;
+  list-style: none;
+  z-index: 2;
+  width: calc(16.6% - 20px);
+  text-align: center;
+  color: #000000;
+  font-size: 16px;
+  line-height: 1.4;
+  padding-top: 46px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNi4wMDU3IDIuMDA3ODFDMjMuNzM2NCAyLjAwNzgxIDMwLjAwNTggOC4yNzcyMiAzMC4wMDU4IDE2LjAwNzlDMzAuMDA1OCAyMy43Mzg2IDIzLjczNjQgMzAuMDA4IDE2LjAwNTcgMzAuMDA4QzguMjc1MDMgMzAuMDA4IDIuMDA1NjIgMjMuNzM4NiAyLjAwNTYyIDE2LjAwNzlDMi4wMDU2MiA4LjI3NzIyIDguMjc1MDMgMi4wMDc4MSAxNi4wMDU3IDIuMDA3ODFaTTEzLjA5ODQgMjAuNTU1Mkw5LjY3MDg0IDE3LjEyNDhDOS4wODY5MSAxNi41NDA1IDkuMDg2NzkgMTUuNTg3NyA5LjY3MDg0IDE1LjAwMzZDMTAuMjU1IDE0LjQxOTUgMTEuMjEyMSAxNC40MjMyIDExLjc5MiAxNS4wMDM2TDE0LjIwODQgMTcuNDIxOUwyMC4yMTk2IDExLjQxMDdDMjAuODAzOCAxMC44MjY1IDIxLjc1NjcgMTAuODI2NSAyMi4zNDA4IDExLjQxMDdDMjIuOTI1IDExLjk5NDcgMjIuOTI0MSAxMi45NDg1IDIyLjM0MDggMTMuNTMxOEwxNS4yNjczIDIwLjYwNTNDMTQuNjgzOSAyMS4xODg3IDEzLjczMDIgMjEuMTg5NSAxMy4xNDYxIDIwLjYwNTNDMTMuMTI5NyAyMC41ODg5IDEzLjExMzkgMjAuNTcyMiAxMy4wOTg0IDIwLjU1NTJaIiBmaWxsPSIjMDBCQTAwIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTYuMDA1NyAyLjAwNzgxQzIzLjczNjQgMi4wMDc4MSAzMC4wMDU4IDguMjc3MjIgMzAuMDA1OCAxNi4wMDc5QzMwLjAwNTggMjMuNzM4NiAyMy43MzY0IDMwLjAwOCAxNi4wMDU3IDMwLjAwOEM4LjI3NTAzIDMwLjAwOCAyLjAwNTYyIDIzLjczODYgMi4wMDU2MiAxNi4wMDc5QzIuMDA1NjIgOC4yNzcyMiA4LjI3NTAzIDIuMDA3ODEgMTYuMDA1NyAyLjAwNzgxWk0xMy4wOTg0IDIwLjU1NTJMOS42NzA4NCAxNy4xMjQ4QzkuMDg2OTEgMTYuNTQwNSA5LjA4Njc5IDE1LjU4NzcgOS42NzA4NCAxNS4wMDM2QzEwLjI1NSAxNC40MTk1IDExLjIxMjEgMTQuNDIzMiAxMS43OTIgMTUuMDAzNkwxNC4yMDg0IDE3LjQyMTlMMjAuMjE5NiAxMS40MTA3QzIwLjgwMzggMTAuODI2NSAyMS43NTY3IDEwLjgyNjUgMjIuMzQwOCAxMS40MTA3QzIyLjkyNSAxMS45OTQ3IDIyLjkyNDEgMTIuOTQ4NSAyMi4zNDA4IDEzLjUzMThMMTUuMjY3MyAyMC42MDUzQzE0LjY4MzkgMjEuMTg4NyAxMy43MzAyIDIxLjE4OTUgMTMuMTQ2MSAyMC42MDUzQzEzLjEyOTcgMjAuNTg4OSAxMy4xMTM5IDIwLjU3MjIgMTMuMDk4NCAyMC41NTUyWiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzIxMjJfMTgxOSkiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl8yMTIyXzE4MTkiIHgxPSIxLjk4ODA5IiB5MT0iNS4yNjIyNiIgeDI9IjMwLjA1MzYiIHkyPSIxMC4xNDM1IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRjdBMUIiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRkI0RjA1Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+Cg==);
+  background-repeat: no-repeat;
+  background-size: 32px auto;
+  background-position: top center;
+  white-space: pre-wrap;
+  font-family: var(--font-roboto);
+  font-weight: 400;
+}
+@media (max-width: 1200px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .list-container li {
+    font-size: 14px;
+    width: calc(16.6% - 11.6666666667px);
+  }
+}
+@media (max-width: 767px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .list-container li {
+    background-size: 28px auto;
+    padding-top: 42px;
+  }
+}
+@media (max-width: 440px) {
+  .wp-block-dcs-business-trip-why-choose-us .list-content .list-container li {
+    background-size: 24px auto;
+    padding-top: 38px;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

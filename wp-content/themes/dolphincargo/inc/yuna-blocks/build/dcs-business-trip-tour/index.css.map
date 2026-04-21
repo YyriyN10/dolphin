@@ -1,0 +1,1 @@
+{"version":3,"file":"dcs-business-trip-tour/index.css","mappings":";;;AAAA;EACC;AACD;AACC;EAEC;AAAF,C","sources":["webpack://yuna-gb/./src/dcs-business-trip-tour/editor.scss"],"sourcesContent":[".wp-block-dcs-business-trip-tour{\n\tbackground-color: #ffffff;\n\n\t&:before,\n\t&:after{\n\t\tdisplay: none;\n\t}\n}\n"],"names":[],"sourceRoot":""}

@@ -1,0 +1,61 @@
+.wp-block-dcs-business-trip-group-container{
+  position: relative;
+
+  &.white-bg{
+    background-color: #ffffff;
+    overflow: unset;
+  }
+
+  &.dark-bg{
+    background: rgba(0, 5, 37, 1);
+    overflow: hidden;
+
+    &:before,
+    &:after{
+      content: '';
+      position: absolute;
+      border-radius: 1000px;
+      background: #0217A9;
+      filter: blur(350px);
+      z-index: 1;
+    }
+
+    &:before{
+      width: 791px;
+      height: 622px;
+      top: -220px;
+      left: -212px;
+    }
+
+    &:after{
+      width: 1066px;
+      height: 862px;
+      top: 1115px;
+      right: -87px;
+    }
+
+    &.even-block{
+
+      &:before{
+        left: auto;
+        right: -220px;
+      }
+
+      &:after{
+        right: auto;
+        left: -87px;
+      }
+    }
+  }
+
+  &.light-bg{
+    background-image: linear-gradient(#EBF8FF 0%, #B2D9F0 100%);
+    overflow: unset;
+  }
+
+  section{
+    background-image: unset !important;
+    background: rgba(0,0,0,0) !important;
+    background-color: rgba(0,0,0,0) !important;
+  }
+}
